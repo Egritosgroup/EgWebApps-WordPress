@@ -3,13 +3,13 @@
 * Plugin Name: Ηλεκτρονικές Εφαρμογές - Έγκριτος Group
 * Plugin URI: 
 * Description: Ηλεκτρονικές Εφαρμογές - Έγκριτος Group
-* Version: 1.6
+* Version: 1.7
 * Author: EgritosGroup
 * Author URI: https://egritosgroup.gr/
 **/ 
 
 global $egr_db_version;
-$egr_db_version = '1.6';
+$egr_db_version = '1.7';
 
 define( 'EGR__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 

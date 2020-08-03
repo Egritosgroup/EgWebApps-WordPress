@@ -40,6 +40,7 @@
 <script src="<?php echo site_url('wp-content/plugins/egwebapps/src/'); ?>main-es2015.js?v=<?php echo $GLOBALS["egritos_version"]; ?>" type="module"></script>
 <script src="<?php echo site_url('wp-content/plugins/egwebapps/src/'); ?>main-es5.js?v=<?php echo $GLOBALS["egritos_version"]; ?>" nomodule defer></script>
 
+
 <app-root></app-root>
 
 <?php get_footer(); ?>
