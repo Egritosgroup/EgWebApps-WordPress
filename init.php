@@ -34,9 +34,9 @@ function initRequires() {
         }
         
         $updater = new Smashing_Updater( __FILE__ );
-        $updater->set_username( 'webeg' );
-        $updater->set_repository( 'egwebapps');
-        $updater->authorize( '91945bf7a6c75a39f72c7d76f27fe11f33eaaa8b' ); // Your auth code goes here for private repos
+        $updater->set_username( 'Egritosgroup' );
+        $updater->set_repository( 'EgWebApps-WordPress');
+        //$updater->authorize( '91945bf7a6c75a39f72c7d76f27fe11f33eaaa8b' ); // Your auth code goes here for private repos
         $updater->initialize();
     }
     
