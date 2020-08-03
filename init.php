@@ -3,13 +3,13 @@
 * Plugin Name: Ηλεκτρονικές Εφαρμογές - Έγκριτος Group
 * Plugin URI: 
 * Description: Ηλεκτρονικές Εφαρμογές - Έγκριτος Group
-* Version: ReplaceWithTFSVersionNumber
+* Version: 1.7.1
 * Author: EgritosGroup
 * Author URI: https://egritosgroup.gr/
 **/ 
 
 global $egwebapps_version;
-$egwebapps_version = 'ReplaceWithTFSVersionNumber';
+$egwebapps_version = '1.7.1';
 
 define( 'EGR__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
