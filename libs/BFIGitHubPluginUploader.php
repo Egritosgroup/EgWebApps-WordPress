@@ -1,6 +1,6 @@
 <?php
 
-class Smashing_Updater {
+class BFIGitHubPluginUpdater {
 
     private $slug;
  
