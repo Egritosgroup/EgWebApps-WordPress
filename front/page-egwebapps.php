@@ -14,29 +14,29 @@ get_header(); ?>
 
 <script src="<?php echo site_url('/' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . '/auth-settings'); ?>?v=<?php echo $egwebapps_version; ?>"></script>
 
-<script src="<?php echo site_url('/wp-content/plugins' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'static/'); ?>common-es5.js?v=<?php echo $egwebapps_version; ?>" nomodule></script>
-<script src="<?php echo site_url('/wp-content/plugins' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'static/'); ?>runtime-es5.js?v=<?php echo $egwebapps_version; ?>" nomodule></script>
-<script src="<?php echo site_url('/wp-content/plugins' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'static/'); ?>polyfills-es5.js?v=<?php echo $egwebapps_version; ?>" nomodule></script>
-<script src="<?php echo site_url('/wp-content/plugins' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'static/'); ?>main-es5.js?v=<?php echo $egwebapps_version; ?>" nomodule></script>
+<script src="<?php echo site_url('/wp-content/plugins/' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'static/'); ?>common-es5.js?v=<?php echo $egwebapps_version; ?>" nomodule></script>
+<script src="<?php echo site_url('/wp-content/plugins/' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'static/'); ?>runtime-es5.js?v=<?php echo $egwebapps_version; ?>" nomodule></script>
+<script src="<?php echo site_url('/wp-content/plugins/' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'static/'); ?>polyfills-es5.js?v=<?php echo $egwebapps_version; ?>" nomodule></script>
+<script src="<?php echo site_url('/wp-content/plugins/' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'static/'); ?>main-es5.js?v=<?php echo $egwebapps_version; ?>" nomodule></script>
 
-<script src="<?php echo site_url('/wp-content/plugins' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'static/'); ?>common-es2015.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
-<script src="<?php echo site_url('/wp-content/plugins' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'static/'); ?>runtime-es2015.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
-<script src="<?php echo site_url('/wp-content/plugins' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'static/'); ?>polyfills-es2015.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
-<script src="<?php echo site_url('/wp-content/plugins' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'static/'); ?>main-es2015.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
+<script src="<?php echo site_url('/wp-content/plugins/' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'static/'); ?>common-es2015.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
+<script src="<?php echo site_url('/wp-content/plugins/' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'static/'); ?>runtime-es2015.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
+<script src="<?php echo site_url('/wp-content/plugins/' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'static/'); ?>polyfills-es2015.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
+<script src="<?php echo site_url('/wp-content/plugins/' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'static/'); ?>main-es2015.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
 
 
 <?php
 
 for ($i=5; $i <= 11; $i++) { 
 ?>
-<script src="<?php echo site_url('/wp-content/plugins' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'static/') . $i; ?>-es5.js?v=<?php echo $egwebapps_version; ?>" nomodule></script>
-<script src="<?php echo site_url('/wp-content/plugins' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'static/') . $i; ?>-es2015.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
+<script src="<?php echo site_url('/wp-content/plugins/' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'static/') . $i; ?>-es5.js?v=<?php echo $egwebapps_version; ?>" nomodule></script>
+<script src="<?php echo site_url('/wp-content/plugins/' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'static/') . $i; ?>-es2015.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
 <?php
 }
 
 ?>
 
-<script src="<?php echo site_url('/wp-content/plugins' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'static/'); ?>scripts.js?v=<?php echo $egwebapps_version; ?>" defer></script>
+<script src="<?php echo site_url('/wp-content/plugins/' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'static/'); ?>scripts.js?v=<?php echo $egwebapps_version; ?>" defer></script>
 
 
 <app-root></app-root>

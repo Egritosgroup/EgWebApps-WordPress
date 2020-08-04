@@ -3,7 +3,7 @@
 * Plugin Name: Ηλεκτρονικές Εφαρμογές - Έγκριτος Group
 * Plugin URI: 
 * Description: Ηλεκτρονικές Εφαρμογές - Έγκριτος Group
-* Version: 2.2.8833
+* Version: 2.2.8830
 * Author: EgritosGroup
 * Author URI: https://egritosgroup.gr/
 **/ 
@@ -37,7 +37,7 @@ function egritosTpl_admin_scripts() {
     $screen = get_current_screen();
 
     if($screen->base == 'settings_page_egwebapps') {
-        wp_enqueue_style('egwebapps-admin-style', '/wp-content/plugins' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'admin/css/admin.css', array());
+        wp_enqueue_style('egwebapps-admin-style', '/wp-content/plugins/' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'admin/css/admin.css', array());
     }
 }
 
