@@ -35,8 +35,9 @@ function initRequires() {
 
 function egritosTpl_admin_scripts() {
     $screen = get_current_screen();
+
     if($screen->base == 'settings_page_egwebapps') {
-        wp_enqueue_style('egwebapps-admin-style', EGR__PLUGIN_DIR . 'admin/css/admin.css', array());
+        wp_enqueue_style('egwebapps-admin-style', '/wp-content/plugins' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'admin/css/admin.css', array());
     }
 }
 
