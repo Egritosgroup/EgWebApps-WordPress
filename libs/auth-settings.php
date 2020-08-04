@@ -45,7 +45,7 @@ function setAuthSettings($options, $pluginFolderName) {
         'client_id' => $options['clientid'],
         'response_type' => 'id_token token',
         'resource' => '',
-        'scope' => $options['scope'],
+        'scope' => 'openid profile roles profileextra EgritosGroup.Auth.Basic',
         'post_logout_redirect_uri' => site_url('/egwebapps/home'),
         'start_checksession' => false,
         'silent_renew' => false,
