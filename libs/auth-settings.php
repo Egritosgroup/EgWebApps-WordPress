@@ -1,10 +1,10 @@
-<?php $pluginFolderName = explode('/', trailingslashit(dirname(plugin_basename( __FILE__ ))));
+<?php
 add_action('parse_request', 'egwebapps_settings_url_handler');
 function egwebapps_settings_url_handler() {
     if(strpos($_SERVER['REQUEST_URI'],'/auth-settings') > -1 ) {
         $options = get_option('egr_webapps_plugin_options');
-        echo 'var AuthConfOptions = '.setAuthSettings($options, $pluginFolderName).'; ';
-        echo 'var AppConfOptions = '.setAppsSettings($options, $pluginFolderName).'; ';
+        echo 'var AuthConfOptions = '.setAuthSettings($options, $GLOBALS['pluginFolderName']).'; ';
+        echo 'var AppConfOptions = '.setAppsSettings($options, $GLOBALS['pluginFolderName']).'; ';
         exit();
     }
 }
