@@ -2,6 +2,7 @@
 get_header(); ?>
 
 <link href="<?php echo site_url('/wp-content/themes/xalkida/css/'); ?>egwebapps.css?v=<?php echo $GLOBALS["egritos_version"]; ?>" rel='stylesheet' type='text/css'>
+<link href="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/front/css/'); ?>egwebapps-base.css?v=<?php echo $GLOBALS["egritos_version"]; ?>" rel='stylesheet' type='text/css'>
 
 <script>
     var baseHeaderTag = document.createElement('base');

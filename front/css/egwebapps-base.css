@@ -1,0 +1,18 @@
+.plugin-footer {
+    background-color: #204969;
+    color: white;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 100px;
+    padding-right: 30px;
+    text-align: right;
+    padding-bottom: 15px;
+}
+
+.app-footer {
+    margin-bottom: 0;
+}
+
+.main-container {
+    margin-bottom: 0;
+}
