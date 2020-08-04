@@ -3,13 +3,13 @@ add_action('parse_request', 'egwebapps_settings_url_handler');
 function egwebapps_settings_url_handler() {
     if(strpos($_SERVER['REQUEST_URI'],'/auth-settings') > -1 ) {
         $options = get_option('egr_webapps_plugin_options');
-        echo 'var AuthConfOptions = '.setAuthSettings($options).'; ';
-        echo 'var AppConfOptions = '.setAppsSettings($options).'; ';
+        echo 'var AuthConfOptions = '.setAuthSettings($options, $pluginFolderName).'; ';
+        echo 'var AppConfOptions = '.setAppsSettings($options, $pluginFolderName).'; ';
         exit();
     }
 }
 
-function setAuthSettings($options) {
+function setAuthSettings($options, $pluginFolderName) {
     $settingsArray = array(
         'stsServer' => $options['authserver'],
         'redirect_url' => site_url('/egwebapps'),
@@ -32,7 +32,7 @@ function setAuthSettings($options) {
     return json_encode($settingsArray);
 }
 
-function setAppsSettings($options) {
+function setAppsSettings($options, $pluginFolderName) {
     
     $settingsArray = array(
         'organization_name' => $options['organization_name'] ? $options['organization_name'] : get_bloginfo(),

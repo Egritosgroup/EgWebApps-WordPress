@@ -29,7 +29,7 @@ $pluginFolderName = explode('/', trailingslashit(dirname(plugin_basename( __FILE
 
 <?php
 
-for ($i=5; $i <= 11; $i++) { 
+for ($i=6; $i <= 12; $i++) { 
 ?>
 <script src="<?php echo site_url('/wp-content/plugins/' . $pluginFolderName[0] . '/static/') . $i; ?>-es5.js?v=<?php echo $egwebapps_version; ?>" nomodule></script>
 <script src="<?php echo site_url('/wp-content/plugins/' . $pluginFolderName[0] . '/static/') . $i; ?>-es2015.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
@@ -38,7 +38,7 @@ for ($i=5; $i <= 11; $i++) {
 
 ?>
 
-<script src="<?php echo site_url('/wp-content/plugins/' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'static/'); ?>scripts.js?v=<?php echo $egwebapps_version; ?>" defer></script>
+<script src="<?php echo site_url('/wp-content/plugins/' . $pluginFolderName[0] . '/static/'); ?>scripts.js?v=<?php echo $egwebapps_version; ?>" defer></script>
 
 
 <app-root></app-root>
