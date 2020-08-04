@@ -7,20 +7,32 @@ function egwebapps_settings_url_handler() {
         $AuthConf = json_decode(setAuthSettings($options, $GLOBALS['pluginFolderName']));
         $AppConf = json_decode(setAppsSettings($options, $GLOBALS['pluginFolderName']));
 
-        echo 'var AuthConfOptions = {';
+        echo 'var AuthConfOptions = { ';
         if($AuthConf) {
             foreach($AuthConf as $key => $value) {
-                echo '"'.$key.'"' .': "'.$value.'", ';
+                if(is_bool($value)) {
+                    $bool_val = $value ? 'true' : 'false';
+                    echo $key.': '.$bool_val.', ';
+                } else if(is_numeric($value)) {
+                    echo $key.': '.$value.', ';
+                } else {
+                    echo $key.': "'.$value.'", ';
+                }
             }
         }
-        echo '};';
-        echo 'var AppConfOptions = {';
+        echo ' }; ';
+        echo 'var AppConfOptions = { ';
         if($AppConf) {
             foreach($AppConf as $key => $value) {
-                echo '"'.$key.'"' .': "'.$value.'", ';
+                if(is_bool($value)) {
+                    $bool_val = $value ? 'true' : 'false';
+                    echo $key.': '.$bool_val.', ';
+                } else {
+                    echo $key.': "'.$value.'", ';
+                }
             }
         }
-        echo '};';
+        echo ' }; ';
         exit();
     }
 }
