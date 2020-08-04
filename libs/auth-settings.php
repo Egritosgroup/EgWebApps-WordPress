@@ -5,8 +5,8 @@ function egwebapps_settings_url_handler() {
         $options = get_option('egr_webapps_plugin_options');
         echo 'var AuthConfOptions = '.setAuthSettings($options).'; ';
         echo 'var AppConfOptions = '.setAppsSettings($options).'; ';
+        exit();
     }
-    exit();
 }
 
 function setAuthSettings($options) {
