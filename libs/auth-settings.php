@@ -24,7 +24,7 @@ function setAuthSettings($options) {
         'post_login_route' => '/home',
         'log_console_warning_active' => false,
         'log_console_debug_active' => false,
-        'assets_base_href' => site_url('wp-content/plugins/egwebapps/static/assets/'),
+        'assets_base_href' => site_url(plugin_dir_path( __FILE__ ). 'static/assets/'),
         'max_id_token_iat_offset_allowed_in_seconds' => 3000,
         'show_home_info' => true
     );
