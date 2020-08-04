@@ -105,6 +105,9 @@ class BFIGitHubPluginUpdater {
         $this->getRepoReleaseInfo();
  
         $doUpdate = version_compare( $this->githubAPIResult->tag_name, $transient->checked[$this->slug] );
+        var_dump($this->githubAPIResult->tag_name);
+        var_dump($transient->checked[$this->slug]);
+        var_dump($doUpdate);
  
         if ( $doUpdate )
         {
@@ -168,7 +171,7 @@ class BFIGitHubPluginUpdater {
         $response->download_link = $downloadLink;
  
         // Load Parsedown
-        require_once __DIR__ . DIRECTORY_SEPARATOR . 'Parsedown.php';
+        //require_once __DIR__ . DIRECTORY_SEPARATOR . 'Parsedown.php';
  
         // Create tabs in the lightbox
         $response->sections = array(
