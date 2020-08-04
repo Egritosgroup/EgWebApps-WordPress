@@ -2,7 +2,6 @@
 get_header(); ?>
 
 <link href="<?php echo site_url('/wp-content/themes/xalkida/css/'); ?>egwebapps.css?v=<?php echo $GLOBALS["egritos_version"]; ?>" rel='stylesheet' type='text/css'>
-<link href="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/front/css/'); ?>egwebapps-base.css?v=<?php echo $GLOBALS["egritos_version"]; ?>" rel='stylesheet' type='text/css'>
 
 <script>
     var baseHeaderTag = document.createElement('base');
@@ -14,6 +13,7 @@ get_header(); ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
 
 <script src="<?php echo site_url('/' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'auth-settings'); ?>?v=<?php echo $egwebapps_version; ?>"></script>
+<link href="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/front/css/'); ?>egwebapps-base.css?v=<?php echo $GLOBALS["egritos_version"]; ?>" rel='stylesheet' type='text/css'>
 
 <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>common-es5.js?v=<?php echo $egwebapps_version; ?>" nomodule></script>
 <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>runtime-es5.js?v=<?php echo $egwebapps_version; ?>" nomodule></script>
@@ -26,10 +26,14 @@ get_header(); ?>
 <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>main-es2015.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
 
 
-<?php for ($i=6; $i <= 12; $i++) { ?>
-    <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/') . $i; ?>-es5.js?v=<?php echo $egwebapps_version; ?>" nomodule></script>
-    <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/') . $i; ?>-es2015.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
-<?php } ?>
+<?php
+
+for ($i=6; $i <= 12; $i++) { 
+?>
+<script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/') . $i; ?>-es5.js?v=<?php echo $egwebapps_version; ?>" nomodule></script>
+<script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/') . $i; ?>-es2015.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
+<?php
+} ?>
 
 <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>scripts.js?v=<?php echo $egwebapps_version; ?>" defer></script>
 
