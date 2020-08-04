@@ -4,10 +4,9 @@
 add_action( 'admin_menu', 'egr_add_settings_page' );
 
 function egr_render_plugin_settings_page() { ?>
-    <h2>Ρυθμίσεις Ηλεκτρονικών Εφαρμογών</h2>
+    <h2 class="page-title">Ρυθμίσεις Ηλεκτρονικών Εφαρμογών</h2>
     <form action="options.php" method="post">
-        <?php 
-        settings_fields('egr_webapps_plugin_options');
+        <?php settings_fields('egr_webapps_plugin_options');
         do_settings_sections('egr_example_plugin'); ?>
         <input name="submit" class="button button-primary" type="submit" value="<?php esc_attr_e( 'Save' ); ?>" />
     </form>
@@ -19,66 +18,86 @@ function egr_register_settings() {
     
     add_settings_section( 'auth_settings', 'Ρυθμίσεις Authentication Server', 'egr_plugin_section_text', 'egr_example_plugin' );
 
-    add_settings_field( 'egr_plugin_setting_authserver', 'URL Authentication Server', 'egr_plugin_setting_authserver', 'egr_example_plugin', 'auth_settings' );
-    add_settings_field( 'egr_plugin_setting_clientid', 'Client ID', 'egr_plugin_setting_clientid', 'egr_example_plugin', 'auth_settings' );
-    add_settings_field( 'egr_plugin_setting_scope', 'Scopes', 'egr_plugin_setting_scope', 'egr_example_plugin', 'auth_settings' );
+    add_settings_field( 'egr_plugin_setting_organization_name', 'Όνομα Οργανισμού (organization_name)', 'egr_plugin_setting_organization_name', 'egr_example_plugin', 'auth_settings' );
+    add_settings_field( 'egr_plugin_setting_unauthorized_allowed', 'Επιτρέπεται περιήγηση απο μη συνδεδεμένους χρήστες (unauthorized_allowed)', 'egr_plugin_setting_unauthorized_allowed', 'egr_example_plugin', 'auth_settings' );
+    add_settings_field( 'egr_plugin_setting_authserver', 'URL Authentication Server (stsServer)', 'egr_plugin_setting_authserver', 'egr_example_plugin', 'auth_settings' );
+    add_settings_field( 'egr_plugin_setting_clientid', 'Client ID (client_id)', 'egr_plugin_setting_clientid', 'egr_example_plugin', 'auth_settings' );
+    add_settings_field( 'egr_plugin_setting_scope', 'Scopes (scope)', 'egr_plugin_setting_scope', 'egr_example_plugin', 'auth_settings' );
 
-    add_settings_section( 'domes_settings', 'Ρυθμίσεις Δομών', 'egr_plugin_section_text', 'egr_example_plugin' );
+    add_settings_section( 'domes_settings', '<div>Ρυθμίσεις Δομών</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
 
-    add_settings_field( 'egr_plugin_setting_isdomes', 'Δομές', 'egr_plugin_setting_isdomes', 'egr_example_plugin', 'domes_settings' );
-    add_settings_field( 'egr_plugin_setting_domes_organization', 'Όνομα Οργανισμού', 'egr_plugin_setting_domes_organization', 'egr_example_plugin', 'domes_settings' );
-    add_settings_field( 'egr_plugin_setting_domes_api', 'Δομές Api URL', 'egr_plugin_setting_domes_api', 'egr_example_plugin', 'domes_settings' );
+    add_settings_field( 'egr_plugin_setting_isdomes', 'Δομές (is_benefits_enabled)', 'egr_plugin_setting_isdomes', 'egr_example_plugin', 'domes_settings' );
+    add_settings_field( 'egr_plugin_setting_domes_api', 'Δομές Api URL (benefits_api)', 'egr_plugin_setting_domes_api', 'egr_example_plugin', 'domes_settings' );
+    add_settings_field( 'egr_plugin_setting_benefits_tab_title', 'Τίτλος Καρτέλας Μενού (benefits_tab_title)', 'egr_plugin_setting_benefits_tab_title', 'egr_example_plugin', 'domes_settings' );
+    add_settings_field( 'egr_plugin_setting_benefits_description', 'Περιγραφή (benefits_description)', 'egr_plugin_setting_benefits_description', 'egr_example_plugin', 'domes_settings' );
+    add_settings_field( 'egr_plugin_setting_app_help_page', 'Σελίδα Οδηγιών (app_help_page)', 'egr_plugin_setting_app_help_page', 'egr_example_plugin', 'domes_settings' );
 
-    add_settings_section( 'carpooling_settings', 'Ρυθμίσεις CarPooling', 'egr_plugin_section_text', 'egr_example_plugin' );
+    add_settings_section( 'carpooling_settings', '<div>Ρυθμίσεις CarPooling</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
 
-    add_settings_field( 'egr_plugin_setting_iscarpooling', 'Car Pooling', 'egr_plugin_setting_iscarpooling', 'egr_example_plugin', 'carpooling_settings' );
-    add_settings_field( 'egr_plugin_setting_carpooling_api', 'Car Pooling Api URL', 'egr_plugin_setting_carpooling_api', 'egr_example_plugin', 'carpooling_settings' );
-    add_settings_field( 'egr_plugin_setting_google_maps_key', 'Google Maps Key', 'egr_plugin_setting_google_maps_key', 'egr_example_plugin', 'carpooling_settings' );
+    add_settings_field( 'egr_plugin_setting_iscarpooling', 'Car Pooling (is_carpooling_enabled)', 'egr_plugin_setting_iscarpooling', 'egr_example_plugin', 'carpooling_settings' );
+    add_settings_field( 'egr_plugin_setting_carpooling_api', 'Car Pooling Api URL (carpooling_api)', 'egr_plugin_setting_carpooling_api', 'egr_example_plugin', 'carpooling_settings' );
+    add_settings_field( 'egr_plugin_setting_carpooling_description', 'Περιγραφή (carpooling_description)', 'egr_plugin_setting_carpooling_description', 'egr_example_plugin', 'carpooling_settings' );
+    add_settings_field( 'egr_plugin_setting_google_maps_key', 'Google Maps Key (google_maps_key)', 'egr_plugin_setting_google_maps_key', 'egr_example_plugin', 'carpooling_settings' );
 
-    add_settings_section( 'epayments_settings', 'Ρυθμίσεις Ηλεκτρονικών Πληρωμών', 'egr_plugin_section_text', 'egr_example_plugin' );
+    add_settings_section( 'epayments_settings', '<div>Ρυθμίσεις Ηλεκτρονικών Πληρωμών</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
     
-    add_settings_field( 'egr_plugin_setting_isepayments', 'Ηλεκτρονικές Πληρωμές', 'egr_plugin_setting_isepayments', 'egr_example_plugin', 'epayments_settings' );
-    add_settings_field( 'egr_plugin_setting_epayments_api', 'Ηλεκτρονικές Πληρωμές Api URL', 'egr_plugin_setting_epayments_api', 'egr_example_plugin', 'epayments_settings' );
-    add_settings_field( 'egr_plugin_setting_show_debits', 'Εμφάνιση μη διαρκών χρεών', 'egr_plugin_setting_show_debits', 'egr_example_plugin', 'epayments_settings' );
+    add_settings_field( 'egr_plugin_setting_isepayments', 'Ηλεκτρονικές Πληρωμές (is_epayments_enabled)', 'egr_plugin_setting_isepayments', 'egr_example_plugin', 'epayments_settings' );
+    add_settings_field( 'egr_plugin_setting_epayments_api', 'Ηλεκτρονικές Πληρωμές Api URL (epayments_api)', 'egr_plugin_setting_epayments_api', 'egr_example_plugin', 'epayments_settings' );
+    add_settings_field( 'egr_plugin_setting_epayments_description', 'Περιγραφή (epayments_description)', 'egr_plugin_setting_epayments_description', 'egr_example_plugin', 'epayments_settings' );
+    add_settings_field( 'egr_plugin_setting_show_non_persisted_debits', 'Εμφάνιση μη διαρκών χρεών (show_non_persisted_debits)', 'egr_plugin_setting_show_non_persisted_debits', 'egr_example_plugin', 'epayments_settings' );
     
-    add_settings_section( 'kliseis_settings', 'Ρυθμίσεις Κλήσεων', 'egr_plugin_section_text', 'egr_example_plugin' );
+    add_settings_section( 'kliseis_settings', '<div>Ρυθμίσεις Κλήσεων</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
     
-    add_settings_field( 'egr_plugin_setting_iskliseis', 'Κλήσεις', 'egr_plugin_setting_iskliseis', 'egr_example_plugin', 'kliseis_settings' );
-    add_settings_field( 'egr_plugin_setting_kliseis_api', 'Κλήσεις Api URL', 'egr_plugin_setting_kliseis_api', 'egr_example_plugin', 'kliseis_settings' );
+    add_settings_field( 'egr_plugin_setting_iskliseis', 'Κλήσεις (is_kliseis_enabled)', 'egr_plugin_setting_iskliseis', 'egr_example_plugin', 'kliseis_settings' );
+    add_settings_field( 'egr_plugin_setting_kliseis_api', 'Κλήσεις Api URL (kliseis_api)', 'egr_plugin_setting_kliseis_api', 'egr_example_plugin', 'kliseis_settings' );
+    add_settings_field( 'egr_plugin_setting_kliseis_description', 'Περιγραφή (kliseis_description)', 'egr_plugin_setting_kliseis_description', 'egr_example_plugin', 'kliseis_settings' );
 
-    add_settings_section( 'eidopoiitiria_settings', 'Ρυθμίσεις Ειδοποιητηρίων', 'egr_plugin_section_text', 'egr_example_plugin' );
+    add_settings_section( 'eidopoiitiria_settings', '<div>Ρυθμίσεις Ειδοποιητηρίων</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
     
-    add_settings_field( 'egr_plugin_setting_iseidopoiitiria', 'Ειδοποιητήρια', 'egr_plugin_setting_iseidopoiitiria', 'egr_example_plugin', 'eidopoiitiria_settings' );
-    add_settings_field( 'egr_plugin_setting_eidopoiitiria_api', 'Ειδοποιητήρια Api URL', 'egr_plugin_setting_eidopoiitiria_api', 'egr_example_plugin', 'eidopoiitiria_settings' );
+    add_settings_field( 'egr_plugin_setting_iseidopoiitiria', 'Ειδοποιητήρια (is_eidopoiitiria_enabled)', 'egr_plugin_setting_iseidopoiitiria', 'egr_example_plugin', 'eidopoiitiria_settings' );
+    add_settings_field( 'egr_plugin_setting_eidopoiitiria_api', 'Ειδοποιητήρια Api URL (eidopoiitiria_api)', 'egr_plugin_setting_eidopoiitiria_api', 'egr_example_plugin', 'eidopoiitiria_settings' );
+    add_settings_field( 'egr_plugin_setting_eidopoiitiria_description', 'Περιγραφή (eidopoiitiria_description)', 'egr_plugin_setting_eidopoiitiria_description', 'egr_example_plugin', 'eidopoiitiria_settings' );
 
-    add_settings_section( 'dimotikos_foros_settings', 'Ρυθμίσεις Δημοτικού Φόρου', 'egr_plugin_section_text', 'egr_example_plugin' );
+    add_settings_section( 'dimotikos_foros_settings', '<div>Ρυθμίσεις Δημοτικού Φόρου</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
 
-    add_settings_field( 'egr_plugin_setting_isdimotikos_foros', 'Δημοτικός Φόρος', 'egr_plugin_setting_isdimotikos_foros', 'egr_example_plugin', 'dimotikos_foros_settings' );
-    add_settings_field( 'egr_plugin_setting_katastimata_api', 'Δημοτικός Φόρος Api URL', 'egr_plugin_setting_katastimata_api', 'egr_example_plugin', 'dimotikos_foros_settings' );
+    add_settings_field( 'egr_plugin_setting_isdimotikos_foros', 'Δημοτικός Φόρος (is_dimotikos_foros_enabled)', 'egr_plugin_setting_isdimotikos_foros', 'egr_example_plugin', 'dimotikos_foros_settings' );
+    add_settings_field( 'egr_plugin_setting_katastimata_api', 'Δημοτικός Φόρος Api URL (katastimata_api)', 'egr_plugin_setting_katastimata_api', 'egr_example_plugin', 'dimotikos_foros_settings' );
+    add_settings_field( 'egr_plugin_setting_katastimata_description', 'Περιγραφή (katastimata_description)', 'egr_plugin_setting_katastimata_description', 'egr_example_plugin', 'dimotikos_foros_settings' );
 
-    add_settings_section( 'diakanonismoi_settings', 'Ρυθμίσεις Διακανονισμών', 'egr_plugin_section_text', 'egr_example_plugin' );
+    add_settings_section( 'diakanonismoi_settings', '<div>Ρυθμίσεις Διακανονισμών</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
     
-    add_settings_field( 'egr_plugin_setting_isdiakanonismoi', 'Διακανονισμοί', 'egr_plugin_setting_isdiakanonismoi', 'egr_example_plugin', 'diakanonismoi_settings' );
+    add_settings_field( 'egr_plugin_setting_isdiakanonismoi', 'Διακανονισμοί (is_diakanonismoi_enabled)', 'egr_plugin_setting_isdiakanonismoi', 'egr_example_plugin', 'diakanonismoi_settings' );
+    add_settings_field( 'egr_plugin_setting_diakanonismoi_description', 'Περιγραφή (diakanonismoi_description)', 'egr_plugin_setting_diakanonismoi_description', 'egr_example_plugin', 'diakanonismoi_settings' );
 }
 add_action( 'admin_init', 'egr_register_settings' ); 
 
 function egr_plugin_section_text() {
-    //echo '<p>Here you can set all the options for using the API</p>';
+    
+}
+
+function egr_plugin_setting_organization_name() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_organization_name' name='egr_webapps_plugin_options[organization_name]' type='text' value='".esc_attr(isset($options['organization_name']) ? $options['organization_name'] : '')."' />";
+}
+
+function egr_plugin_setting_unauthorized_allowed() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_unauthorized_allowed' name='egr_webapps_plugin_options[unauthorized_allowed]' type='checkbox' ".esc_attr(isset($options['unauthorized_allowed']) ? 'checked=checked' : '')." />";
 }
 
 function egr_plugin_setting_authserver() {
     $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<input id='egr_plugin_setting_authserver' name='egr_webapps_plugin_options[authserver]' type='text' value='".esc_attr($options['authserver'])."' />";
+    echo "<input id='egr_plugin_setting_authserver' name='egr_webapps_plugin_options[authserver]' type='text' value='".esc_attr(isset($options['authserver']) ? $options['authserver'] : '')."' />";
 }
 
 function egr_plugin_setting_clientid() {
     $options = get_option( 'egr_webapps_plugin_options' ); 
-    echo "<input id='egr_plugin_setting_clientid' name='egr_webapps_plugin_options[clientid]' type='text' value='".esc_attr($options['clientid'])."' />";
+    echo "<input id='egr_plugin_setting_clientid' name='egr_webapps_plugin_options[clientid]' type='text' value='".esc_attr(isset($options['clientid']) ? $options['clientid'] : '')."' />";
 }
 
 function egr_plugin_setting_scope() {
     $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<input id='egr_plugin_setting_scope' name='egr_webapps_plugin_options[scope]' type='text' value='".esc_attr($options['scope'])."' />";
+    echo "<input id='egr_plugin_setting_scope' name='egr_webapps_plugin_options[scope]' type='text' value='".esc_attr(isset($options['scope']) ? $options['scope'] : '')."' />";
 }
 
 //domes
@@ -88,14 +107,24 @@ function egr_plugin_setting_isdomes() {
     echo "<input id='egr_plugin_setting_isdomes' name='egr_webapps_plugin_options[isdomes]' type='checkbox' ".esc_attr(isset($options['isdomes']) ? 'checked=checked' : '')." />";
 }
 
-function egr_plugin_setting_domes_organization() {
-    $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<input id='egr_plugin_setting_domes_organization' name='egr_webapps_plugin_options[domes_organization]' type='text' value='".esc_attr($options['domes_organization'])."' />";
-}
-
 function egr_plugin_setting_domes_api() {
     $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<input id='egr_plugin_setting_domes_api' name='egr_webapps_plugin_options[domes_api]' type='text' value='".esc_attr($options['domes_api'])."' />";
+    echo "<input id='egr_plugin_setting_domes_api' name='egr_webapps_plugin_options[domes_api]' type='text' value='".esc_attr(isset($options['domes_api']) ? $options['domes_api'] : '')."' />";
+}
+
+function egr_plugin_setting_benefits_tab_title() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_benefits_tab_title' name='egr_webapps_plugin_options[benefits_tab_title]' type='text' value='".esc_attr(isset($options['benefits_tab_title']) ? $options['benefits_tab_title'] : '')."' />";
+}
+
+function egr_plugin_setting_benefits_description() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<textarea id='egr_plugin_setting_benefits_description' name='egr_webapps_plugin_options[benefits_description]'>".esc_attr(isset($options['benefits_description']) ? $options['benefits_description'] : '')."</textarea>";
+}
+
+function egr_plugin_setting_app_help_page() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_app_help_page' name='egr_webapps_plugin_options[app_help_page]' type='text' value='".esc_attr(isset($options['app_help_page']) ? $options['app_help_page'] : '')."' />";
 }
 
 //END
@@ -109,12 +138,17 @@ function egr_plugin_setting_iscarpooling() {
 
 function egr_plugin_setting_carpooling_api() {
     $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<input id='egr_plugin_setting_carpooling_api' name='egr_webapps_plugin_options[carpooling_api]' type='text' value='".esc_attr($options['carpooling_api'])."' />";
+    echo "<input id='egr_plugin_setting_carpooling_api' name='egr_webapps_plugin_options[carpooling_api]' type='text' value='".esc_attr(isset($options['carpooling_api']) ? $options['carpooling_api'] : '')."' />";
+}
+
+function egr_plugin_setting_carpooling_description() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<textarea id='egr_plugin_setting_carpooling_description' name='egr_webapps_plugin_options[carpooling_description]'>".esc_attr(isset($options['carpooling_description']) ? $options['carpooling_description'] : '')."</textarea>";
 }
 
 function egr_plugin_setting_google_maps_key() {
     $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<input id='egr_plugin_setting_google_maps_key' name='egr_webapps_plugin_options[google_maps_key]' type='text' value='".esc_attr($options['google_maps_key'])."' />";
+    echo "<input id='egr_plugin_setting_google_maps_key' name='egr_webapps_plugin_options[google_maps_key]' type='text' value='".esc_attr(isset($options['google_maps_key']) ? $options['google_maps_key'] : '')."' />";
 }
 
 //END
@@ -128,12 +162,17 @@ function egr_plugin_setting_isepayments() {
 
 function egr_plugin_setting_epayments_api() {
     $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<input id='egr_plugin_setting_epayments_api' name='egr_webapps_plugin_options[epayments_api]' type='text' value='".esc_attr($options['epayments_api'])."' />";
+    echo "<input id='egr_plugin_setting_epayments_api' name='egr_webapps_plugin_options[epayments_api]' type='text' value='".esc_attr(isset($options['epayments_api']) ? $options['epayments_api'] : '')."' />";
 }
 
-function egr_plugin_setting_show_debits() {
+function egr_plugin_setting_epayments_description() {
     $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<input id='egr_plugin_setting_show_debits' name='egr_webapps_plugin_options[show_debits]' type='text' value='".esc_attr($options['show_debits'])."' />";
+    echo "<textarea id='egr_plugin_setting_epayments_description' name='egr_webapps_plugin_options[epayments_description]'>".esc_attr(isset($options['epayments_description']) ? $options['epayments_description'] : '')."</textarea>";
+}
+
+function egr_plugin_setting_show_non_persisted_debits() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_show_non_persisted_debits' name='egr_webapps_plugin_options[show_non_persisted_debits]' type='checkbox' ".esc_attr(isset($options['show_non_persisted_debits']) ? 'checked=checked' : '')." />";
 }
 
 //END
@@ -147,7 +186,12 @@ function egr_plugin_setting_iskliseis() {
 
 function egr_plugin_setting_kliseis_api() {
     $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<input id='egr_plugin_setting_kliseis_api' name='egr_webapps_plugin_options[kliseis_api]' type='text' value='".esc_attr($options['kliseis_api'])."' />";
+    echo "<input id='egr_plugin_setting_kliseis_api' name='egr_webapps_plugin_options[kliseis_api]' type='text' value='".esc_attr(isset($options['kliseis_api']) ? $options['kliseis_api'] : '')."' />";
+}
+
+function egr_plugin_setting_kliseis_description() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<textarea id='egr_plugin_setting_kliseis_description' name='egr_webapps_plugin_options[kliseis_description]'>".esc_attr(isset($options['kliseis_description']) ? $options['kliseis_description'] : '')."</textarea>";
 }
 
 //END
@@ -161,7 +205,12 @@ function egr_plugin_setting_iseidopoiitiria() {
 
 function egr_plugin_setting_eidopoiitiria_api() {
     $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<input id='egr_plugin_setting_eidopoiitiria_api' name='egr_webapps_plugin_options[eidopoiitiria_api]' type='text' value='".esc_attr($options['eidopoiitiria_api'])."' />";
+    echo "<input id='egr_plugin_setting_eidopoiitiria_api' name='egr_webapps_plugin_options[eidopoiitiria_api]' type='text' value='".esc_attr(isset($options['eidopoiitiria_api']) ? $options['eidopoiitiria_api'] : '')."' />";
+}
+
+function egr_plugin_setting_eidopoiitiria_description() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<textarea id='egr_plugin_setting_eidopoiitiria_description' name='egr_webapps_plugin_options[eidopoiitiria_description]'>".esc_attr(isset($options['eidopoiitiria_description']) ? $options['eidopoiitiria_description'] : '')."</textarea>";
 }
 
 //END
@@ -175,7 +224,12 @@ function egr_plugin_setting_isdimotikos_foros() {
 
 function egr_plugin_setting_katastimata_api() {
     $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<input id='egr_plugin_setting_katastimata_api' name='egr_webapps_plugin_options[katastimata_api]' type='text' value='".esc_attr($options['katastimata_api'])."' />";
+    echo "<input id='egr_plugin_setting_katastimata_api' name='egr_webapps_plugin_options[katastimata_api]' type='text' value='".esc_attr(isset($options['katastimata_api']) ? $options['katastimata_api'] : '')."' />";
+}
+
+function egr_plugin_setting_katastimata_description() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<textarea id='egr_plugin_setting_katastimata_description' name='egr_webapps_plugin_options[katastimata_description]'>".esc_attr(isset($options['katastimata_description']) ? $options['katastimata_description'] : '')."</textarea>";
 }
 
 //END
@@ -185,5 +239,10 @@ function egr_plugin_setting_katastimata_api() {
 function egr_plugin_setting_isdiakanonismoi() {
     $options = get_option( 'egr_webapps_plugin_options' );
     echo "<input id='egr_plugin_setting_isdiakanonismoi' name='egr_webapps_plugin_options[isdiakanonismoi]' type='checkbox' ".esc_attr(isset($options['isdiakanonismoi']) ? 'checked=checked' : '')." />";
+}
+
+function egr_plugin_setting_diakanonismoi_description() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<textarea id='egr_plugin_setting_diakanonismoi_description' name='egr_webapps_plugin_options[diakanonismoi_description]'>".esc_attr(isset($options['diakanonismoi_description']) ? $options['diakanonismoi_description'] : '')."</textarea>";
 }
 //END ?>

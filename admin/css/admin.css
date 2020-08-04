@@ -1,0 +1,26 @@
+.page-title {
+    font-size: x-large;
+    border-bottom: 2px solid black;
+    padding-bottom: 25px;
+}
+
+#wpbody-content {
+    width: 99%;
+}
+
+.form-table th {
+    width: 400px;
+}
+
+input[type=text], textarea {
+    width: 400px;
+}
+
+textarea {
+    min-height: 200px;
+}
+
+form h2 {
+    font-weight: bold;
+    font-size: x-large;
+}

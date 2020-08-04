@@ -3,15 +3,15 @@
 * Plugin Name: Ηλεκτρονικές Εφαρμογές - Έγκριτος Group
 * Plugin URI: 
 * Description: Ηλεκτρονικές Εφαρμογές - Έγκριτος Group
-* Version: 2.2.8819
+* Version: 2.2.8826
 * Author: EgritosGroup
 * Author URI: https://egritosgroup.gr/
 **/ 
 
 global $egwebapps_version;
-$egwebapps_version = '2.2.8819';
+$egwebapps_version = '2.2.8826';
 
-define( 'EGR__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define('EGR__PLUGIN_DIR', plugin_dir_path( __FILE__ ));
 
 
 initEgritosPlugin();
@@ -32,6 +32,16 @@ function initRequires() {
         new BFIGitHubPluginUpdater( __FILE__, 'Egritosgroup', "EgWebApps-WordPress");
     }
 } 
+
+function egritosTpl_admin_scripts() {
+    $screen = get_current_screen();
+
+    if($screen->base == 'settings_page_egwebapps') {
+        wp_enqueue_style('egwebapps-admin-style', '/wp-content/plugins/egwebapps/admin/css/admin.css', array());
+    }
+}
+
+add_action('admin_enqueue_scripts', 'egritosTpl_admin_scripts');
 
 function egritos_install() {
 	global $wpdb;
