@@ -105,9 +105,6 @@ class BFIGitHubPluginUpdater {
         $this->getRepoReleaseInfo();
  
         $doUpdate = version_compare( $this->githubAPIResult->tag_name, $transient->checked[$this->slug] );
-        var_dump($this->githubAPIResult->tag_name);
-        var_dump($transient->checked[$this->slug]);
-        var_dump($doUpdate);
  
         if ( $doUpdate )
         {

@@ -87,7 +87,7 @@ function egr_plugin_setting_unauthorized_allowed() {
 
 function egr_plugin_setting_authserver() {
     $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<input id='egr_plugin_setting_authserver' name='egr_webapps_plugin_options[authserver]' type='text' value='".esc_attr(isset($options['authserver']) ? $options['authserver'] : '')."' />";
+    echo "<input id='egr_plugin_setting_authserver' name='egr_webapps_plugin_options[authserver]' type='text' value='".esc_url(isset($options['authserver']) ? $options['authserver'] : '')."' />";
 }
 
 function egr_plugin_setting_clientid() {

@@ -3,8 +3,24 @@ add_action('parse_request', 'egwebapps_settings_url_handler');
 function egwebapps_settings_url_handler() {
     if(strpos($_SERVER['REQUEST_URI'],'/auth-settings') > -1 ) {
         $options = get_option('egr_webapps_plugin_options');
-        echo 'var AuthConfOptions = '.setAuthSettings($options, $GLOBALS['pluginFolderName']).'; ';
-        echo 'var AppConfOptions = '.setAppsSettings($options, $GLOBALS['pluginFolderName']).'; ';
+
+        $AuthConf = json_decode(setAuthSettings($options, $GLOBALS['pluginFolderName']));
+        $AppConf = json_decode(setAppsSettings($options, $GLOBALS['pluginFolderName']));
+
+        echo 'var AuthConfOptions = {';
+        if($AuthConf) {
+            foreach($AuthConf as $key => $value) {
+                echo '"'.$key.'"' .': "'.$value.'", ';
+            }
+        }
+        echo '};';
+        echo 'var AppConfOptions = {';
+        if($AppConf) {
+            foreach($AppConf as $key => $value) {
+                echo '"'.$key.'"' .': "'.$value.'", ';
+            }
+        }
+        echo '};';
         exit();
     }
 }
