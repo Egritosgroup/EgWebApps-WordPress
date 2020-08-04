@@ -26,16 +26,10 @@ get_header(); ?>
 <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>main-es2015.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
 
 
-<?php
-
-for ($i=6; $i <= 12; $i++) { 
-?>
-<script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/') . $i; ?>-es5.js?v=<?php echo $egwebapps_version; ?>" nomodule></script>
-<script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/') . $i; ?>-es2015.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
-<?php
-}
-
-?>
+<?php for ($i=6; $i <= 12; $i++) { ?>
+    <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/') . $i; ?>-es5.js?v=<?php echo $egwebapps_version; ?>" nomodule></script>
+    <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/') . $i; ?>-es2015.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
+<?php } ?>
 
 <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>scripts.js?v=<?php echo $egwebapps_version; ?>" defer></script>
 
