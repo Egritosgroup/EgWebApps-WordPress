@@ -72,6 +72,7 @@ function egr_register_settings() {
 
     add_settings_section( 'extra_css', '', 'egr_plugin_section_text', 'egr_example_plugin' );
     add_settings_field( 'egr_plugin_setting_extra_css', 'Έξτρα Κανόνες CSS', 'egr_plugin_setting_extra_css', 'egr_example_plugin', 'extra_css' );
+    add_settings_field( 'egr_plugin_setting_extra_css_path', 'Path υπάρχοντος CSS αρχείου', 'egr_plugin_setting_extra_css_path', 'egr_example_plugin', 'extra_css' );
 }
 add_action( 'admin_init', 'egr_register_settings' ); 
 
@@ -260,4 +261,9 @@ function egr_plugin_setting_diakanonismoi_description() {
 function egr_plugin_setting_extra_css() {
     $options = get_option( 'egr_webapps_plugin_options' );
     echo "<textarea id='egr_plugin_setting_extra_css' name='egr_webapps_plugin_options[extra_css]'>".esc_attr(isset($options['extra_css']) ? $options['extra_css'] : '')."</textarea>";
+}
+
+function egr_plugin_setting_extra_css_path() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_extra_css_path' name='egr_webapps_plugin_options[extra_css_path]' type='text' value='".esc_attr(isset($options['extra_css_path']) ? $options['extra_css_path'] : '')."' />";
 } ?>
