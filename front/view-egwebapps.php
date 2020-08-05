@@ -1,6 +1,6 @@
 <?php $egwebapps_version = $GLOBALS["egwebapps_version"];
 $options = get_option('egr_webapps_plugin_options');
-get_header(); ?>
+?>
 
 <link href="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>styles.css?v=<?php echo $egwebapps_version; ?>" rel='stylesheet' type='text/css'>
 <?php if(!empty($options['extra_css_path'])) { ?>
@@ -45,6 +45,3 @@ get_header(); ?>
 
 <app-root></app-root>
 
-
-
-<?php get_footer(); ?>
