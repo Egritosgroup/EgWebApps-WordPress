@@ -70,9 +70,10 @@ function egr_register_settings() {
     add_settings_field( 'egr_plugin_setting_isdiakanonismoi', 'Διακανονισμοί (is_diakanonismoi_enabled)', 'egr_plugin_setting_isdiakanonismoi', 'egr_example_plugin', 'diakanonismoi_settings' );
     add_settings_field( 'egr_plugin_setting_diakanonismoi_description', 'Περιγραφή (diakanonismoi_description)', 'egr_plugin_setting_diakanonismoi_description', 'egr_example_plugin', 'diakanonismoi_settings' );
 
-    add_settings_section( 'extra_css', '', 'egr_plugin_section_text', 'egr_example_plugin' );
-    add_settings_field( 'egr_plugin_setting_extra_css', 'Έξτρα Κανόνες CSS', 'egr_plugin_setting_extra_css', 'egr_example_plugin', 'extra_css' );
-    add_settings_field( 'egr_plugin_setting_extra_css_path', 'Path υπάρχοντος CSS αρχείου', 'egr_plugin_setting_extra_css_path', 'egr_example_plugin', 'extra_css' );
+    add_settings_section( 'extra_plugin_options', '', 'egr_plugin_section_text', 'egr_example_plugin' );
+    add_settings_field( 'egr_plugin_setting_jquery_check', 'Ενεργοποίηση JQuery', 'egr_plugin_setting_jquery_check', 'egr_example_plugin', 'extra_plugin_options' );
+    add_settings_field( 'egr_plugin_setting_extra_css', 'Έξτρα Κανόνες CSS', 'egr_plugin_setting_extra_css', 'egr_example_plugin', 'extra_plugin_options' );
+    add_settings_field( 'egr_plugin_setting_extra_css_path', 'Path υπάρχοντος CSS αρχείου', 'egr_plugin_setting_extra_css_path', 'egr_example_plugin', 'extra_plugin_options' );
 }
 add_action( 'admin_init', 'egr_register_settings' ); 
 
@@ -257,6 +258,11 @@ function egr_plugin_setting_diakanonismoi_description() {
 }
 
 //END 
+
+function egr_plugin_setting_jquery_check() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_jquery_check' name='egr_webapps_plugin_options[jquery_check]' type='checkbox' ".esc_attr(isset($options['jquery_check']) ? 'checked=checked' : '')." />";
+}
 
 function egr_plugin_setting_extra_css() {
     $options = get_option( 'egr_webapps_plugin_options' );
