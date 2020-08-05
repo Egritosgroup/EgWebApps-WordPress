@@ -3,7 +3,7 @@
 * Plugin Name: Ηλεκτρονικές Εφαρμογές - Έγκριτος Group
 * Plugin URI: 
 * Description: Ηλεκτρονικές Εφαρμογές - Έγκριτος Group
-* Version: 2.2.8863
+* Version: 2.2.8853
 * Author: EgritosGroup
 * Author URI: https://egritosgroup.gr/
 **/ 

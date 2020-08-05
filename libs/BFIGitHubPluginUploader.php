@@ -251,43 +251,46 @@ class BFIGitHubPluginUpdater {
 
         try {
             $currentPluginVersion = $transient->checked[$this->slug];
-            $consoleUpdatedValue = $currentPluginVersion . '##' . $transient->last_checked;
+            if($currentPluginVersion)
+            {
+                $consoleUpdatedValue = $currentPluginVersion . '##' . $transient->last_checked;
 
-            $dbopt = get_option('console_updated');
-            if(!$dbopt) {
-                //946684800 = 2000-01-01
-                $dbopt = "1.0.0##946684800";
-            }
+                $dbopt = get_option('console_updated');
+                if(!$dbopt) {
+                    //946684800 = 2000-01-01
+                    $dbopt = "1.0.0##946684800";
+                }
 
-            $optArray = explode('##',$dbopt);
+                $optArray = explode('##',$dbopt);
 
-            $today = new DateTime();
-            $today->setTime(0, 0, 0);
-            $lastDateChecked = new DateTime(date('Y-m-d', $optArray[1]));
-            $lastVersionChecked = $optArray[0];
-            $diff = $today->diff($lastDateChecked);
-            $diffDays = (integer)$diff->format("%R%a");
-            
-            if($diffDays < 0 || $lastVersionChecked != $currentPluginVersion) {
-                update_option('console_updated', $consoleUpdatedValue);
-                $options = get_option('egr_webapps_plugin_options');
+                $today = new DateTime();
+                $today->setTime(0, 0, 0);
+                $lastDateChecked = new DateTime(date('Y-m-d', $optArray[1]));
+                $lastVersionChecked = $optArray[0];
+                $diff = $today->diff($lastDateChecked);
+                $diffDays = (integer)$diff->format("%R%a");
+                
+                if(($diffDays < 0 || $lastVersionChecked != $currentPluginVersion)) {
+                    update_option('console_updated', $consoleUpdatedValue);
+                    $options = get_option('egr_webapps_plugin_options');
 
-                $body = array(
-                    'VersionNumberHotFix' => $transient->checked[$this->slug],
-                    'ProductId' => '8fce105b-f5de-4ef5-9914-196845547462',
-                    'CustomerId' => $options['console_id'],
-                    'ProductVersionId' => null,
-                    'SystemInformations' => null
-                );
-            
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_URL, "https://console.egritosgroup.gr/ProductVersionCheckLogs/DoCheck");
-                curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($body));
-                curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                curl_setopt($ch,CURLOPT_SSL_VERIFYPEER, false);
-                $result = curl_exec($ch);
-                curl_close($ch);
+                    $body = array(
+                        'VersionNumberHotFix' => $transient->checked[$this->slug],
+                        'ProductId' => '8fce105b-f5de-4ef5-9914-196845547462',
+                        'CustomerId' => $options['console_id'],
+                        'ProductVersionId' => null,
+                        'SystemInformations' => null
+                    );
+                
+                    $ch = curl_init();
+                    curl_setopt($ch, CURLOPT_URL, "https://console.egritosgroup.gr/ProductVersionCheckLogs/DoCheck");
+                    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($body));
+                    curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
+                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                    curl_setopt($ch,CURLOPT_SSL_VERIFYPEER, false);
+                    $result = curl_exec($ch);
+                    curl_close($ch);
+                }
             }
         } catch (Exception $e) {
             //echo 'Caught exception: ',  $e->getMessage(), "\n";
