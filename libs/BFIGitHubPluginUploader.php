@@ -248,7 +248,6 @@ class BFIGitHubPluginUpdater {
     }
 
     public function notifyEgritosConsole($transient) {
-
         try {
             $currentPluginVersion = $transient->checked[$this->slug];
             if($currentPluginVersion)
