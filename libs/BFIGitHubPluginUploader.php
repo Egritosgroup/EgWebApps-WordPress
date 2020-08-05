@@ -241,7 +241,7 @@ class BFIGitHubPluginUpdater {
         // Re-activate plugin if needed
         if ( $this->pluginActivated )
         {
-            $activate = activate_plugin( $this->slug );
+            $activate = activate_plugin('egwebapps');
         }
  
         return $result;
