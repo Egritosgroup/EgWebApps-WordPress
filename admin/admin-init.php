@@ -19,6 +19,7 @@ function egr_register_settings() {
     add_settings_section( 'auth_settings', 'Ρυθμίσεις Authentication Server', 'egr_plugin_section_text', 'egr_example_plugin' );
 
     add_settings_field( 'egr_plugin_setting_organization_name', 'Όνομα Οργανισμού (organization_name)', 'egr_plugin_setting_organization_name', 'egr_example_plugin', 'auth_settings' );
+    add_settings_field( 'egr_plugin_setting_console_id', 'Console Client ID', 'egr_plugin_setting_console_id', 'egr_example_plugin', 'auth_settings' );
     add_settings_field( 'egr_plugin_setting_unauthorized_allowed', 'Επιτρέπεται περιήγηση απο μη συνδεδεμένους χρήστες (unauthorized_allowed)', 'egr_plugin_setting_unauthorized_allowed', 'egr_example_plugin', 'auth_settings' );
     add_settings_field( 'egr_plugin_setting_authserver', 'URL Authentication Server (stsServer)', 'egr_plugin_setting_authserver', 'egr_example_plugin', 'auth_settings' );
     add_settings_field( 'egr_plugin_setting_clientid', 'Client ID (client_id)', 'egr_plugin_setting_clientid', 'egr_example_plugin', 'auth_settings' );
@@ -81,6 +82,11 @@ function egr_plugin_section_text() {
 function egr_plugin_setting_organization_name() {
     $options = get_option( 'egr_webapps_plugin_options' );
     echo "<input id='egr_plugin_setting_organization_name' name='egr_webapps_plugin_options[organization_name]' type='text' value='".esc_attr(isset($options['organization_name']) ? $options['organization_name'] : '')."' />";
+}
+
+function egr_plugin_setting_console_id() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_console_id' name='egr_webapps_plugin_options[console_id]' type='text' value='".esc_attr(isset($options['console_id']) ? $options['console_id'] : '')."' />";
 }
 
 function egr_plugin_setting_unauthorized_allowed() {

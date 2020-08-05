@@ -99,14 +99,46 @@ class BFIGitHubPluginUpdater {
         {
             return $transient;
         }
- 
+        
         // Get plugin & GitHub release information
         $this->initPluginData();
         $this->getRepoReleaseInfo();
+        
+        if(!get_option('console_updated')) {
+            add_option('console_updated', $transient->last_checked);
+        }
+
+        $today = new DateTime();
+        $today->setTime(0, 0, 0);
+        $match_date = new DateTime(date('Y-m-d', get_option('console_updated')));
+        $diff = $today->diff($match_date);
+        $diffDays = (integer)$diff->format("%R%a");
+        
+        if($diffDays < 0) {
+            update_option('console_updated', $transient->last_checked);
+            $options = get_option('egr_webapps_plugin_options');
+
+            $body = array(
+                'VersionNumberHotFix' => $transient->checked[$this->slug],
+                'ProductId' => '8fce105b-f5de-4ef5-9914-196845547462',
+                'CustomerId' => $options['console_id'],
+                'ProductVersionId' => null,
+                'SystemInformations' => null
+            );
+        
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, "https://console.egritosgroup.gr/ProductVersionCheckLogs/DoCheck");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($body));
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch,CURLOPT_SSL_VERIFYPEER, false);
+            $result = curl_exec($ch);
+            curl_close($ch);
+        }        
  
         $doUpdate = version_compare( $this->githubAPIResult->tag_name, $transient->checked[$this->slug] );
  
-        if ( $doUpdate )
+        if ($doUpdate)
         {
             $package = $this->githubAPIResult->zipball_url;
  
