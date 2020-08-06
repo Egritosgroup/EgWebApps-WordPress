@@ -15,15 +15,15 @@ $GLOBALS['pluginFolderName'] = explode('/', trailingslashit(dirname(plugin_basen
 define('EGR__PLUGIN_DIR', plugin_dir_path( __FILE__ ));
 
 
-initEgritosPlugin();
-register_activation_hook(__FILE__, 'egritos_install');
+initEgritosEgwebappsPlugin();
+register_activation_hook(__FILE__, 'egritos_Egwebapps_install');
 
-function initEgritosPlugin() {
+function initEgritosEgwebappsPlugin() {
     include_once(ABSPATH . 'wp-admin/includes/plugin.php');
-    initRequires();
+    initEgwebappsRequires();
 }
 
-function initRequires() {
+function initEgwebappsRequires() {
     require_once(EGR__PLUGIN_DIR . 'libs/auth-settings.php');
     require_once(EGR__PLUGIN_DIR . 'front/front-init.php');
     require_once(EGR__PLUGIN_DIR . 'admin/admin-init.php');
@@ -44,7 +44,7 @@ function egritosTpl_plugin_admin_scripts() {
 
 add_action('admin_enqueue_scripts', 'egritosTpl_plugin_admin_scripts');
 
-function egritos_install() {
+function egritos_Egwebapps_install() {
 	global $wpdb;
     global $egwebapps_version;
 
