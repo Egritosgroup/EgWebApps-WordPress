@@ -3,13 +3,13 @@
 * Plugin Name: Ηλεκτρονικές Εφαρμογές - Έγκριτος Group
 * Plugin URI: 
 * Description: Ηλεκτρονικές Εφαρμογές - Έγκριτος Group
-* Version: 2.2.8880
+* Version: 2.2.8853
 * Author: EgritosGroup
 * Author URI: https://egritosgroup.gr/
 **/ 
 
 global $egwebapps_version;
-$egwebapps_version = '2.2.8880';
+$egwebapps_version = '2.2.8826';
 
 $GLOBALS['pluginFolderName'] = explode('/', trailingslashit(dirname(plugin_basename( __FILE__ ))));
 define('EGR__PLUGIN_DIR', plugin_dir_path( __FILE__ ));
@@ -24,9 +24,9 @@ function initEgritosPlugin() {
 }
 
 function initRequires() {
+    require_once(EGR__PLUGIN_DIR . 'libs/auth-settings.php');
     require_once(EGR__PLUGIN_DIR . 'front/front-init.php');
     require_once(EGR__PLUGIN_DIR . 'admin/admin-init.php');
-    require_once(EGR__PLUGIN_DIR . 'libs/auth-settings.php');
 
     require_once(EGR__PLUGIN_DIR . 'libs/BFIGitHubPluginUploader.php');
     if (is_admin()) {
