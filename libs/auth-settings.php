@@ -1,5 +1,5 @@
-<?php
-add_action('parse_request', 'egwebapps_settings_url_handler');
+<?php add_action('parse_request', 'egwebapps_settings_url_handler');
+
 function egwebapps_settings_url_handler() {
     if(strpos($_SERVER['REQUEST_URI'],'/auth-settings') > -1 ) {
         $options = get_option('egr_webapps_plugin_options');
@@ -52,7 +52,7 @@ function setAuthSettings($options, $pluginFolderName) {
         'post_login_route' => '/home',
         'log_console_warning_active' => false,
         'log_console_debug_active' => false,
-        'assets_base_href' => '/wp-content/plugins/' . $pluginFolderName[0] . 'static/assets/',
+        'assets_base_href' => '/wp-content/plugins/' . $pluginFolderName[0] . '/static/assets/',
         'max_id_token_iat_offset_allowed_in_seconds' => 3000,
         'show_home_info' => true
     );
