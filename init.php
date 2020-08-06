@@ -34,7 +34,7 @@ function initRequires() {
     }
 } 
 
-function egritosTpl_admin_scripts() {
+function egritosTpl_plugin_admin_scripts() {
     $screen = get_current_screen();
 
     if($screen->base == 'settings_page_egwebapps') {
@@ -42,7 +42,7 @@ function egritosTpl_admin_scripts() {
     }
 }
 
-add_action('admin_enqueue_scripts', 'egritosTpl_admin_scripts');
+add_action('admin_enqueue_scripts', 'egritosTpl_plugin_admin_scripts');
 
 function egritos_install() {
 	global $wpdb;
