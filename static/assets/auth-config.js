@@ -8,7 +8,7 @@ var AuthConfOptions = {
 	response_type: "id_token token",
 	// For some oidc, we require resource identifier to be provided along with the request.
 	resource: "",
-	//EgritosGroup.Finance.Revenue.Full EgritosGroup.Auth.Full EgritosGroup.CarPooling.Full EgritosGroup.Paidikoi.Basic
+	//EgritosGroup.Finance.Revenue.Full EgritosGroup.CarPooling.Full EgritosGroup.Domes.Basic EgritosGroup.Kliseis.Politis EgritosGroup.Katastimata.Politis
 	scope: "openid profile profileextra EgritosGroup.Auth.Basic",
 	post_logout_redirect_uri: "http://localhost:4200/home",
 	start_checksession: false,
@@ -70,14 +70,4 @@ var AppConfOptions = {
 	is_diakanonismoi_enabled: true,
 	diakanonismoi_description: 'Ενημέρωση για την κατάσταση των διακανονισμών σας & αίτηση νέων διακακονισμών.'
 };
-
-
-
-
-
-
-
-
-
-
 
