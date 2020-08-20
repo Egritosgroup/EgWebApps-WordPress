@@ -4,7 +4,7 @@ var AuthConfOptions = {
 	app_base_href: "/",
 	// The Client MUST validate that the aud (audience) Claim contains its client_id value registered at the Issuer identified by the iss (issuer) Claim as an audience.
 	// The ID Token MUST be rejected if the ID Token does not list the Client as a valid audience, or if it contains additional audiences not trusted by the Client.
-	client_id: "egwebapps",
+	client_id: "egwebapps-localhost",
 	response_type: "id_token token",
 	// For some oidc, we require resource identifier to be provided along with the request.
 	resource: "",
