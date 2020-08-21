@@ -65,6 +65,7 @@ function setAppsSettings($options, $pluginFolderName) {
     $settingsArray = array(
         'organization_name' => $options['organization_name'] ? $options['organization_name'] : get_bloginfo(),
         'unauthorized_allowed' => isset($options['unauthorized_allowed']) && $options['unauthorized_allowed'] == 'on' ? true : false,
+        'oroi_xrisis_link' => $options['oroi_xrisis_link'] ? $options['oroi_xrisis_link'] : '',
         'is_benefits_enabled' => isset($options['isdomes']) && $options['isdomes'] == 'on' ? true : false,
         'benefits_api' => $options['domes_api'] ? $options['domes_api'] : '',
         'benefits_tab_title' => $options['benefits_tab_title'] ? $options['benefits_tab_title'] : 'Αιτήσεις Παιδικών Σταθμών',

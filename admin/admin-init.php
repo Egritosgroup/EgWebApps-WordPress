@@ -24,6 +24,7 @@ function egr_register_settings() {
     add_settings_field( 'egr_plugin_setting_authserver', 'URL Authentication Server (stsServer)', 'egr_plugin_setting_authserver', 'egr_example_plugin', 'auth_settings' );
     add_settings_field( 'egr_plugin_setting_clientid', 'Client ID (client_id)', 'egr_plugin_setting_clientid', 'egr_example_plugin', 'auth_settings' );
     add_settings_field( 'egr_plugin_setting_scope', 'Scopes (scope)', 'egr_plugin_setting_scope', 'egr_example_plugin', 'auth_settings' );
+    add_settings_field( 'egr_plugin_setting_oroi_xrisis_link', 'Link Όρων Χρήσης', 'egr_plugin_setting_oroi_xrisis_link', 'egr_example_plugin', 'auth_settings' );
 
     add_settings_section( 'domes_settings', '<div>Ρυθμίσεις Δομών</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
 
@@ -110,6 +111,11 @@ function egr_plugin_setting_clientid() {
 function egr_plugin_setting_scope() {
     $options = get_option( 'egr_webapps_plugin_options' );
     echo "<input id='egr_plugin_setting_scope' name='egr_webapps_plugin_options[scope]' type='text' disabled='disabled' value='openid profile roles profileextra EgritosGroup.Auth.Basic' />";
+}
+
+function egr_plugin_setting_oroi_xrisis_link() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_oroi_xrisis_link' name='egr_webapps_plugin_options[oroi_xrisis_link]' type='text' value='".esc_attr(isset($options['oroi_xrisis_link']) ? $options['oroi_xrisis_link'] : '')."' />";
 }
 
 //domes
