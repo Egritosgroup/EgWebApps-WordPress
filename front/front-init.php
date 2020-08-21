@@ -96,7 +96,7 @@ function IncludeAngularFiles() {
             <script src="<?= site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/') . $i; ?>?v=<?= $egwebapps_version; ?>" type="module"></script>
         <?php } ?>
         
-        <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>script.js?v=<?php echo $egwebapps_version; ?>" defer></script>
+        <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>scripts.js?v=<?php echo $egwebapps_version; ?>" defer></script>
 
         <?php closedir($handle);
     }  
