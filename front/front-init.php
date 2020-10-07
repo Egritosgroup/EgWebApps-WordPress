@@ -3,8 +3,9 @@ $options = get_option( 'egr_webapps_plugin_options' );
 
 if(isset($options['shortcode']) && $options['shortcode'] == 'on') {
     add_filter('request', function ( $query_vars ) {
+		
         if(strpos($_SERVER['REQUEST_URI'],'/egwebapps') > -1) {
-            $query_vars['pagename'] = 'egwebapps';
+			$query_vars['pagename'] = 'egwebapps';
         }
         
         return $query_vars;

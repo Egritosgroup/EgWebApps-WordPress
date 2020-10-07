@@ -71,11 +71,14 @@ function egr_register_settings() {
     add_settings_field( 'egr_plugin_setting_isdiakanonismoi', 'Διακανονισμοί (is_diakanonismoi_enabled)', 'egr_plugin_setting_isdiakanonismoi', 'egr_example_plugin', 'diakanonismoi_settings' );
     add_settings_field( 'egr_plugin_setting_diakanonismoi_description', 'Περιγραφή (diakanonismoi_description)', 'egr_plugin_setting_diakanonismoi_description', 'egr_example_plugin', 'diakanonismoi_settings' );
 
-    add_settings_section( 'extra_plugin_options', '', 'egr_plugin_section_text', 'egr_example_plugin' );
-    add_settings_field( 'egr_plugin_setting_shortcode', 'Ενεργοποίηση Shortcode', 'egr_plugin_setting_shortcode', 'egr_example_plugin', 'extra_plugin_options' );
+    add_settings_section( 'extra_plugin_options', 'Έξτρα Ρυθμίσεις Plugin', 'egr_plugin_section_text', 'egr_example_plugin' );
+	
+    //add_settings_field( 'egr_plugin_setting_shortcode', 'Ενεργοποίηση Shortcode', 'egr_plugin_setting_shortcode', 'egr_example_plugin', 'extra_plugin_options' );
     add_settings_field( 'egr_plugin_setting_jquery_check', 'Ενεργοποίηση JQuery', 'egr_plugin_setting_jquery_check', 'egr_example_plugin', 'extra_plugin_options' );
     add_settings_field( 'egr_plugin_setting_extra_css', 'Έξτρα Κανόνες CSS', 'egr_plugin_setting_extra_css', 'egr_example_plugin', 'extra_plugin_options' );
     add_settings_field( 'egr_plugin_setting_extra_css_path', 'Path υπάρχοντος CSS αρχείου', 'egr_plugin_setting_extra_css_path', 'egr_example_plugin', 'extra_plugin_options' );
+	add_settings_field( 'egr_plugin_setting_extra_html_header', 'HTML κάτω απο το header', 'egr_plugin_setting_extra_html_header', 'egr_example_plugin', 'extra_plugin_options' );
+	add_settings_field( 'egr_plugin_setting_extra_html_footer', 'HTML πάνω απο το footer', 'egr_plugin_setting_extra_html_footer', 'egr_example_plugin', 'extra_plugin_options' );
 }
 add_action( 'admin_init', 'egr_register_settings' ); 
 
@@ -284,4 +287,14 @@ function egr_plugin_setting_extra_css() {
 function egr_plugin_setting_extra_css_path() {
     $options = get_option( 'egr_webapps_plugin_options' );
     echo "<input id='egr_plugin_setting_extra_css_path' name='egr_webapps_plugin_options[extra_css_path]' type='text' value='".esc_attr(isset($options['extra_css_path']) ? $options['extra_css_path'] : '')."' />";
+}
+
+function egr_plugin_setting_extra_html_header() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<textarea id='egr_plugin_setting_extra_html_header' name='egr_webapps_plugin_options[html_header]'>".esc_attr(isset($options['html_header']) ? $options['html_header'] : '')."</textarea>";
+}
+
+function egr_plugin_setting_extra_html_footer() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<textarea id='egr_plugin_setting_extra_html_footer' name='egr_webapps_plugin_options[html_footer]'>".esc_attr(isset($options['html_footer']) ? $options['html_footer'] : '')."</textarea>";
 } ?>
