@@ -89,7 +89,10 @@ function setAppsSettings($options, $pluginFolderName) {
         'katastimata_api' => $options['katastimata_api'] ? $options['katastimata_api'] : '',
         'katastimata_description' => $options['katastimata_description'] ? $options['katastimata_description'] : 'Υποβάλλετε και εξοφλήστε την δήλωσή σας για το τέλος 0,5%.',
         'is_diakanonismoi_enabled' => isset($options['isdiakanonismoi']) && $options['isdiakanonismoi'] == 'on' ? true : false,
-        'diakanonismoi_description' => $options['diakanonismoi_description'] ? $options['diakanonismoi_description'] : 'Ενημέρωση για την κατάσταση των διακανονισμών σας & αίτηση νέων διακακονισμών.'
+        'diakanonismoi_description' => $options['diakanonismoi_description'] ? $options['diakanonismoi_description'] : 'Ενημέρωση για την κατάσταση των διακανονισμών σας & αίτηση νέων διακακονισμών.',
+        'is_shde_app_enabled' => isset($options['isshde']) && $options['isshde'] == 'on' ? true : false,
+        'shde_api' => $options['shde_api'] ? $options['shde_api'] : '',
+        'shde_description' => $options['shde_description'] ? $options['shde_description'] : 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.'
     );
 
     return json_encode($settingsArray);
