@@ -1,6 +1,6 @@
 var AuthConfOptions = {
 	stsServer: "http://auth.dev.egritosgroup.gr",
-	redirect_url: "https://localhost:4200",
+	redirect_url: "http://localhost:4200",
 	app_base_href: "/",
 	// The Client MUST validate that the aud (audience) Claim contains its client_id value registered at the Issuer identified by the iss (issuer) Claim as an audience.
 	// The ID Token MUST be rejected if the ID Token does not list the Client as a valid audience, or if it contains additional audiences not trusted by the Client.
@@ -10,7 +10,7 @@ var AuthConfOptions = {
 	resource: "",
 	//EgritosGroup.Finance.Revenue.Full EgritosGroup.CarPooling.Full EgritosGroup.Domes.Basic EgritosGroup.Kliseis.Politis EgritosGroup.Katastimata.Politis
 	scope: "openid profile profileextra EgritosGroup.Auth.Basic",
-	post_logout_redirect_uri: "https://localhost:4200",
+	post_logout_redirect_uri: "http://localhost:4200",
 	start_checksession: false,
 	silent_renew: false,
 	post_login_route: "/home",
@@ -22,7 +22,7 @@ var AuthConfOptions = {
 	//auto_clean_state_after_authentication: true,
 	log_console_warning_active: false,
 	log_console_debug_active: false,
-	assets_base_href: "https://localhost:4200/assets/",
+	assets_base_href: "http://localhost:4200/assets/",
 
 	// id_token C8: The iat Claim can be used to reject tokens that were issued too far away from the current time,
 	// limiting the amount of time that nonces need to be stored to prevent attacks.The acceptable range is Client specific.
@@ -69,6 +69,10 @@ var AppConfOptions = {
 	katastimata_description: 'Υποβάλλετε και εξοφλήστε την δήλωσή σας για το τέλος 0,5%.',
 
 	is_diakanonismoi_enabled: true,
-	diakanonismoi_description: 'Ενημέρωση για την κατάσταση των διακανονισμών σας & αίτηση νέων διακακονισμών.'
+	diakanonismoi_description: 'Ενημέρωση για την κατάσταση των διακανονισμών σας & αίτηση νέων διακακονισμών.',
+
+	is_shde_app_enabled: true,
+	shde_api: "http://prot.dev.egritosgroup.gr/",
+	shde_description: 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.',
 };
 
