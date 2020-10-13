@@ -65,7 +65,7 @@ var AppConfOptions = {
 	is_eidopoiitiria_enabled: true,
 	eidopoiitiria_api: "http://financeapi.dev.egritosgroup.gr/",
 	eidopoiitiria_description: 'Εξόφληση ειδοποιητηρίων.',
-	eidopoiitiria_tab_info: 'Εξόφληση ειδοποιητηρίων.',
+	eidopoiitiria_tab_info: '',
 
 	is_dimotikos_foros_enabled: true,
 	katastimata_api: "http://katastimata.demo.egritosgroup.gr/",
