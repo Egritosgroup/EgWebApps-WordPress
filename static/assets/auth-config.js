@@ -31,7 +31,6 @@ var AuthConfOptions = {
 	//override_well_known_configuration_url : '/.well-known/openid-configuration'
 };
 
-
 var AppConfOptions = {
 	organization_name: "του Δήμου Τρικκαίων",
 	unauthorized_allowed: true,
@@ -42,37 +41,44 @@ var AppConfOptions = {
 	benefits_api: "http://paidi.demo.egritosgroup.gr/",
 	benefits_tab_title: "Αιτήσεις Παιδικών Σταθμών",
 	benefits_description: 'Δημιουργία, επεξεργασία & υποβολή αιτήσεων για παιδικούς σταθμούς, με άμεση ενημέρωση για την κατάσταση της αίτησής σας.',
+	benefits_tab_info: 'Δημιουργία, επεξεργασία & υποβολή αιτήσεων για παιδικούς σταθμούς, με άμεση ενημέρωση για την κατάσταση της αίτησής σας.',
 	//app_help_page: "https://aitisi.dopafmai.gr/odigies-eggrafis/"
 
 	is_carpooling_enabled: true,
 	carpooling_api: "http://carpooling.demo.egritosgroup.gr/",
 	carpooling_description: 'Δημιουργία & συμμετοχή σε διαδρομές συν-πολιτών σας από οποιοδήποτε μέρος της Ελλάδας.',
+	carpooling_tab_info: '<p>Δημιουργία & συμμετοχή σε διαδρομές συν-πολιτών σας από οποιοδήποτε μέρος της Ελλάδας.</p>',
 	google_maps_key: "AIzaSyCIE9XxZEUpWvs_4e1O-gKL1jK6Xo2CQCM",
 
 	is_epayments_enabled: true,
-	//epayments_api: "http://financeapi.dev.egritosgroup.gr/",
-	epayments_api: "https://financeapi.localhost.egritosgroup.gr/",
+	epayments_api: "http://financeapi.dev.egritosgroup.gr/",
+	//epayments_api: "https://financeapi.localhost.egritosgroup.gr/",
 	epayments_description: 'Εξόφληση των οριστικοποιημένων οφειλών σας προς τον Φορέα.',
-	//epayments_api: "http://localhost:5462/",
+	epayments_tab_info: 'Εξόφληση των οριστικοποιημένων οφειλών σας προς τον Φορέα.',
 	show_non_persisted_debits: false,
 
 	is_kliseis_enabled: true,
 	kliseis_api: "http://localhost:4287/",
 	kliseis_description: 'Εξόφληση και καταχώρηση κλήσεων Δημοτικής Αστυνομίας.',
+	kliseis_tab_info: 'Εξόφληση και καταχώρηση κλήσεων Δημοτικής Αστυνομίας.',
 
 	is_eidopoiitiria_enabled: true,
 	eidopoiitiria_api: "http://financeapi.dev.egritosgroup.gr/",
 	eidopoiitiria_description: 'Εξόφληση ειδοποιητηρίων.',
+	eidopoiitiria_tab_info: 'Εξόφληση ειδοποιητηρίων.',
 
 	is_dimotikos_foros_enabled: true,
 	katastimata_api: "http://katastimata.demo.egritosgroup.gr/",
 	katastimata_description: 'Υποβάλλετε και εξοφλήστε την δήλωσή σας για το τέλος 0,5%.',
+	katastimata_tab_info: 'Υποβάλλετε και εξοφλήστε την δήλωσή σας για το τέλος 0,5%.',
 
 	is_diakanonismoi_enabled: true,
 	diakanonismoi_description: 'Ενημέρωση για την κατάσταση των διακανονισμών σας & αίτηση νέων διακακονισμών.',
+	diakanonismoi_tab_info: 'Ενημέρωση για την κατάσταση των διακανονισμών σας & αίτηση νέων διακακονισμών.',
 
 	is_shde_app_enabled: true,
 	shde_api: "http://prot.dev.egritosgroup.gr/",
 	shde_description: 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.',
+	shde_tab_info: 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.',
 };
 
