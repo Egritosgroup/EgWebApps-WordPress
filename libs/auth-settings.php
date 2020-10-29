@@ -46,7 +46,7 @@ function setAuthSettings($options, $pluginFolderName) {
         'response_type' => 'id_token token',
         'resource' => '',
         'scope' => 'openid profile roles profileextra EgritosGroup.Auth.Basic',
-        'post_logout_redirect_uri' => site_url('/egwebapps/home'),
+        'post_logout_redirect_uri' => site_url(),
         'start_checksession' => false,
         'silent_renew' => false,
         'post_login_route' => '/home',
