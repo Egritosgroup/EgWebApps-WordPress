@@ -1,6 +1,6 @@
 var AuthConfOptions = {
 	stsServer: "http://auth.dev.egritosgroup.gr",
-	redirect_url: "http://localhost:4200",
+	redirect_url: "http://localhost:4200/redirect-auth",
 	app_base_href: "/",
 	// The Client MUST validate that the aud (audience) Claim contains its client_id value registered at the Issuer identified by the iss (issuer) Claim as an audience.
 	// The ID Token MUST be rejected if the ID Token does not list the Client as a valid audience, or if it contains additional audiences not trusted by the Client.
@@ -80,5 +80,10 @@ var AppConfOptions = {
 	shde_api: "http://prot.dev.egritosgroup.gr/",
 	shde_description: 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.',
 	shde_tab_info: 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.',
+
+	is_rantevou_app_enabled: true,
+	rantevou_api: "http://localhost:5337/",
+	rantevou_description: 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.',
+	rantevou_tab_info: 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.',
 };
 
