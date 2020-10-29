@@ -40,7 +40,7 @@ function egwebapps_settings_url_handler() {
 function setAuthSettings($options, $pluginFolderName) {
     $settingsArray = array(
         'stsServer' => $options['authserver'],
-        'redirect_url' => site_url('/redirect-auth'),
+        'redirect_url' => site_url('/egwebapps/redirect-auth'),
         'app_base_href' => '/',
         'client_id' => $options['clientid'],
         'response_type' => 'id_token token',
