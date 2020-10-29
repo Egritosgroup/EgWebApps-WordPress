@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{y1PB:function(t,e,s){"use strict";s.d(e,"a",(function(){return n}));var c=s("JIr8"),i=s("nYR2");class n{constructor(t,e){this.http=t,this.exceptionService=e,this.catchHttpErrors=()=>t=>t.pipe(Object(c.a)(this.exceptionService.catchBadResponse),Object(i.a)(()=>{})),this.baseUrl="/",this.baseUrl+="api/"}}}}]);
