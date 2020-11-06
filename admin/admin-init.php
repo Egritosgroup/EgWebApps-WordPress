@@ -87,8 +87,8 @@ function egr_register_settings() {
 
     add_settings_section( 'rantevou_settings', '<div>Ρυθμίσεις Ηλεκτρονικών Ραντεβού</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
     
-    add_settings_field( 'egr_plugin_setting_israntevou', 'Ηλεκτρονική Διακήνηση Εγγράφων (is_rantevou_app_enabled)', 'egr_plugin_setting_israntevou', 'egr_example_plugin', 'rantevou_settings' );
-    add_settings_field( 'egr_plugin_setting_rantevou_api', 'Api Ηλεκτρονικής Διακήνησης Εγγράφων (rantevou_api)', 'egr_plugin_setting_rantevou_api', 'egr_example_plugin', 'rantevou_settings' );
+    add_settings_field( 'egr_plugin_setting_israntevou', 'Ηλεκτρονικά Ραντεβού (is_rantevou_app_enabled)', 'egr_plugin_setting_israntevou', 'egr_example_plugin', 'rantevou_settings' );
+    add_settings_field( 'egr_plugin_setting_rantevou_api', 'Api Ηλεκτρονικών Ραντεβού (rantevou_api)', 'egr_plugin_setting_rantevou_api', 'egr_example_plugin', 'rantevou_settings' );
     add_settings_field( 'egr_plugin_setting_rantevou_description', 'Περιγραφή (rantevou_description)', 'egr_plugin_setting_rantevou_description', 'egr_example_plugin', 'rantevou_settings' );
     add_settings_field( 'egr_plugin_setting_rantevou_tab_info', 'Οδηγίες (rantevou_tab_info)', 'egr_plugin_setting_rantevou_tab_info', 'egr_example_plugin', 'rantevou_settings' );
 
