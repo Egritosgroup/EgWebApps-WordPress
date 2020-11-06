@@ -100,7 +100,11 @@ function setAppsSettings($options, $pluginFolderName) {
         'is_shde_app_enabled' => isset($options['isshde']) && $options['isshde'] == 'on' ? true : false,
         'shde_api' => $options['shde_api'] ? $options['shde_api'] : '',
         'shde_description' => $options['shde_description'] ? htmlspecialchars($options['shde_description']) : 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.',
-        'shde_tab_info' => $options['shde_tab_info'] ? htmlspecialchars($options['shde_tab_info']) : ''
+        'shde_tab_info' => $options['shde_tab_info'] ? htmlspecialchars($options['shde_tab_info']) : '',
+        'is_rantevou_app_enabled' => isset($options['israntevou']) && $options['israntevou'] == 'on' ? true : false,
+        'rantevou_api' => $options['rantevou_api'] ? $options['rantevou_api'] : '',
+        'rantevou_description' => $options['rantevou_description'] ? htmlspecialchars($options['rantevou_description']) : 'Ηλεκτρονικά Ραντεβού Πολιτών',
+        'rantevou_tab_info' => $options['rantevou_tab_info'] ? htmlspecialchars($options['rantevou_tab_info']) : ''
     );
 
     return json_encode($settingsArray);

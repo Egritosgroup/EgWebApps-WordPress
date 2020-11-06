@@ -85,6 +85,13 @@ function egr_register_settings() {
     add_settings_field( 'egr_plugin_setting_shde_description', 'Περιγραφή (shde_description)', 'egr_plugin_setting_shde_description', 'egr_example_plugin', 'shde_settings' );
     add_settings_field( 'egr_plugin_setting_shde_tab_info', 'Οδηγίες (shde_tab_info)', 'egr_plugin_setting_shde_tab_info', 'egr_example_plugin', 'shde_settings' );
 
+    add_settings_section( 'rantevou_settings', '<div>Ρυθμίσεις Ηλεκτρονικών Ραντεβού</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
+    
+    add_settings_field( 'egr_plugin_setting_israntevou', 'Ηλεκτρονική Διακήνηση Εγγράφων (is_rantevou_app_enabled)', 'egr_plugin_setting_israntevou', 'egr_example_plugin', 'rantevou_settings' );
+    add_settings_field( 'egr_plugin_setting_rantevou_api', 'Api Ηλεκτρονικής Διακήνησης Εγγράφων (rantevou_api)', 'egr_plugin_setting_rantevou_api', 'egr_example_plugin', 'rantevou_settings' );
+    add_settings_field( 'egr_plugin_setting_rantevou_description', 'Περιγραφή (rantevou_description)', 'egr_plugin_setting_rantevou_description', 'egr_example_plugin', 'rantevou_settings' );
+    add_settings_field( 'egr_plugin_setting_rantevou_tab_info', 'Οδηγίες (rantevou_tab_info)', 'egr_plugin_setting_rantevou_tab_info', 'egr_example_plugin', 'rantevou_settings' );
+
     add_settings_section( 'extra_plugin_options', 'Έξτρα Ρυθμίσεις Plugin', 'egr_plugin_section_text', 'egr_example_plugin' );
 	
     //add_settings_field( 'egr_plugin_setting_shortcode', 'Ενεργοποίηση Shortcode', 'egr_plugin_setting_shortcode', 'egr_example_plugin', 'extra_plugin_options' );
@@ -336,6 +343,28 @@ function egr_plugin_setting_shde_description() {
 function egr_plugin_setting_shde_tab_info() {
     $options = get_option( 'egr_webapps_plugin_options' );
     echo "<textarea id='egr_plugin_setting_shde_tab_info' name='egr_webapps_plugin_options[shde_tab_info]'>".esc_attr(isset($options['shde_tab_info']) ? $options['shde_tab_info'] : '')."</textarea>";
+}
+
+//RANTEVOU
+
+function egr_plugin_setting_israntevou() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_israntevou' name='egr_webapps_plugin_options[israntevou]' type='checkbox' ".esc_attr(isset($options['israntevou']) ? 'checked=checked' : '')." />";
+}
+
+function egr_plugin_setting_rantevou_api() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_rantevou_api' name='egr_webapps_plugin_options[rantevou_api]' type='text' value='".esc_attr(isset($options['rantevou_api']) ? $options['rantevou_api'] : '')."' />";
+}
+
+function egr_plugin_setting_rantevou_description() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<textarea id='egr_plugin_setting_rantevou_description' name='egr_webapps_plugin_options[rantevou_description]'>".esc_attr(isset($options['rantevou_description']) ? $options['rantevou_description'] : '')."</textarea>";
+}
+
+function egr_plugin_setting_rantevou_tab_info() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<textarea id='egr_plugin_setting_rantevou_tab_info' name='egr_webapps_plugin_options[rantevou_tab_info]'>".esc_attr(isset($options['rantevou_tab_info']) ? $options['rantevou_tab_info'] : '')."</textarea>";
 }
 
 //END 
