@@ -1,6 +1,7 @@
 var AuthConfOptions = {
 	stsServer: "http://auth.dev.egritosgroup.gr",
 	redirect_url: "http://localhost:4200/redirect-auth",
+	application_url: "http://localhost:4200",
 	app_base_href: "/",
 	// The Client MUST validate that the aud (audience) Claim contains its client_id value registered at the Issuer identified by the iss (issuer) Claim as an audience.
 	// The ID Token MUST be rejected if the ID Token does not list the Client as a valid audience, or if it contains additional audiences not trusted by the Client.
@@ -35,6 +36,7 @@ var AppConfOptions = {
 	organization_name: "του Δήμου Τρικκαίων",
 	unauthorized_allowed: true,
 	oroi_xrisis_link: "#",
+	home_page_text: '<p>Σχόλια που αφορούν τις βεβαιωμένες οφειλές.</p><p>Σχόλια που αφορούν τις αποδείξεις των βεβαιωμένων οφειλών.</p>',
 
 	is_benefits_enabled: true,
 	benefits_applications_organization: "ΔΟΜΕΣ",
@@ -54,13 +56,18 @@ var AppConfOptions = {
 	epayments_api: "http://financeapi.dev.egritosgroup.gr/",
 	//epayments_api: "https://financeapi.localhost.egritosgroup.gr/",
 	epayments_description: 'Εξόφληση των οριστικοποιημένων οφειλών σας προς τον Φορέα.',
-	epayments_tab_info: 'Εξόφληση των οριστικοποιημένων οφειλών σας προς τον Φορέα.',
+	epayments_debits_tab_info: 'Σχόλια που αφορούν τις βεβαιωμένες οφειλές.',
+	epayments_receipts_tab_info: 'Σχόλια που αφορούν τις αποδείξεις των βεβαιωμένων οφειλών.',
 	show_non_persisted_debits: false,
 
 	is_kliseis_enabled: true,
-	kliseis_api: "http://localhost:4287/",
+	kliseis_api: "http://kliseis.demo.egritosgroup.gr/",
 	kliseis_description: 'Εξόφληση και καταχώρηση κλήσεων Δημοτικής Αστυνομίας.',
-	kliseis_tab_info: 'Εξόφληση και καταχώρηση κλήσεων Δημοτικής Αστυνομίας.',
+	kliseis_debits_tab_info: `Παρακαλούμε επιλέξτε αυτές τις κλήσεις που θέλετε να εξοφλήσετε από την παρακάτω λίστα.<br />
+				Σε περίπτωση που επιθυμείτε να πληρώσετε κάποια κλήση που δεν υπάρχει στη λίστα, παρακαλώ πιέστε
+				"Καταχώρηση Νέας Κλήσης".`,
+	kliseis_receipts_tab_info: 'Ιστορικό πληρωμών κλήσεων.',
+	kliseis_unauthorized_info: 'Δεν έχετε δικαίωμα πρόσβασης.',
 
 	is_eidopoiitiria_enabled: true,
 	eidopoiitiria_api: "http://financeapi.dev.egritosgroup.gr/",
