@@ -153,6 +153,11 @@ function egr_plugin_setting_home_page_text() {
     echo "<input id='egr_plugin_setting_home_page_text' name='egr_webapps_plugin_options[home_page_text]' type='text' value='".esc_attr(isset($options['home_page_text']) ? $options['home_page_text'] : '')."' />";
 }
 
+function egr_plugin_setting_oroi_xrisis_link() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_oroi_xrisis_link' name='egr_webapps_plugin_options[oroi_xrisis_link]' type='text' value='".esc_attr(isset($options['oroi_xrisis_link']) ? $options['oroi_xrisis_link'] : '')."' />";
+}
+
 //domes
 
 function egr_plugin_setting_isdomes() {
