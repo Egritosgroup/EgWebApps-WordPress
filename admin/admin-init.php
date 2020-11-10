@@ -50,8 +50,8 @@ function egr_register_settings() {
     add_settings_field( 'egr_plugin_setting_isepayments', 'Ηλεκτρονικές Πληρωμές (is_epayments_enabled)', 'egr_plugin_setting_isepayments', 'egr_example_plugin', 'epayments_settings' );
     add_settings_field( 'egr_plugin_setting_epayments_api', 'Ηλεκτρονικές Πληρωμές Api URL (epayments_api)', 'egr_plugin_setting_epayments_api', 'egr_example_plugin', 'epayments_settings' );
     add_settings_field( 'egr_plugin_setting_epayments_description', 'Περιγραφή (epayments_description)', 'egr_plugin_setting_epayments_description', 'egr_example_plugin', 'epayments_settings' );
-    add_settings_field( 'egr_plugin_setting_epaymets_debits_tab_info', 'Οδηγίες Βεβαιωμένων Οφειλών (epaymets_debits_tab_info)', 'egr_plugin_setting_epaymets_debits_tab_info', 'egr_example_plugin', 'epayments_settings' );
-    add_settings_field( 'egr_plugin_setting_epaymets_receipts_tab_info', 'Οδηγίες Ιστορικού Πληρωμών Βεβαιωμένων Οφειλών (epaymets_receipts_tab_info)', 'egr_plugin_setting_epaymets_receipts_tab_info', 'egr_example_plugin', 'epayments_settings' );
+    add_settings_field( 'egr_plugin_setting_epayments_debits_tab_info', 'Οδηγίες Βεβαιωμένων Οφειλών (epayments_debits_tab_info)', 'egr_plugin_setting_epayments_debits_tab_info', 'egr_example_plugin', 'epayments_settings' );
+    add_settings_field( 'egr_plugin_setting_epayments_receipts_tab_info', 'Οδηγίες Ιστορικού Πληρωμών Βεβαιωμένων Οφειλών (epayments_receipts_tab_info)', 'egr_plugin_setting_epayments_receipts_tab_info', 'egr_example_plugin', 'epayments_settings' );
     add_settings_field( 'egr_plugin_setting_epayments_tab_info', 'Γενικές Οδηγίες (epayments_tab_info)', 'egr_plugin_setting_epayments_tab_info', 'egr_example_plugin', 'epayments_settings' );
     add_settings_field( 'egr_plugin_setting_show_non_persisted_debits', 'Εμφάνιση μη διαρκών χρεών (show_non_persisted_debits)', 'egr_plugin_setting_show_non_persisted_debits', 'egr_example_plugin', 'epayments_settings' );
     
@@ -238,14 +238,14 @@ function egr_plugin_setting_epayments_description() {
     echo "<textarea id='egr_plugin_setting_epayments_description' name='egr_webapps_plugin_options[epayments_description]'>".esc_attr(isset($options['epayments_description']) ? $options['epayments_description'] : '')."</textarea>";
 }
 
-function egr_plugin_setting_epaymets_debits_tab_info() {
+function egr_plugin_setting_epayments_debits_tab_info() {
     $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<textarea id='egr_plugin_setting_epaymets_debits_tab_info' name='egr_webapps_plugin_options[epaymets_debits_tab_info]'>".esc_attr(isset($options['epaymets_debits_tab_info']) ? $options['epaymets_debits_tab_info'] : '')."</textarea>";
+    echo "<textarea id='egr_plugin_setting_epayments_debits_tab_info' name='egr_webapps_plugin_options[epayments_debits_tab_info]'>".esc_attr(isset($options['epayments_debits_tab_info']) ? $options['epayments_debits_tab_info'] : '')."</textarea>";
 }
 
-function egr_plugin_setting_epaymets_receipts_tab_info() {
+function egr_plugin_setting_epayments_receipts_tab_info() {
     $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<textarea id='egr_plugin_setting_epaymets_receipts_tab_info' name='egr_webapps_plugin_options[epaymets_receipts_tab_info]'>".esc_attr(isset($options['epaymets_receipts_tab_info']) ? $options['epaymets_receipts_tab_info'] : '')."</textarea>";
+    echo "<textarea id='egr_plugin_setting_epayments_receipts_tab_info' name='egr_webapps_plugin_options[epayments_receipts_tab_info]'>".esc_attr(isset($options['epayments_receipts_tab_info']) ? $options['epayments_receipts_tab_info'] : '')."</textarea>";
 }
 
 function egr_plugin_setting_epayments_tab_info() {
