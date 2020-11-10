@@ -1,7 +1,6 @@
 var AuthConfOptions = {
 	stsServer: "http://auth.dev.egritosgroup.gr",
 	redirect_url: "http://localhost:4200/redirect-auth",
-	application_url: "http://localhost:4200",
 	app_base_href: "/",
 	// The Client MUST validate that the aud (audience) Claim contains its client_id value registered at the Issuer identified by the iss (issuer) Claim as an audience.
 	// The ID Token MUST be rejected if the ID Token does not list the Client as a valid audience, or if it contains additional audiences not trusted by the Client.
@@ -33,6 +32,7 @@ var AuthConfOptions = {
 };
 
 var AppConfOptions = {
+	application_url: "http://localhost:4200",
 	organization_name: "του Δήμου Τρικκαίων",
 	unauthorized_allowed: true,
 	oroi_xrisis_link: "#",
