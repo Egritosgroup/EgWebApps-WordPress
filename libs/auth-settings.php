@@ -60,6 +60,7 @@ function setAuthSettings($options, $pluginFolderName) {
     return json_encode($settingsArray);
 }
 
+
 function setAppsSettings($options, $pluginFolderName) {
     
     $settingsArray = array(
