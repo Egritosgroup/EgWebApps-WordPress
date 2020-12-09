@@ -35,7 +35,7 @@ var AppConfOptions = {
 	application_url: "http://localhost:4200",
 	organization_name: "του Δήμου Τρικκαίων",
 	unauthorized_allowed: true,
-	oroi_xrisis_link: "#",
+	oroi_xrisis_link: "",
 	home_page_text: '<p>Σχόλια που αφορούν τις βεβαιωμένες οφειλές.</p><p>Σχόλια που αφορούν τις αποδείξεις των βεβαιωμένων οφειλών.</p>',
 
 	is_benefits_enabled: true,
