@@ -11,6 +11,7 @@
 global $egwebapps_version;
 $egwebapps_version = '2.2.10805';
 
+
 $GLOBALS['pluginFolderName'] = explode('/', trailingslashit(dirname(plugin_basename( __FILE__ ))));
 define('EGR__PLUGIN_DIR', plugin_dir_path( __FILE__ ));
 
