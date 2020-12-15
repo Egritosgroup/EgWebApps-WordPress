@@ -287,6 +287,11 @@ function egr_plugin_setting_kliseis_debits_tab_info() {
     echo "<textarea id='egr_plugin_setting_kliseis_debits_tab_info' name='egr_webapps_plugin_options[kliseis_debits_tab_info]'>".esc_attr(isset($options['kliseis_debits_tab_info']) ? $options['kliseis_debits_tab_info'] : '')."</textarea>";
 }
 
+function egr_plugin_setting_kliseis_receipts_tab_info() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<textarea id='egr_plugin_setting_kliseis_receipts_tab_info' name='egr_webapps_plugin_options[kliseis_receipts_tab_info]'>".esc_attr(isset($options['kliseis_receipts_tab_info']) ? $options['kliseis_receipts_tab_info'] : '')."</textarea>";
+}
+
 //END
 
 //EIDOPOIITIRIA
