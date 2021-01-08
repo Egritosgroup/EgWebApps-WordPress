@@ -3,13 +3,71 @@
 }
 add_action( 'admin_menu', 'egr_add_settings_page' );
 
-function egr_render_plugin_settings_page() { ?>
+function egr_render_plugin_settings_page() {
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css" integrity="sha512-PIAUVU8u1vAd0Sz1sS1bFE5F1YjGqm/scQJ+VIUJL9kNa8jtAWFUDMu5vynXPDprRRBqHrE8KKEsjA7z22J1FA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css" integrity="sha512-BX/R0uUd8EXbPa29QfrCsxg5xPZR+JfM0k6K6zFiygTje1CXfxHclrUKJblO4lJeorJTmGJ4jjj0NjbQtbTRkg==" crossorigin="anonymous" />
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="<?= site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/admin/js') ?>/editor.js"></script>
+
     <h2 class="page-title">Ρυθμίσεις Ηλεκτρονικών Εφαρμογών</h2>
     <form action="options.php" method="post">
         <?php settings_fields('egr_webapps_plugin_options');
         do_settings_sections('egr_example_plugin'); ?>
-        <input name="submit" class="button button-primary" type="submit" value="<?php esc_attr_e( 'Save' ); ?>" />
+        <input name="submit" class="submit-button button button-primary" type="submit" value="<?php esc_attr_e( 'Save' ); ?>" />
     </form>
+
+    <script>
+        $(document).ready(function() {
+            var editorsArray = [];
+
+            var editors = $('.editor');
+
+            editors.each(function() {
+                var editor = $('#'+$(this).attr('id')).Editor({
+                    'fonts' : false,
+                    'styles' : false,
+                    'font_size' : false,
+                    'print' : false,
+                    'togglescreen' : false,
+                    'undo' : false,
+                    'redo' : false,
+                    'aligneffects' : false,
+                    'insert_image' : false,
+                    'insert_table' : false,
+                    'hr_line' : false,
+                    'select_all' : false,
+                    'splchars' : false,
+                    'source' : false,
+                    'l_align' : false,
+                    'r_align' : false,
+                    'c_align' : false,
+                    'justify' : false,
+                    'color' : false,
+                    'insert_img' : false
+                });
+
+                editorsArray.push($(this).attr('id'));
+
+                var editorId = $(this).attr('id');
+                var inputId = $(this).attr('id').split('_editor')[0];
+
+                $('.'+ editorId +' .Editor-editor').html($('input#'+ inputId).val());
+            });
+
+            $('.submit-button').on('click', function(e) {
+                for(var index = 0; index < editorsArray.length; index++) {
+                    var item = editorsArray[index];
+                    var editorId = item;
+                    var inputId = item.split('_editor')[0];
+
+                    $('input#'+ inputId).val($('.'+ editorId +' .Editor-editor').html());
+                }
+            });
+        });
+    </script>
     <?php
 }
 
@@ -176,14 +234,22 @@ function egr_plugin_setting_benefits_tab_title() {
 }
 
 function egr_plugin_setting_benefits_description() {
-    $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<textarea id='egr_plugin_setting_benefits_description' name='egr_webapps_plugin_options[benefits_description]'>".esc_attr(isset($options['benefits_description']) ? $options['benefits_description'] : '')."</textarea>";
-}
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+
+    <div class="editor-wrapper egr_plugin_setting_benefits_description_editor">
+        <?php echo "<input type='hidden' id='egr_plugin_setting_benefits_description' name='egr_webapps_plugin_options[benefits_description]' value='".esc_attr(isset($options['benefits_description']) ? $options['benefits_description'] : '')."' />"; ?>
+        <div id="egr_plugin_setting_benefits_description_editor" class="editor"></div>
+    </div>
+<?php }
 
 function egr_plugin_setting_benefits_tab_info() {
-    $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<textarea id='egr_plugin_setting_benefits_tab_info' name='egr_webapps_plugin_options[benefits_tab_info]'>".esc_attr(isset($options['benefits_tab_info']) ? $options['benefits_tab_info'] : '')."</textarea>";
-}
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+
+    <div class="editor-wrapper egr_plugin_setting_benefits_tab_info_editor">
+        <?php echo "<input type='hidden' id='egr_plugin_setting_benefits_tab_info' name='egr_webapps_plugin_options[benefits_tab_info]' value='".esc_attr(isset($options['benefits_tab_info']) ? $options['benefits_tab_info'] : '')."' />"; ?>
+        <div id="egr_plugin_setting_benefits_tab_info_editor" class="editor"></div>
+    </div>
+<?php }
 
 function egr_plugin_setting_app_help_page() {
     $options = get_option( 'egr_webapps_plugin_options' );
@@ -205,14 +271,22 @@ function egr_plugin_setting_carpooling_api() {
 }
 
 function egr_plugin_setting_carpooling_description() {
-    $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<textarea id='egr_plugin_setting_carpooling_description' name='egr_webapps_plugin_options[carpooling_description]'>".esc_attr(isset($options['carpooling_description']) ? $options['carpooling_description'] : '')."</textarea>";
-}
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+
+    <div class="editor-wrapper egr_plugin_setting_carpooling_description_editor">
+        <?php echo "<input type='hidden' id='egr_plugin_setting_carpooling_description' name='egr_webapps_plugin_options[carpooling_description]' value='".esc_attr(isset($options['carpooling_description']) ? $options['carpooling_description'] : '')."' />"; ?>
+        <div id="egr_plugin_setting_carpooling_description_editor" class="editor"></div>
+    </div>
+<?php }
 
 function egr_plugin_setting_carpooling_tab_info() {
-    $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<textarea id='egr_plugin_setting_carpooling_tab_info' name='egr_webapps_plugin_options[carpooling_tab_info]'>".esc_attr(isset($options['carpooling_tab_info']) ? $options['carpooling_tab_info'] : '')."</textarea>";
-}
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+
+    <div class="editor-wrapper egr_plugin_setting_carpooling_tab_info_editor">
+        <?php echo "<input type='hidden' id='egr_plugin_setting_carpooling_tab_info' name='egr_webapps_plugin_options[carpooling_tab_info]' value='".esc_attr(isset($options['carpooling_tab_info']) ? $options['carpooling_tab_info'] : '')."' />"; ?>
+        <div id="egr_plugin_setting_carpooling_tab_info_editor" class="editor"></div>
+    </div>
+<?php }
 
 function egr_plugin_setting_google_maps_key() {
     $options = get_option( 'egr_webapps_plugin_options' );
@@ -234,24 +308,40 @@ function egr_plugin_setting_epayments_api() {
 }
 
 function egr_plugin_setting_epayments_description() {
-    $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<textarea id='egr_plugin_setting_epayments_description' name='egr_webapps_plugin_options[epayments_description]'>".esc_attr(isset($options['epayments_description']) ? $options['epayments_description'] : '')."</textarea>";
-}
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+
+    <div class="editor-wrapper egr_plugin_setting_epayments_description_editor">
+        <?php echo "<input type='hidden' id='egr_plugin_setting_epayments_description' name='egr_webapps_plugin_options[epayments_description]' value='".esc_attr(isset($options['epayments_description']) ? $options['epayments_description'] : '')."' />"; ?>
+        <div id="egr_plugin_setting_epayments_description_editor" class="editor"></div>
+    </div>
+<?php }
 
 function egr_plugin_setting_epayments_debits_tab_info() {
-    $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<textarea id='egr_plugin_setting_epayments_debits_tab_info' name='egr_webapps_plugin_options[epayments_debits_tab_info]'>".esc_attr(isset($options['epayments_debits_tab_info']) ? $options['epayments_debits_tab_info'] : '')."</textarea>";
-}
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+
+    <div class="editor-wrapper egr_plugin_setting_epayments_debits_tab_info_editor">
+        <?php echo "<input type='hidden' id='egr_plugin_setting_epayments_debits_tab_info' name='egr_webapps_plugin_options[epayments_debits_tab_info]' value='".esc_attr(isset($options['epayments_debits_tab_info']) ? $options['epayments_debits_tab_info'] : '')."' />"; ?>
+        <div id="egr_plugin_setting_epayments_debits_tab_info_editor" class="editor"></div>
+    </div>
+<?php }
 
 function egr_plugin_setting_epayments_receipts_tab_info() {
-    $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<textarea id='egr_plugin_setting_epayments_receipts_tab_info' name='egr_webapps_plugin_options[epayments_receipts_tab_info]'>".esc_attr(isset($options['epayments_receipts_tab_info']) ? $options['epayments_receipts_tab_info'] : '')."</textarea>";
-}
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+
+    <div class="editor-wrapper egr_plugin_setting_epayments_receipts_tab_info_editor">
+        <?php echo "<input type='hidden' id='egr_plugin_setting_epayments_receipts_tab_info' name='egr_webapps_plugin_options[epayments_receipts_tab_info]' value='".esc_attr(isset($options['epayments_receipts_tab_info']) ? $options['epayments_receipts_tab_info'] : '')."' />"; ?>
+        <div id="egr_plugin_setting_epayments_receipts_tab_info_editor" class="editor"></div>
+    </div>
+<?php }
 
 function egr_plugin_setting_epayments_tab_info() {
-    $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<textarea id='egr_plugin_setting_epayments_tab_info' name='egr_webapps_plugin_options[epayments_tab_info]'>".esc_attr(isset($options['epayments_tab_info']) ? $options['epayments_tab_info'] : '')."</textarea>";
-}
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+
+    <div class="editor-wrapper egr_plugin_setting_epayments_tab_info_editor">
+        <?php echo "<input type='hidden' id='egr_plugin_setting_epayments_tab_info' name='egr_webapps_plugin_options[epayments_tab_info]' value='".esc_attr(isset($options['epayments_tab_info']) ? $options['epayments_tab_info'] : '')."' />"; ?>
+        <div id="egr_plugin_setting_epayments_tab_info_editor" class="editor"></div>
+    </div>
+<?php }
 
 function egr_plugin_setting_show_non_persisted_debits() {
     $options = get_option( 'egr_webapps_plugin_options' );
@@ -273,24 +363,40 @@ function egr_plugin_setting_kliseis_api() {
 }
 
 function egr_plugin_setting_kliseis_description() {
-    $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<textarea id='egr_plugin_setting_kliseis_description' name='egr_webapps_plugin_options[kliseis_description]'>".esc_attr(isset($options['kliseis_description']) ? $options['kliseis_description'] : '')."</textarea>";
-}
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+
+    <div class="editor-wrapper egr_plugin_setting_kliseis_description_editor">
+        <?php echo "<input type='hidden' id='egr_plugin_setting_kliseis_description' name='egr_webapps_plugin_options[kliseis_description]' value='".esc_attr(isset($options['kliseis_description']) ? $options['kliseis_description'] : '')."' />"; ?>
+        <div id="egr_plugin_setting_kliseis_description_editor" class="editor"></div>
+    </div>
+<?php }
 
 function egr_plugin_setting_kliseis_tab_info() {
-    $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<textarea id='egr_plugin_setting_kliseis_tab_info' name='egr_webapps_plugin_options[kliseis_tab_info]'>".esc_attr(isset($options['kliseis_tab_info']) ? $options['kliseis_tab_info'] : '')."</textarea>";
-}
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+
+    <div class="editor-wrapper egr_plugin_setting_kliseis_tab_info_editor">
+        <?php echo "<input type='hidden' id='egr_plugin_setting_kliseis_tab_info' name='egr_webapps_plugin_options[kliseis_tab_info]' value='".esc_attr(isset($options['kliseis_tab_info']) ? $options['kliseis_tab_info'] : '')."' />"; ?>
+        <div id="egr_plugin_setting_kliseis_tab_info_editor" class="editor"></div>
+    </div>
+<?php }
 
 function egr_plugin_setting_kliseis_debits_tab_info() {
-    $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<textarea id='egr_plugin_setting_kliseis_debits_tab_info' name='egr_webapps_plugin_options[kliseis_debits_tab_info]'>".esc_attr(isset($options['kliseis_debits_tab_info']) ? $options['kliseis_debits_tab_info'] : '')."</textarea>";
-}
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+
+    <div class="editor-wrapper egr_plugin_setting_kliseis_debits_tab_info_editor">
+        <?php echo "<input type='hidden' id='egr_plugin_setting_kliseis_debits_tab_info' name='egr_webapps_plugin_options[kliseis_debits_tab_info]' value='".esc_attr(isset($options['kliseis_debits_tab_info']) ? $options['kliseis_debits_tab_info'] : '')."' />"; ?>
+        <div id="egr_plugin_setting_kliseis_debits_tab_info_editor" class="editor"></div>
+    </div>
+<?php }
 
 function egr_plugin_setting_kliseis_receipts_tab_info() {
-    $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<textarea id='egr_plugin_setting_kliseis_receipts_tab_info' name='egr_webapps_plugin_options[kliseis_receipts_tab_info]'>".esc_attr(isset($options['kliseis_receipts_tab_info']) ? $options['kliseis_receipts_tab_info'] : '')."</textarea>";
-}
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+
+    <div class="editor-wrapper egr_plugin_setting_kliseis_receipts_tab_info_editor">
+        <?php echo "<input type='hidden' id='egr_plugin_setting_kliseis_receipts_tab_info' name='egr_webapps_plugin_options[kliseis_receipts_tab_info]' value='".esc_attr(isset($options['kliseis_receipts_tab_info']) ? $options['kliseis_receipts_tab_info'] : '')."' />"; ?>
+        <div id="egr_plugin_setting_kliseis_receipts_tab_info_editor" class="editor"></div>
+    </div>
+<?php }
 
 //END
 
@@ -307,14 +413,22 @@ function egr_plugin_setting_eidopoiitiria_api() {
 }
 
 function egr_plugin_setting_eidopoiitiria_description() {
-    $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<textarea id='egr_plugin_setting_eidopoiitiria_description' name='egr_webapps_plugin_options[eidopoiitiria_description]'>".esc_attr(isset($options['eidopoiitiria_description']) ? $options['eidopoiitiria_description'] : '')."</textarea>";
-}
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+
+    <div class="editor-wrapper egr_plugin_setting_eidopoiitiria_description_editor">
+        <?php echo "<input type='hidden' id='egr_plugin_setting_eidopoiitiria_description' name='egr_webapps_plugin_options[eidopoiitiria_description]' value='".esc_attr(isset($options['eidopoiitiria_description']) ? $options['eidopoiitiria_description'] : '')."' />"; ?>
+        <div id="egr_plugin_setting_eidopoiitiria_description_editor" class="editor"></div>
+    </div>
+<?php }
 
 function egr_plugin_setting_eidopoiitiria_tab_info() {
-    $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<textarea id='egr_plugin_setting_eidopoiitiria_tab_info' name='egr_webapps_plugin_options[eidopoiitiria_tab_info]'>".esc_attr(isset($options['eidopoiitiria_tab_info']) ? $options['eidopoiitiria_tab_info'] : '')."</textarea>";
-}
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+
+    <div class="editor-wrapper egr_plugin_setting_eidopoiitiria_tab_info_editor">
+        <?php echo "<input type='hidden' id='egr_plugin_setting_eidopoiitiria_tab_info' name='egr_webapps_plugin_options[eidopoiitiria_tab_info]' value='".esc_attr(isset($options['eidopoiitiria_tab_info']) ? $options['eidopoiitiria_tab_info'] : '')."' />"; ?>
+        <div id="egr_plugin_setting_eidopoiitiria_tab_info_editor" class="editor"></div>
+    </div>
+<?php }
 
 //END
 
@@ -331,14 +445,22 @@ function egr_plugin_setting_katastimata_api() {
 }
 
 function egr_plugin_setting_katastimata_description() {
-    $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<textarea id='egr_plugin_setting_katastimata_description' name='egr_webapps_plugin_options[katastimata_description]'>".esc_attr(isset($options['katastimata_description']) ? $options['katastimata_description'] : '')."</textarea>";
-}
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+
+    <div class="editor-wrapper egr_plugin_setting_katastimata_description_editor">
+        <?php echo "<input type='hidden' id='egr_plugin_setting_katastimata_description' name='egr_webapps_plugin_options[katastimata_description]' value='".esc_attr(isset($options['katastimata_description']) ? $options['katastimata_description'] : '')."' />"; ?>
+        <div id="egr_plugin_setting_katastimata_description_editor" class="editor"></div>
+    </div>
+<?php }
 
 function egr_plugin_setting_katastimata_tab_info() {
-    $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<textarea id='egr_plugin_setting_katastimata_tab_info' name='egr_webapps_plugin_options[katastimata_tab_info]'>".esc_attr(isset($options['katastimata_tab_info']) ? $options['katastimata_tab_info'] : '')."</textarea>";
-}
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+
+    <div class="editor-wrapper egr_plugin_setting_katastimata_tab_info_editor">
+        <?php echo "<input type='hidden' id='egr_plugin_setting_katastimata_tab_info' name='egr_webapps_plugin_options[katastimata_tab_info]' value='".esc_attr(isset($options['katastimata_tab_info']) ? $options['katastimata_tab_info'] : '')."' />"; ?>
+        <div id="egr_plugin_setting_katastimata_tab_info_editor" class="editor"></div>
+    </div>
+<?php }
 
 //END
 
@@ -350,14 +472,22 @@ function egr_plugin_setting_isdiakanonismoi() {
 }
 
 function egr_plugin_setting_diakanonismoi_description() {
-    $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<textarea id='egr_plugin_setting_diakanonismoi_description' name='egr_webapps_plugin_options[diakanonismoi_description]'>".esc_attr(isset($options['diakanonismoi_description']) ? $options['diakanonismoi_description'] : '')."</textarea>";
-}
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+
+    <div class="editor-wrapper egr_plugin_setting_diakanonismoi_description_editor">
+        <?php echo "<input type='hidden' id='egr_plugin_setting_diakanonismoi_description' name='egr_webapps_plugin_options[diakanonismoi_description]' value='".esc_attr(isset($options['diakanonismoi_description']) ? $options['diakanonismoi_description'] : '')."' />"; ?>
+        <div id="egr_plugin_setting_diakanonismoi_description_editor" class="editor"></div>
+    </div>
+<?php }
 
 function egr_plugin_setting_diakanonismoi_tab_info() {
-    $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<textarea id='egr_plugin_setting_diakanonismoi_tab_info' name='egr_webapps_plugin_options[diakanonismoi_tab_info]'>".esc_attr(isset($options['diakanonismoi_tab_info']) ? $options['diakanonismoi_tab_info'] : '')."</textarea>";
-}
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+
+    <div class="editor-wrapper egr_plugin_setting_diakanonismoi_tab_info_editor">
+        <?php echo "<input type='hidden' id='egr_plugin_setting_diakanonismoi_tab_info' name='egr_webapps_plugin_options[diakanonismoi_tab_info]' value='".esc_attr(isset($options['diakanonismoi_tab_info']) ? $options['diakanonismoi_tab_info'] : '')."' />"; ?>
+        <div id="egr_plugin_setting_diakanonismoi_tab_info_editor" class="editor"></div>
+    </div>
+<?php }
 
 //SHDE
 
@@ -372,14 +502,22 @@ function egr_plugin_setting_shde_api() {
 }
 
 function egr_plugin_setting_shde_description() {
-    $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<textarea id='egr_plugin_setting_shde_description' name='egr_webapps_plugin_options[shde_description]'>".esc_attr(isset($options['shde_description']) ? $options['shde_description'] : '')."</textarea>";
-}
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+
+    <div class="editor-wrapper egr_plugin_setting_shde_description_editor">
+        <?php echo "<input type='hidden' id='egr_plugin_setting_shde_description' name='egr_webapps_plugin_options[shde_description]' value='".esc_attr(isset($options['shde_description']) ? $options['shde_description'] : '')."' />"; ?>
+        <div id="egr_plugin_setting_shde_description_editor" class="editor"></div>
+    </div>
+<?php }
 
 function egr_plugin_setting_shde_tab_info() {
-    $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<textarea id='egr_plugin_setting_shde_tab_info' name='egr_webapps_plugin_options[shde_tab_info]'>".esc_attr(isset($options['shde_tab_info']) ? $options['shde_tab_info'] : '')."</textarea>";
-}
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+
+    <div class="editor-wrapper egr_plugin_setting_shde_tab_info_editor">
+        <?php echo "<input type='hidden' id='egr_plugin_setting_shde_tab_info' name='egr_webapps_plugin_options[shde_tab_info]' value='".esc_attr(isset($options['shde_tab_info']) ? $options['shde_tab_info'] : '')."' />"; ?>
+        <div id="egr_plugin_setting_shde_tab_info_editor" class="editor"></div>
+    </div>
+<?php }
 
 //RANTEVOU
 
@@ -394,14 +532,22 @@ function egr_plugin_setting_rantevou_api() {
 }
 
 function egr_plugin_setting_rantevou_description() {
-    $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<textarea id='egr_plugin_setting_rantevou_description' name='egr_webapps_plugin_options[rantevou_description]'>".esc_attr(isset($options['rantevou_description']) ? $options['rantevou_description'] : '')."</textarea>";
-}
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+
+    <div class="editor-wrapper egr_plugin_setting_rantevou_description_editor">
+        <?php echo "<input type='hidden' id='egr_plugin_setting_rantevou_description' name='egr_webapps_plugin_options[rantevou_description]' value='".esc_attr(isset($options['rantevou_description']) ? $options['rantevou_description'] : '')."' />"; ?>
+        <div id="egr_plugin_setting_rantevou_description_editor" class="editor"></div>
+    </div>
+<?php }
 
 function egr_plugin_setting_rantevou_tab_info() {
-    $options = get_option( 'egr_webapps_plugin_options' );
-    echo "<textarea id='egr_plugin_setting_rantevou_tab_info' name='egr_webapps_plugin_options[rantevou_tab_info]'>".esc_attr(isset($options['rantevou_tab_info']) ? $options['rantevou_tab_info'] : '')."</textarea>";
-}
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+
+    <div class="editor-wrapper egr_plugin_setting_rantevou_tab_info_editor">
+        <?php echo "<input type='hidden' id='egr_plugin_setting_rantevou_tab_info' name='egr_webapps_plugin_options[rantevou_tab_info]' value='".esc_attr(isset($options['rantevou_tab_info']) ? $options['rantevou_tab_info'] : '')."' />"; ?>
+        <div id="egr_plugin_setting_rantevou_tab_info_editor" class="editor"></div>
+    </div>
+<?php }
 
 //END 
 
