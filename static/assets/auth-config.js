@@ -92,5 +92,12 @@ var AppConfOptions = {
 	rantevou_api: "http://localhost:5337/",
 	rantevou_description: 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.',
 	rantevou_tab_info: 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.',
+
+	//PROSLIPSEIS
+	is_proslipseis_enabled: true,
+	proslipseis_api: "http://proslipseis.demo.egritosgroup.gr/",
+	proslipseis_description: 'Αιτήσεις Πολιτών προς το σύστημα προσλήψεων εποχιακού και μόνιμου προσωπικού του οργανισμού.',
+	proslipseis_tab_title: "Αιτήσεις Προσλήψεων",
+	proslipseis_tab_info: 'Αιτήσεις Πολιτών προς το σύστημα προσλήψεων εποχιακού και μόνιμου προσωπικού του οργανισμού.'
 };
 
