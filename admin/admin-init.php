@@ -3,6 +3,17 @@
 }
 add_action( 'admin_menu', 'egr_add_settings_page' );
 
+add_action('wp_ajax_nopriv_do_update_egwebapps_file', 'update_egwebapps_file');
+add_action('wp_ajax_do_update_egwebapps_file', 'update_egwebapps_file');
+
+function update_egwebapps_file() {
+    $newContent = $_REQUEST["egwebapps_file_content"];
+    $newContent = stripcslashes($newContent);
+    $file = explode('admin', plugin_dir_path(__FILE__))[0] . 'front\page-egwebapps.php';
+
+    echo file_put_contents($file, $newContent);
+}
+
 function egr_render_plugin_settings_page() {
     $options = get_option( 'egr_webapps_plugin_options' ); ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css" integrity="sha512-PIAUVU8u1vAd0Sz1sS1bFE5F1YjGqm/scQJ+VIUJL9kNa8jtAWFUDMu5vynXPDprRRBqHrE8KKEsjA7z22J1FA==" crossorigin="anonymous" />
@@ -22,6 +33,7 @@ function egr_render_plugin_settings_page() {
     <script>
         $(document).ready(function() {
             var editorsArray = [];
+            var baseUrl = location.protocol + '//' + window.location.host + '/';
 
             var editors = $('.editor');
 
@@ -64,6 +76,24 @@ function egr_render_plugin_settings_page() {
                     var inputId = item.split('_editor')[0];
 
                     $('input#'+ inputId).val($('.'+ editorId +' .Editor-editor').html());
+                }
+
+                if($('#egr_plugin_setting_extra_change_egwebapps').val() != '') {
+                    var newVal = $('#egr_plugin_setting_extra_change_egwebapps').val();
+                    
+                    $.post(baseUrl + "wp-admin/admin-ajax.php",
+                    {
+                        "action": "do_update_egwebapps_file",
+                        "fn": "update_egwebapps_file",
+                        "egwebapps_file_content" : newVal,
+                        cache: false,
+                        async: false
+                    },
+                    function(data) {
+                        if (!$.trim(data) || data == undefined) {
+                            return;
+                        }
+                    });
                 }
             });
         });
@@ -155,6 +185,14 @@ function egr_register_settings() {
     add_settings_field( 'egr_plugin_setting_rantevou_api', 'Api Ηλεκτρονικών Ραντεβού (rantevou_api)', 'egr_plugin_setting_rantevou_api', 'egr_example_plugin', 'rantevou_settings' );
     add_settings_field( 'egr_plugin_setting_rantevou_description', 'Περιγραφή (rantevou_description)', 'egr_plugin_setting_rantevou_description', 'egr_example_plugin', 'rantevou_settings' );
     add_settings_field( 'egr_plugin_setting_rantevou_tab_info', 'Γενικές Οδηγίες (rantevou_tab_info)', 'egr_plugin_setting_rantevou_tab_info', 'egr_example_plugin', 'rantevou_settings' );
+    
+    add_settings_section( 'proslipseis_settings', '<div>Ρυθμίσεις Προσλήψεων</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
+    
+    add_settings_field( 'egr_plugin_setting_isproslipseis', 'Προσλήψεις (is_proslipseis_enabled)', 'egr_plugin_setting_isproslipseis', 'egr_example_plugin', 'proslipseis_settings' );
+    add_settings_field( 'egr_plugin_setting_proslipseis_api', 'Api Προσλήψεων (proslipseis_api)', 'egr_plugin_setting_proslipseis_api', 'egr_example_plugin', 'proslipseis_settings' );
+    add_settings_field( 'egr_plugin_setting_proslipseis_description', 'Περιγραφή (proslipseis_description)', 'egr_plugin_setting_proslipseis_description', 'egr_example_plugin', 'proslipseis_settings' );
+    add_settings_field( 'egr_plugin_setting_proslipseis_tab_title', 'Τίτλος Καρτέλας Μενού (proslipseis_tab_title)', 'egr_plugin_setting_proslipseis_tab_title', 'egr_example_plugin', 'proslipseis_settings' );
+    add_settings_field( 'egr_plugin_setting_proslipseis_tab_info', 'Γενικές Οδηγίες (proslipseis_tab_info)', 'egr_plugin_setting_proslipseis_tab_info', 'egr_example_plugin', 'proslipseis_settings' );
 
     add_settings_section( 'extra_plugin_options', 'Έξτρα Ρυθμίσεις Plugin', 'egr_plugin_section_text', 'egr_example_plugin' );
 	
@@ -162,8 +200,7 @@ function egr_register_settings() {
     add_settings_field( 'egr_plugin_setting_jquery_check', 'Ενεργοποίηση JQuery', 'egr_plugin_setting_jquery_check', 'egr_example_plugin', 'extra_plugin_options' );
     add_settings_field( 'egr_plugin_setting_extra_css', 'Έξτρα Κανόνες CSS', 'egr_plugin_setting_extra_css', 'egr_example_plugin', 'extra_plugin_options' );
     add_settings_field( 'egr_plugin_setting_extra_css_path', 'Path υπάρχοντος CSS αρχείου', 'egr_plugin_setting_extra_css_path', 'egr_example_plugin', 'extra_plugin_options' );
-	add_settings_field( 'egr_plugin_setting_extra_html_header', 'HTML κάτω απο το header', 'egr_plugin_setting_extra_html_header', 'egr_example_plugin', 'extra_plugin_options' );
-	add_settings_field( 'egr_plugin_setting_extra_html_footer', 'HTML πάνω απο το footer', 'egr_plugin_setting_extra_html_footer', 'egr_example_plugin', 'extra_plugin_options' );
+	add_settings_field( 'egr_plugin_setting_extra_change_egwebapps', 'Αλλαγή αρχείου egwebapps', 'egr_plugin_setting_extra_change_egwebapps', 'egr_example_plugin', 'extra_plugin_options' );
 }
 add_action( 'admin_init', 'egr_register_settings' ); 
 
@@ -551,6 +588,43 @@ function egr_plugin_setting_rantevou_tab_info() {
 
 //END 
 
+//PROSLIPSEIS
+
+function egr_plugin_setting_isproslipseis() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_isproslipseis' name='egr_webapps_plugin_options[isproslipseis]' type='checkbox' ".esc_attr(isset($options['isproslipseis']) ? 'checked=checked' : '')." />";
+}
+
+function egr_plugin_setting_proslipseis_api() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_proslipseis_api' name='egr_webapps_plugin_options[proslipseis_api]' type='text' value='".esc_attr(isset($options['proslipseis_api']) ? $options['proslipseis_api'] : '')."' />";
+}
+
+function egr_plugin_setting_proslipseis_description() {
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+
+    <div class="editor-wrapper egr_plugin_setting_proslipseis_description_editor">
+        <?php echo "<input type='hidden' id='egr_plugin_setting_proslipseis_description' name='egr_webapps_plugin_options[proslipseis_description]' value='".esc_attr(isset($options['proslipseis_description']) ? $options['proslipseis_description'] : '')."' />"; ?>
+        <div id="egr_plugin_setting_proslipseis_description_editor" class="editor"></div>
+    </div>
+<?php }
+
+function egr_plugin_setting_proslipseis_tab_title() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_proslipseis_tab_title' name='egr_webapps_plugin_options[proslipseis_tab_title]' type='text' value='".esc_attr(isset($options['proslipseis_tab_title']) ? $options['proslipseis_tab_title'] : '')."' />";
+}
+
+function egr_plugin_setting_proslipseis_tab_info() {
+    $options = get_option( 'egr_webapps_plugin_options' ); ?>
+
+    <div class="editor-wrapper egr_plugin_setting_proslipseis_tab_info_editor">
+        <?php echo "<input type='hidden' id='egr_plugin_setting_proslipseis_tab_info' name='egr_webapps_plugin_options[proslipseis_tab_info]' value='".esc_attr(isset($options['proslipseis_tab_info']) ? $options['proslipseis_tab_info'] : '')."' />"; ?>
+        <div id="egr_plugin_setting_proslipseis_tab_info_editor" class="editor"></div>
+    </div>
+<?php }
+
+//END 
+
 function egr_plugin_setting_shortcode() {
     $options = get_option( 'egr_webapps_plugin_options' );
     echo "<input id='egr_plugin_setting_shortcode' name='egr_webapps_plugin_options[shortcode]' type='checkbox' ".esc_attr(isset($options['shortcode']) ? 'checked=checked' : '')." />";
@@ -579,4 +653,14 @@ function egr_plugin_setting_extra_html_header() {
 function egr_plugin_setting_extra_html_footer() {
     $options = get_option( 'egr_webapps_plugin_options' );
     echo "<textarea id='egr_plugin_setting_extra_html_footer' name='egr_webapps_plugin_options[html_footer]'>".esc_attr(isset($options['html_footer']) ? $options['html_footer'] : '')."</textarea>";
-} ?>
+} 
+
+function egr_plugin_setting_extra_change_egwebapps() {
+    $options = get_option( 'egr_webapps_plugin_options' ); 
+
+    $file = explode('admin', plugin_dir_path(__FILE__))[0] . 'front\page-egwebapps.php';
+    $orig = file_get_contents($file);
+    $file_contents = htmlentities($orig);
+
+    echo "<textarea id='egr_plugin_setting_extra_change_egwebapps' name='egr_webapps_plugin_options[change_egwebapps]'>".esc_attr(isset($file_contents) ? $file_contents : '')."</textarea>"; ?>
+<?php } ?>

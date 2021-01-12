@@ -111,7 +111,12 @@ function setAppsSettings($options, $pluginFolderName) {
         'is_rantevou_app_enabled' => isset($options['israntevou']) && $options['israntevou'] == 'on' ? true : false,
         'rantevou_api' => $options['rantevou_api'] ? $options['rantevou_api'] : '',
         'rantevou_description' => $options['rantevou_description'] ? htmlspecialchars($options['rantevou_description']) : 'Ηλεκτρονικά Ραντεβού Πολιτών',
-        'rantevou_tab_info' => $options['rantevou_tab_info'] ? htmlspecialchars($options['rantevou_tab_info']) : ''
+        'rantevou_tab_info' => $options['rantevou_tab_info'] ? htmlspecialchars($options['rantevou_tab_info']) : '',
+        'is_proslipseis_enabled' => isset($options['isproslipseis']) && $options['isproslipseis'] == 'on' ? true : false,
+        'proslipseis_api' => $options['proslipseis_api'] ? $options['proslipseis_api'] : '',
+        'proslipseis_description' => $options['proslipseis_description'] ? htmlspecialchars($options['proslipseis_description']) : 'Αιτήσεις Πολιτών προς το σύστημα προσλήψεων εποχιακού και μόνιμου προσωπικού του οργανισμού.',
+        'proslipseis_tab_title' => $options['proslipseis_tab_title'] ? htmlspecialchars($options['proslipseis_tab_title']) : '',
+        'proslipseis_tab_info' => $options['proslipseis_tab_info'] ? htmlspecialchars($options['proslipseis_tab_info']) : ''
     );
 
     return json_encode($settingsArray);
