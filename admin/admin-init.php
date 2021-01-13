@@ -10,8 +10,16 @@ function update_egwebapps_file() {
     $newContent = $_REQUEST["egwebapps_file_content"];
     $newContent = stripcslashes($newContent);
     $file = explode('admin', plugin_dir_path(__FILE__))[0] . 'front\page-egwebapps.php';
+    
+    if(isset($newContent) && strlen($newContent) > 0) {
+        echo file_put_contents($file, $newContent);
+    } else {
+        $default_content = '<?php get_header(); ?>
+        <?php require_once("view-egwebapps.php"); ?>
+        <?php get_footer(); ?>';
 
-    echo file_put_contents($file, $newContent);
+        echo file_put_contents($file, $default_content);
+    }
 }
 
 function egr_render_plugin_settings_page() {
@@ -70,6 +78,7 @@ function egr_render_plugin_settings_page() {
             });
 
             $('.submit-button').on('click', function(e) {
+                e.preventDefault();
                 for(var index = 0; index < editorsArray.length; index++) {
                     var item = editorsArray[index];
                     var editorId = item;
@@ -78,7 +87,7 @@ function egr_render_plugin_settings_page() {
                     $('input#'+ inputId).val($('.'+ editorId +' .Editor-editor').html());
                 }
 
-                if($('#egr_plugin_setting_extra_change_egwebapps').val() != '') {
+                if($('#egr_plugin_setting_extra_change_egwebapps').length > 0) {
                     var newVal = $('#egr_plugin_setting_extra_change_egwebapps').val();
                     
                     $.post(baseUrl + "wp-admin/admin-ajax.php",
@@ -656,11 +665,7 @@ function egr_plugin_setting_extra_html_footer() {
 } 
 
 function egr_plugin_setting_extra_change_egwebapps() {
-    $options = get_option( 'egr_webapps_plugin_options' ); 
-
-    $file = explode('admin', plugin_dir_path(__FILE__))[0] . 'front\page-egwebapps.php';
-    $orig = file_get_contents($file);
-    $file_contents = htmlentities($orig);
-
-    echo "<textarea id='egr_plugin_setting_extra_change_egwebapps' name='egr_webapps_plugin_options[change_egwebapps]'>".esc_attr(isset($file_contents) ? $file_contents : '')."</textarea>"; ?>
-<?php } ?>
+    $options = get_option( 'egr_webapps_plugin_options' );     
+    echo "<textarea id='egr_plugin_setting_extra_change_egwebapps' name='egr_webapps_plugin_options[change_egwebapps]'>".esc_attr(isset($options['change_egwebapps']) ? $options['change_egwebapps'] : '')."</textarea>";
+    echo '</br><b>Για να επιστρέψει το αρχείο egwebapps.php στην default του κατάσταση αφήστε αυτό το πεδίο κενό.</b>';
+} ?>
