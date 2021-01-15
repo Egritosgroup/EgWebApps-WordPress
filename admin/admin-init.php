@@ -22,14 +22,19 @@ function update_egwebapps_file() {
     }
 }
 
+add_action('admin_enqueue_scripts','custom_scripts');
+
+function custom_scripts() {
+    wp_enqueue_script( 'jquery', plugins_url( '/js/jquery.min.js', __FILE__ ));
+    wp_enqueue_script( 'bootstrap', plugins_url( '/js/bootstrap.min.js', __FILE__ ));
+    wp_enqueue_script( 'editorjs', plugins_url( '/js/editor.js', __FILE__ ));
+    wp_enqueue_script( 'egwebapps-script-js', plugins_url( '/js/egwebapps-script.js', __FILE__ ));
+}
+
 function egr_render_plugin_settings_page() {
     $options = get_option( 'egr_webapps_plugin_options' ); ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css" integrity="sha512-PIAUVU8u1vAd0Sz1sS1bFE5F1YjGqm/scQJ+VIUJL9kNa8jtAWFUDMu5vynXPDprRRBqHrE8KKEsjA7z22J1FA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css" integrity="sha512-BX/R0uUd8EXbPa29QfrCsxg5xPZR+JfM0k6K6zFiygTje1CXfxHclrUKJblO4lJeorJTmGJ4jjj0NjbQtbTRkg==" crossorigin="anonymous" />
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="<?= site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/admin/js') ?>/editor.js"></script>
 
     <h2 class="page-title">Ρυθμίσεις Ηλεκτρονικών Εφαρμογών</h2>
     <form action="options.php" method="post">
@@ -37,76 +42,6 @@ function egr_render_plugin_settings_page() {
         do_settings_sections('egr_example_plugin'); ?>
         <input name="submit" class="submit-button button button-primary" type="submit" value="<?php esc_attr_e( 'Save' ); ?>" />
     </form>
-
-    <script>
-        $(document).ready(function() {
-            var editorsArray = [];
-            var baseUrl = location.protocol + '//' + window.location.host + '/';
-
-            var editors = $('.editor');
-
-            editors.each(function() {
-                var editor = $('#'+$(this).attr('id')).Editor({
-                    'fonts' : false,
-                    'styles' : false,
-                    'font_size' : false,
-                    'print' : false,
-                    'togglescreen' : false,
-                    'undo' : false,
-                    'redo' : false,
-                    'aligneffects' : false,
-                    'insert_image' : false,
-                    'insert_table' : false,
-                    'hr_line' : false,
-                    'select_all' : false,
-                    'splchars' : false,
-                    'source' : false,
-                    'l_align' : false,
-                    'r_align' : false,
-                    'c_align' : false,
-                    'justify' : false,
-                    'color' : false,
-                    'insert_img' : false
-                });
-
-                editorsArray.push($(this).attr('id'));
-
-                var editorId = $(this).attr('id');
-                var inputId = $(this).attr('id').split('_editor')[0];
-
-                $('.'+ editorId +' .Editor-editor').html($('input#'+ inputId).val());
-            });
-
-            $('.submit-button').on('click', function(e) {
-                e.preventDefault();
-                for(var index = 0; index < editorsArray.length; index++) {
-                    var item = editorsArray[index];
-                    var editorId = item;
-                    var inputId = item.split('_editor')[0];
-
-                    $('input#'+ inputId).val($('.'+ editorId +' .Editor-editor').html());
-                }
-
-                if($('#egr_plugin_setting_extra_change_egwebapps').length > 0) {
-                    var newVal = $('#egr_plugin_setting_extra_change_egwebapps').val();
-                    
-                    $.post(baseUrl + "wp-admin/admin-ajax.php",
-                    {
-                        "action": "do_update_egwebapps_file",
-                        "fn": "update_egwebapps_file",
-                        "egwebapps_file_content" : newVal,
-                        cache: false,
-                        async: false
-                    },
-                    function(data) {
-                        if (!$.trim(data) || data == undefined) {
-                            return;
-                        }
-                    });
-                }
-            });
-        });
-    </script>
     <?php
 }
 
