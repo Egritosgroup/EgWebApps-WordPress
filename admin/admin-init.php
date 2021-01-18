@@ -9,7 +9,7 @@ add_action('wp_ajax_do_update_egwebapps_file', 'update_egwebapps_file');
 function update_egwebapps_file() {
     $newContent = $_REQUEST["egwebapps_file_content"];
     $newContent = stripcslashes($newContent);
-    $file = explode('admin', plugin_dir_path(__FILE__))[0] . 'front\page-egwebapps.php';
+    $file = explode('admin', plugin_dir_path(__FILE__))[0] . 'front/page-egwebapps.php';
     
     if(isset($newContent) && strlen($newContent) > 0) {
         echo file_put_contents($file, $newContent);
