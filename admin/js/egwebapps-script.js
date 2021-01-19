@@ -64,3 +64,11 @@ jQuery(document).ready(function($) {
 		}
 	});
 });
+
+
+mybutton = document.getElementById("scrolltotop");
+
+function topFunction() {
+	document.body.scrollTop = 0;
+	document.documentElement.scrollTop = 0;
+}

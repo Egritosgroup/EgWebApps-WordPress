@@ -37,11 +37,31 @@ function egr_render_plugin_settings_page() {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css" integrity="sha512-BX/R0uUd8EXbPa29QfrCsxg5xPZR+JfM0k6K6zFiygTje1CXfxHclrUKJblO4lJeorJTmGJ4jjj0NjbQtbTRkg==" crossorigin="anonymous" />
 
     <h2 class="page-title">Ρυθμίσεις Ηλεκτρονικών Εφαρμογών</h2>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#domes">Δομές</a></li>
+                    <li><a href="#carpooling">Car Pooling</a></li>
+                    <li><a href="#epayments">Ηλεκτρονικές Πληρωμές</a></li>
+                    <li><a href="#kliseis">Κλήσεις</a></li>
+                    <li><a href="#eidopoiitiria">Ειδοποιητήρια</a></li>
+                    <li><a href="#dimotikosforos">Δημοτικός Φόρος</a></li>
+                    <li><a href="#diakanonismoi">Διακανονισμοί</a></li>
+                    <li><a href="#diakinisi">Διακίνηση Εγγράφων</a></li>
+                    <li><a href="#rantevou">Ηλεκτρονικά Ραντεβού</a></li>
+                    <li><a href="#proslipseis">Προσλήψεις</a></li>
+                    <li><a href="#extra-settings">Ρυθμίσεις Προσθέτου</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <form action="options.php" method="post">
         <?php settings_fields('egr_webapps_plugin_options');
         do_settings_sections('egr_example_plugin'); ?>
         <input name="submit" class="submit-button button button-primary" type="submit" value="<?php esc_attr_e( 'Save' ); ?>" />
     </form>
+    <button onclick="topFunction()" id="scrolltotop" title="Go to top"><i class="fa fa-angle-up fa-4x"></i></button>
     <?php
 }
 
@@ -60,7 +80,7 @@ function egr_register_settings() {
     add_settings_field( 'egr_plugin_setting_home_page_text', 'Κείμενο αρχικής σελίδας', 'egr_plugin_setting_home_page_text', 'egr_example_plugin', 'auth_settings' );
     add_settings_field( 'egr_plugin_setting_oroi_xrisis_link', 'Link Όρων Χρήσης', 'egr_plugin_setting_oroi_xrisis_link', 'egr_example_plugin', 'auth_settings' );
 
-    add_settings_section( 'domes_settings', '<div>Ρυθμίσεις Δομών</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
+    add_settings_section( 'domes_settings', '<div id="domes">Ρυθμίσεις Δομών</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
 
     add_settings_field( 'egr_plugin_setting_isdomes', 'Δομές (is_benefits_enabled)', 'egr_plugin_setting_isdomes', 'egr_example_plugin', 'domes_settings' );
     add_settings_field( 'egr_plugin_setting_domes_api', 'Δομές Api URL (benefits_api)', 'egr_plugin_setting_domes_api', 'egr_example_plugin', 'domes_settings' );
@@ -69,7 +89,7 @@ function egr_register_settings() {
     add_settings_field( 'egr_plugin_setting_benefits_tab_info', 'Οδηγίες (benefits_tab_info)', 'egr_plugin_setting_benefits_tab_info', 'egr_example_plugin', 'domes_settings' );
     add_settings_field( 'egr_plugin_setting_app_help_page', 'Σελίδα Οδηγιών (app_help_page)', 'egr_plugin_setting_app_help_page', 'egr_example_plugin', 'domes_settings' );
 
-    add_settings_section( 'carpooling_settings', '<div>Ρυθμίσεις CarPooling</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
+    add_settings_section( 'carpooling_settings', '<div id="carpooling">Ρυθμίσεις CarPooling</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
 
     add_settings_field( 'egr_plugin_setting_iscarpooling', 'Car Pooling (is_carpooling_enabled)', 'egr_plugin_setting_iscarpooling', 'egr_example_plugin', 'carpooling_settings' );
     add_settings_field( 'egr_plugin_setting_carpooling_api', 'Car Pooling Api URL (carpooling_api)', 'egr_plugin_setting_carpooling_api', 'egr_example_plugin', 'carpooling_settings' );
@@ -77,7 +97,7 @@ function egr_register_settings() {
     add_settings_field( 'egr_plugin_setting_carpooling_tab_info', 'Γενικές Οδηγίες (carpooling_tab_info)', 'egr_plugin_setting_carpooling_tab_info', 'egr_example_plugin', 'carpooling_settings' );
     add_settings_field( 'egr_plugin_setting_google_maps_key', 'Google Maps Key (google_maps_key)', 'egr_plugin_setting_google_maps_key', 'egr_example_plugin', 'carpooling_settings' );
 
-    add_settings_section( 'epayments_settings', '<div>Ρυθμίσεις Ηλεκτρονικών Πληρωμών</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
+    add_settings_section( 'epayments_settings', '<div id="epayments">Ρυθμίσεις Ηλεκτρονικών Πληρωμών</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
     
     add_settings_field( 'egr_plugin_setting_isepayments', 'Ηλεκτρονικές Πληρωμές (is_epayments_enabled)', 'egr_plugin_setting_isepayments', 'egr_example_plugin', 'epayments_settings' );
     add_settings_field( 'egr_plugin_setting_epayments_api', 'Ηλεκτρονικές Πληρωμές Api URL (epayments_api)', 'egr_plugin_setting_epayments_api', 'egr_example_plugin', 'epayments_settings' );
@@ -87,7 +107,7 @@ function egr_register_settings() {
     add_settings_field( 'egr_plugin_setting_epayments_tab_info', 'Γενικές Οδηγίες (epayments_tab_info)', 'egr_plugin_setting_epayments_tab_info', 'egr_example_plugin', 'epayments_settings' );
     add_settings_field( 'egr_plugin_setting_show_non_persisted_debits', 'Εμφάνιση μη διαρκών χρεών (show_non_persisted_debits)', 'egr_plugin_setting_show_non_persisted_debits', 'egr_example_plugin', 'epayments_settings' );
     
-    add_settings_section( 'kliseis_settings', '<div>Ρυθμίσεις Κλήσεων</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
+    add_settings_section( 'kliseis_settings', '<div id="kliseis">Ρυθμίσεις Κλήσεων</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
     
     add_settings_field( 'egr_plugin_setting_iskliseis', 'Κλήσεις (is_kliseis_enabled)', 'egr_plugin_setting_iskliseis', 'egr_example_plugin', 'kliseis_settings' );
     add_settings_field( 'egr_plugin_setting_kliseis_api', 'Κλήσεις Api URL (kliseis_api)', 'egr_plugin_setting_kliseis_api', 'egr_example_plugin', 'kliseis_settings' );
@@ -96,41 +116,41 @@ function egr_register_settings() {
     add_settings_field( 'egr_plugin_setting_kliseis_receipts_tab_info', 'Οδηγίες Ιστορικού Πληρωμών Κλήσεων (kliseis_receipts_tab_info)', 'egr_plugin_setting_kliseis_receipts_tab_info', 'egr_example_plugin', 'kliseis_settings' );
     add_settings_field( 'egr_plugin_setting_kliseis_tab_info', 'Γενικές Οδηγίες (kliseis_tab_info)', 'egr_plugin_setting_kliseis_tab_info', 'egr_example_plugin', 'kliseis_settings' );
 
-    add_settings_section( 'eidopoiitiria_settings', '<div>Ρυθμίσεις Ειδοποιητηρίων</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
+    add_settings_section( 'eidopoiitiria_settings', '<div id="eidopoiitiria">Ρυθμίσεις Ειδοποιητηρίων</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
     
     add_settings_field( 'egr_plugin_setting_iseidopoiitiria', 'Ειδοποιητήρια (is_eidopoiitiria_enabled)', 'egr_plugin_setting_iseidopoiitiria', 'egr_example_plugin', 'eidopoiitiria_settings' );
     add_settings_field( 'egr_plugin_setting_eidopoiitiria_api', 'Ειδοποιητήρια Api URL (eidopoiitiria_api)', 'egr_plugin_setting_eidopoiitiria_api', 'egr_example_plugin', 'eidopoiitiria_settings' );
     add_settings_field( 'egr_plugin_setting_eidopoiitiria_description', 'Περιγραφή (eidopoiitiria_description)', 'egr_plugin_setting_eidopoiitiria_description', 'egr_example_plugin', 'eidopoiitiria_settings' );
     add_settings_field( 'egr_plugin_setting_eidopoiitiria_tab_info', 'Γενικές Οδηγίες (eidopoiitiria_tab_info)', 'egr_plugin_setting_eidopoiitiria_tab_info', 'egr_example_plugin', 'eidopoiitiria_settings' );
 
-    add_settings_section( 'dimotikos_foros_settings', '<div>Ρυθμίσεις Δημοτικού Φόρου</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
+    add_settings_section( 'dimotikos_foros_settings', '<div id="dimotikosforos">Ρυθμίσεις Δημοτικού Φόρου</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
 
     add_settings_field( 'egr_plugin_setting_isdimotikos_foros', 'Δημοτικός Φόρος (is_dimotikos_foros_enabled)', 'egr_plugin_setting_isdimotikos_foros', 'egr_example_plugin', 'dimotikos_foros_settings' );
     add_settings_field( 'egr_plugin_setting_katastimata_api', 'Δημοτικός Φόρος Api URL (katastimata_api)', 'egr_plugin_setting_katastimata_api', 'egr_example_plugin', 'dimotikos_foros_settings' );
     add_settings_field( 'egr_plugin_setting_katastimata_description', 'Περιγραφή (katastimata_description)', 'egr_plugin_setting_katastimata_description', 'egr_example_plugin', 'dimotikos_foros_settings' );
     add_settings_field( 'egr_plugin_setting_katastimata_tab_info', 'Γενικές Οδηγίες (katastimata_tab_info)', 'egr_plugin_setting_katastimata_tab_info', 'egr_example_plugin', 'dimotikos_foros_settings' );
 
-    add_settings_section( 'diakanonismoi_settings', '<div>Ρυθμίσεις Διακανονισμών</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
+    add_settings_section( 'diakanonismoi_settings', '<div id="diakanonismoi">Ρυθμίσεις Διακανονισμών</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
     
     add_settings_field( 'egr_plugin_setting_isdiakanonismoi', 'Διακανονισμοί (is_diakanonismoi_enabled)', 'egr_plugin_setting_isdiakanonismoi', 'egr_example_plugin', 'diakanonismoi_settings' );
     add_settings_field( 'egr_plugin_setting_diakanonismoi_description', 'Περιγραφή (diakanonismoi_description)', 'egr_plugin_setting_diakanonismoi_description', 'egr_example_plugin', 'diakanonismoi_settings' );
     add_settings_field( 'egr_plugin_setting_diakanonismoi_tab_info', 'Γενικές Οδηγίες (diakanonismoi_tab_info)', 'egr_plugin_setting_diakanonismoi_tab_info', 'egr_example_plugin', 'diakanonismoi_settings' );
     
-    add_settings_section( 'shde_settings', '<div>Ρυθμίσεις Ηλεκτρονικής Διακήνησης Εγγράφων</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
+    add_settings_section( 'shde_settings', '<div id="diakinisi">Ρυθμίσεις Ηλεκτρονικής Διακήνησης Εγγράφων</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
     
     add_settings_field( 'egr_plugin_setting_isshde', 'Ηλεκτρονική Διακήνηση Εγγράφων (is_shde_app_enabled)', 'egr_plugin_setting_isshde', 'egr_example_plugin', 'shde_settings' );
     add_settings_field( 'egr_plugin_setting_shde_api', 'Api Ηλεκτρονικής Διακήνησης Εγγράφων (shde_api)', 'egr_plugin_setting_shde_api', 'egr_example_plugin', 'shde_settings' );
     add_settings_field( 'egr_plugin_setting_shde_description', 'Περιγραφή (shde_description)', 'egr_plugin_setting_shde_description', 'egr_example_plugin', 'shde_settings' );
     add_settings_field( 'egr_plugin_setting_shde_tab_info', 'Γενικές Οδηγίες (shde_tab_info)', 'egr_plugin_setting_shde_tab_info', 'egr_example_plugin', 'shde_settings' );
 
-    add_settings_section( 'rantevou_settings', '<div>Ρυθμίσεις Ηλεκτρονικών Ραντεβού</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
+    add_settings_section( 'rantevou_settings', '<div id="rantevou">Ρυθμίσεις Ηλεκτρονικών Ραντεβού</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
     
     add_settings_field( 'egr_plugin_setting_israntevou', 'Ηλεκτρονικά Ραντεβού (is_rantevou_app_enabled)', 'egr_plugin_setting_israntevou', 'egr_example_plugin', 'rantevou_settings' );
     add_settings_field( 'egr_plugin_setting_rantevou_api', 'Api Ηλεκτρονικών Ραντεβού (rantevou_api)', 'egr_plugin_setting_rantevou_api', 'egr_example_plugin', 'rantevou_settings' );
     add_settings_field( 'egr_plugin_setting_rantevou_description', 'Περιγραφή (rantevou_description)', 'egr_plugin_setting_rantevou_description', 'egr_example_plugin', 'rantevou_settings' );
     add_settings_field( 'egr_plugin_setting_rantevou_tab_info', 'Γενικές Οδηγίες (rantevou_tab_info)', 'egr_plugin_setting_rantevou_tab_info', 'egr_example_plugin', 'rantevou_settings' );
     
-    add_settings_section( 'proslipseis_settings', '<div>Ρυθμίσεις Προσλήψεων</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
+    add_settings_section( 'proslipseis_settings', '<div id="proslipseis">Ρυθμίσεις Προσλήψεων</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
     
     add_settings_field( 'egr_plugin_setting_isproslipseis', 'Προσλήψεις (is_proslipseis_enabled)', 'egr_plugin_setting_isproslipseis', 'egr_example_plugin', 'proslipseis_settings' );
     add_settings_field( 'egr_plugin_setting_proslipseis_api', 'Api Προσλήψεων (proslipseis_api)', 'egr_plugin_setting_proslipseis_api', 'egr_example_plugin', 'proslipseis_settings' );
@@ -138,7 +158,7 @@ function egr_register_settings() {
     add_settings_field( 'egr_plugin_setting_proslipseis_tab_title', 'Τίτλος Καρτέλας Μενού (proslipseis_tab_title)', 'egr_plugin_setting_proslipseis_tab_title', 'egr_example_plugin', 'proslipseis_settings' );
     add_settings_field( 'egr_plugin_setting_proslipseis_tab_info', 'Γενικές Οδηγίες (proslipseis_tab_info)', 'egr_plugin_setting_proslipseis_tab_info', 'egr_example_plugin', 'proslipseis_settings' );
 
-    add_settings_section( 'extra_plugin_options', 'Έξτρα Ρυθμίσεις Plugin', 'egr_plugin_section_text', 'egr_example_plugin' );
+    add_settings_section( 'extra_plugin_options', '<div id="extra-settings">Έξτρα Ρυθμίσεις Plugin</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
 	
     //add_settings_field( 'egr_plugin_setting_shortcode', 'Ενεργοποίηση Shortcode', 'egr_plugin_setting_shortcode', 'egr_example_plugin', 'extra_plugin_options' );
     add_settings_field( 'egr_plugin_setting_jquery_check', 'Ενεργοποίηση JQuery', 'egr_plugin_setting_jquery_check', 'egr_example_plugin', 'extra_plugin_options' );
@@ -602,5 +622,5 @@ function egr_plugin_setting_extra_html_footer() {
 function egr_plugin_setting_extra_change_egwebapps() {
     $options = get_option( 'egr_webapps_plugin_options' );     
     echo "<textarea id='egr_plugin_setting_extra_change_egwebapps' name='egr_webapps_plugin_options[change_egwebapps]'>".esc_attr(isset($options['change_egwebapps']) ? $options['change_egwebapps'] : '')."</textarea>";
-    echo '</br><b>Για να επιστρέψει το αρχείο egwebapps.php στην default του κατάσταση αφήστε αυτό το πεδίο κενό.</b>';
+    echo '</br><b>Για να επιστρέψει το αρχείο page-egwebapps.php στην default του κατάσταση αφήστε αυτό το πεδίο κενό.</b>';
 } ?>
