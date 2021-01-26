@@ -46,7 +46,7 @@ var AppConfOptions = {
 	benefits_tab_info: 'Δημιουργία, επεξεργασία & υποβολή αιτήσεων για παιδικούς σταθμούς, με άμεση ενημέρωση για την κατάσταση της αίτησής σας.',
 	//app_help_page: "https://aitisi.dopafmai.gr/odigies-eggrafis/"
 
-	is_carpooling_enabled: true,
+	is_carpooling_enabled: false,
 	carpooling_api: "http://carpooling.demo.egritosgroup.gr/",
 	carpooling_description: 'Δημιουργία & συμμετοχή σε διαδρομές συν-πολιτών σας από οποιοδήποτε μέρος της Ελλάδας.',
 	carpooling_tab_info: '<p>Δημιουργία & συμμετοχή σε διαδρομές συν-πολιτών σας από οποιοδήποτε μέρος της Ελλάδας.</p>',
