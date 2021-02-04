@@ -89,15 +89,18 @@ var AppConfOptions = {
 	shde_tab_info: 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.',
 
 	is_rantevou_app_enabled: true,
-	rantevou_api: "http://localhost:5337/",
-	rantevou_description: 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.',
-	rantevou_tab_info: 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.',
+	rantevou_api: "http://rantevou.demo.egritosgroup.gr/",
+	rantevou_description: '',
+	rantevou_tab_info: '',
 
 	//PROSLIPSEIS
 	is_proslipseis_enabled: true,
 	proslipseis_api: "http://proslipseis.demo.egritosgroup.gr/",
 	proslipseis_description: 'Αιτήσεις Πολιτών προς το σύστημα προσλήψεων εποχιακού και μόνιμου προσωπικού του οργανισμού.',
 	proslipseis_tab_title: "Αιτήσεις Προσλήψεων",
-	proslipseis_tab_info: 'Αιτήσεις Πολιτών προς το σύστημα προσλήψεων εποχιακού και μόνιμου προσωπικού του οργανισμού.'
+	proslipseis_tab_info: 'Αιτήσεις Πολιτών προς το σύστημα προσλήψεων εποχιακού και μόνιμου προσωπικού του οργανισμού.',
+
+	is_notifications_enabled: false,
+	notifications_api: "https://localhost:5330/"
 };
 
