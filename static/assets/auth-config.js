@@ -9,7 +9,7 @@ var AuthConfOptions = {
 	// For some oidc, we require resource identifier to be provided along with the request.
 	resource: "",
 	//EgritosGroup.Finance.Revenue.Full EgritosGroup.CarPooling.Full EgritosGroup.Domes.Basic EgritosGroup.Kliseis.Politis EgritosGroup.Katastimata.Politis
-	scope: "openid profile profileextra EgritosGroup.Auth.Basic",
+	scope: "openid profile profilepersonalinfo profileextra roles EgritosGroup.Auth.Basic",
 	post_logout_redirect_uri: "http://localhost:4200",
 	start_checksession: false,
 	silent_renew: false,
