@@ -1,5 +1,5 @@
 var AuthConfOptions = {
-	stsServer: "http://auth.dev.egritosgroup.gr",
+	stsServer: "https://auth.dev.egritosgroup.gr",
 	//stsServer: "https://auth.demo.egritosgroup.gr",
 	redirect_url: "http://localhost:4200/redirect-auth",
 	app_base_href: "/",
@@ -96,7 +96,7 @@ var AppConfOptions = {
 	rantevou_tab_info: '',
 
 	is_proslipseis_enabled: true,
-	proslipseis_api: "http://proslipseis.demo.egritosgroup.gr/",
+	proslipseis_api: "https://proslipseis.demo.egritosgroup.gr/",
 	proslipseis_description: 'Αιτήσεις Πολιτών προς το σύστημα προσλήψεων εποχιακού και μόνιμου προσωπικού του οργανισμού.',
 	proslipseis_tab_title: "Αιτήσεις Προσλήψεων",
 	proslipseis_tab_info: 'Αιτήσεις Πολιτών προς το σύστημα προσλήψεων εποχιακού και μόνιμου προσωπικού του οργανισμού.',
