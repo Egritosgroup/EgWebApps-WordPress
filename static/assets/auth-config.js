@@ -1,15 +1,17 @@
 var AuthConfOptions = {
-	stsServer: "http://auth.dev.egritosgroup.gr",
+	stsServer: "https://auth.dev.egritosgroup.gr",
+	//stsServer: "https://auth.demo.egritosgroup.gr",
 	redirect_url: "http://localhost:4200/redirect-auth",
 	app_base_href: "/",
 	// The Client MUST validate that the aud (audience) Claim contains its client_id value registered at the Issuer identified by the iss (issuer) Claim as an audience.
 	// The ID Token MUST be rejected if the ID Token does not list the Client as a valid audience, or if it contains additional audiences not trusted by the Client.
 	client_id: "egwebapps-localhost",
+	//client_id: "egwebapps-egritos",
 	response_type: "id_token token",
 	// For some oidc, we require resource identifier to be provided along with the request.
 	resource: "",
 	//EgritosGroup.Finance.Revenue.Full EgritosGroup.CarPooling.Full EgritosGroup.Domes.Basic EgritosGroup.Kliseis.Politis EgritosGroup.Katastimata.Politis
-	scope: "openid profile profileextra EgritosGroup.Auth.Basic",
+	scope: "openid profile profilepersonalinfo profileextra roles EgritosGroup.Auth.Basic",
 	post_logout_redirect_uri: "http://localhost:4200",
 	start_checksession: false,
 	silent_renew: false,
@@ -46,7 +48,7 @@ var AppConfOptions = {
 	benefits_tab_info: 'Δημιουργία, επεξεργασία & υποβολή αιτήσεων για παιδικούς σταθμούς, με άμεση ενημέρωση για την κατάσταση της αίτησής σας.',
 	//app_help_page: "https://aitisi.dopafmai.gr/odigies-eggrafis/"
 
-	is_carpooling_enabled: true,
+	is_carpooling_enabled: false,
 	carpooling_api: "http://carpooling.demo.egritosgroup.gr/",
 	carpooling_description: 'Δημιουργία & συμμετοχή σε διαδρομές συν-πολιτών σας από οποιοδήποτε μέρος της Ελλάδας.',
 	carpooling_tab_info: '<p>Δημιουργία & συμμετοχή σε διαδρομές συν-πολιτών σας από οποιοδήποτε μέρος της Ελλάδας.</p>',
@@ -89,8 +91,17 @@ var AppConfOptions = {
 	shde_tab_info: 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.',
 
 	is_rantevou_app_enabled: true,
-	rantevou_api: "http://localhost:5337/",
-	rantevou_description: 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.',
-	rantevou_tab_info: 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.',
+	rantevou_api: "http://rantevou.demo.egritosgroup.gr/",
+	rantevou_description: '',
+	rantevou_tab_info: '',
+
+	is_proslipseis_enabled: true,
+	proslipseis_api: "https://proslipseis.demo.egritosgroup.gr/",
+	proslipseis_description: 'Αιτήσεις Πολιτών προς το σύστημα προσλήψεων εποχιακού και μόνιμου προσωπικού του οργανισμού.',
+	proslipseis_tab_title: "Αιτήσεις Προσλήψεων",
+	proslipseis_tab_info: 'Αιτήσεις Πολιτών προς το σύστημα προσλήψεων εποχιακού και μόνιμου προσωπικού του οργανισμού.',
+
+	is_notifications_enabled: false,
+	notifications_api: "https://localhost:5330/"
 };
 
