@@ -27,6 +27,8 @@ function egwebapps_settings_url_handler() {
                 if(is_bool($value)) {
                     $bool_val = $value ? 'true' : 'false';
                     echo $key.': '.$bool_val.', ';
+                } else if(is_numeric($value)) {
+                    echo $key.': '.$value.', ';
                 } else {
                     echo $key.': "'.$value.'", ';
                 }
@@ -75,11 +77,13 @@ function setAppsSettings($options, $pluginFolderName) {
         'benefits_description' => $options['benefits_description'] ? htmlspecialchars($options['benefits_description']) : 'Δημιουργία, επεξεργασία & υποβολή αιτήσεων για παιδικούς σταθμούς, με άμεση ενημέρωση για την κατάσταση της αίτησής σας.',
         'benefits_tab_info' => $options['benefits_tab_info'] ? htmlspecialchars($options['benefits_tab_info']) : '',
         'app_help_page' => $options['app_help_page'] ? $options['app_help_page'] : '',
+        'order_profile' => $options['order_profile'] ? $options['order_profile'] : 200,
         'is_carpooling_enabled' => isset($options['iscarpooling']) && $options['iscarpooling'] == 'on' ? true : false,
         'carpooling_api' => $options['carpooling_api'] ? $options['carpooling_api'] : '',
         'carpooling_description' => $options['carpooling_description'] ? htmlspecialchars($options['carpooling_description']) : 'Δημιουργία & συμμετοχή σε διαδρομές συν-πολιτών σας από οποιοδήποτε μέρος της Ελλάδας.',
         'carpooling_tab_info' => $options['carpooling_tab_info'] ? htmlspecialchars($options['carpooling_tab_info']) : '',
         'google_maps_key' => $options['google_maps_key'] ? $options['google_maps_key'] : '',
+        'order_carpooling' => $options['order_carpooling'] ? $options['order_carpooling'] : 170,
         'is_epayments_enabled' => isset($options['isepayments']) && $options['isepayments'] == 'on' ? true : false,
         'epayments_api' => $options['epayments_api'] ? $options['epayments_api'] : '',
         'epayments_description' => $options['epayments_description'] ? htmlspecialchars($options['epayments_description']) : 'Εξόφληση των οριστικοποιημένων οφειλών σας προς τον Φορέα.',
@@ -87,36 +91,48 @@ function setAppsSettings($options, $pluginFolderName) {
         'epayments_receipts_tab_info' => $options['epayments_receipts_tab_info'] ? htmlspecialchars($options['epayments_receipts_tab_info']) : '',
         'epayments_tab_info' => $options['epayments_tab_info'] ? htmlspecialchars($options['epayments_tab_info']) : '',
         'show_non_persisted_debits' => isset($options['show_non_persisted_debits']) && $options['show_non_persisted_debits'] == 'on' ? true : false,
+        'order_epayments' => $options['order_epayments'] ? $options['order_epayments'] : 10,
         'is_kliseis_enabled' => isset($options['iskliseis']) && $options['iskliseis'] == 'on' ? true : false,
         'kliseis_api' => $options['kliseis_api'] ? $options['kliseis_api'] : '',
         'kliseis_description' => $options['kliseis_description'] ? htmlspecialchars($options['kliseis_description']) : 'Εξόφληση και καταχώρηση κλήσεων Δημοτικής Αστυνομίας.',
         'kliseis_debits_tab_info' => $options['kliseis_debits_tab_info'] ? htmlspecialchars($options['kliseis_debits_tab_info']) : '',
         'kliseis_receipts_tab_info' => $options['kliseis_receipts_tab_info'] ? htmlspecialchars($options['kliseis_receipts_tab_info']) : '',
         'kliseis_tab_info' => $options['kliseis_tab_info'] ? htmlspecialchars($options['kliseis_tab_info']) : '',
+        'order_kliseis' => $options['order_kliseis'] ? $options['order_kliseis'] : 20,
         'is_eidopoiitiria_enabled' => isset($options['iseidopoiitiria']) && $options['iseidopoiitiria'] == 'on' ? true : false,
         'eidopoiitiria_api' => $options['eidopoiitiria_api'] ? $options['eidopoiitiria_api'] : '',
         'eidopoiitiria_description' => $options['eidopoiitiria_description'] ? htmlspecialchars($options['eidopoiitiria_description']) : 'Εξόφληση ειδοποιητηρίων.',
         'eidopoiitiria_tab_info' => $options['eidopoiitiria_tab_info'] ? htmlspecialchars($options['eidopoiitiria_tab_info']) : '',
+        'order_eidopoiitiria' => $options['order_eidopoiitiria'] ? $options['order_eidopoiitiria'] : 70,
         'is_dimotikos_foros_enabled' => isset($options['isdimotikos_foros']) && $options['isdimotikos_foros'] == 'on' ? true : false,
         'katastimata_api' => $options['katastimata_api'] ? $options['katastimata_api'] : '',
         'katastimata_description' => $options['katastimata_description'] ? htmlspecialchars($options['katastimata_description']) : 'Υποβάλλετε και εξοφλήστε την δήλωσή σας για το τέλος 0,5%.',
         'katastimata_tab_info' => $options['katastimata_tab_info'] ? htmlspecialchars($options['katastimata_tab_info']) : '',
+        'order_katastimata' => $options['order_katastimata'] ? $options['order_katastimata'] : 30,
         'is_diakanonismoi_enabled' => isset($options['isdiakanonismoi']) && $options['isdiakanonismoi'] == 'on' ? true : false,
         'diakanonismoi_description' => $options['diakanonismoi_description'] ? htmlspecialchars($options['diakanonismoi_description']) : 'Ενημέρωση για την κατάσταση των διακανονισμών σας & αίτηση νέων διακακονισμών.',
         'diakanonismoi_tab_info' => $options['diakanonismoi_tab_info'] ? htmlspecialchars($options['diakanonismoi_tab_info']) : '',
+        'order_diakanonismoi' => $options['order_diakanonismoi'] ? $options['order_diakanonismoi'] : 40,
         'is_shde_app_enabled' => isset($options['isshde']) && $options['isshde'] == 'on' ? true : false,
         'shde_api' => $options['shde_api'] ? $options['shde_api'] : '',
         'shde_description' => $options['shde_description'] ? htmlspecialchars($options['shde_description']) : 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.',
         'shde_tab_info' => $options['shde_tab_info'] ? htmlspecialchars($options['shde_tab_info']) : '',
+        'order_shde' => $options['order_shde'] ? $options['order_shde'] : 90,
         'is_rantevou_app_enabled' => isset($options['israntevou']) && $options['israntevou'] == 'on' ? true : false,
         'rantevou_api' => $options['rantevou_api'] ? $options['rantevou_api'] : '',
         'rantevou_description' => $options['rantevou_description'] ? htmlspecialchars($options['rantevou_description']) : 'Ηλεκτρονικά Ραντεβού Πολιτών',
         'rantevou_tab_info' => $options['rantevou_tab_info'] ? htmlspecialchars($options['rantevou_tab_info']) : '',
+        'order_rantevou' => $options['order_rantevou'] ? $options['order_rantevou'] : 100,
         'is_proslipseis_enabled' => isset($options['isproslipseis']) && $options['isproslipseis'] == 'on' ? true : false,
         'proslipseis_api' => $options['proslipseis_api'] ? $options['proslipseis_api'] : '',
         'proslipseis_description' => $options['proslipseis_description'] ? htmlspecialchars($options['proslipseis_description']) : 'Αιτήσεις Πολιτών προς το σύστημα προσλήψεων εποχιακού και μόνιμου προσωπικού του οργανισμού.',
         'proslipseis_tab_title' => $options['proslipseis_tab_title'] ? htmlspecialchars($options['proslipseis_tab_title']) : '',
-        'proslipseis_tab_info' => $options['proslipseis_tab_info'] ? htmlspecialchars($options['proslipseis_tab_info']) : ''
+        'proslipseis_tab_info' => $options['proslipseis_tab_info'] ? htmlspecialchars($options['proslipseis_tab_info']) : '',
+        'order_proslipseis' => $options['order_proslipseis'] ? $options['order_proslipseis'] : 60,
+
+        'is_notifications_enabled' => false,
+        'notifications_api' => '',
+        'order_notifications' => 80
     );
 
     return json_encode($settingsArray);

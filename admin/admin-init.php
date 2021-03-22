@@ -79,6 +79,7 @@ function egr_register_settings() {
     add_settings_field( 'egr_plugin_setting_application_url', 'URL εφαρμογής', 'egr_plugin_setting_application_url', 'egr_example_plugin', 'auth_settings' );
     add_settings_field( 'egr_plugin_setting_home_page_text', 'Κείμενο αρχικής σελίδας', 'egr_plugin_setting_home_page_text', 'egr_example_plugin', 'auth_settings' );
     add_settings_field( 'egr_plugin_setting_oroi_xrisis_link', 'Link Όρων Χρήσης', 'egr_plugin_setting_oroi_xrisis_link', 'egr_example_plugin', 'auth_settings' );
+    add_settings_field( 'egr_plugin_setting_order_profile', 'Σειρά Προφίλ (order_profile)', 'egr_plugin_setting_order_profile', 'egr_example_plugin', 'auth_settings' );
 
     add_settings_section( 'domes_settings', '<div id="domes">Ρυθμίσεις Δομών</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
 
@@ -96,6 +97,7 @@ function egr_register_settings() {
     add_settings_field( 'egr_plugin_setting_carpooling_description', 'Περιγραφή (carpooling_description)', 'egr_plugin_setting_carpooling_description', 'egr_example_plugin', 'carpooling_settings' );
     add_settings_field( 'egr_plugin_setting_carpooling_tab_info', 'Γενικές Οδηγίες (carpooling_tab_info)', 'egr_plugin_setting_carpooling_tab_info', 'egr_example_plugin', 'carpooling_settings' );
     add_settings_field( 'egr_plugin_setting_google_maps_key', 'Google Maps Key (google_maps_key)', 'egr_plugin_setting_google_maps_key', 'egr_example_plugin', 'carpooling_settings' );
+    add_settings_field( 'egr_plugin_setting_order_carpooling', 'Σειρά Carpooling (order_carpooling)', 'egr_plugin_setting_order_carpooling', 'egr_example_plugin', 'carpooling_settings' );
 
     add_settings_section( 'epayments_settings', '<div id="epayments">Ρυθμίσεις Ηλεκτρονικών Πληρωμών</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
     
@@ -106,6 +108,7 @@ function egr_register_settings() {
     add_settings_field( 'egr_plugin_setting_epayments_receipts_tab_info', 'Οδηγίες Ιστορικού Πληρωμών Βεβαιωμένων Οφειλών (epayments_receipts_tab_info)', 'egr_plugin_setting_epayments_receipts_tab_info', 'egr_example_plugin', 'epayments_settings' );
     add_settings_field( 'egr_plugin_setting_epayments_tab_info', 'Γενικές Οδηγίες (epayments_tab_info)', 'egr_plugin_setting_epayments_tab_info', 'egr_example_plugin', 'epayments_settings' );
     add_settings_field( 'egr_plugin_setting_show_non_persisted_debits', 'Εμφάνιση μη διαρκών χρεών (show_non_persisted_debits)', 'egr_plugin_setting_show_non_persisted_debits', 'egr_example_plugin', 'epayments_settings' );
+    add_settings_field( 'egr_plugin_setting_order_epayments', 'Σειρά Ηλεκτρονικών Πληρωμών (order_epayments)', 'egr_plugin_setting_order_epayments', 'egr_example_plugin', 'epayments_settings' );
     
     add_settings_section( 'kliseis_settings', '<div id="kliseis">Ρυθμίσεις Κλήσεων</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
     
@@ -115,6 +118,7 @@ function egr_register_settings() {
     add_settings_field( 'egr_plugin_setting_kliseis_debits_tab_info', 'Οδηγίες Κλήσεων (kliseis_debits_tab_info)', 'egr_plugin_setting_kliseis_debits_tab_info', 'egr_example_plugin', 'kliseis_settings' );
     add_settings_field( 'egr_plugin_setting_kliseis_receipts_tab_info', 'Οδηγίες Ιστορικού Πληρωμών Κλήσεων (kliseis_receipts_tab_info)', 'egr_plugin_setting_kliseis_receipts_tab_info', 'egr_example_plugin', 'kliseis_settings' );
     add_settings_field( 'egr_plugin_setting_kliseis_tab_info', 'Γενικές Οδηγίες (kliseis_tab_info)', 'egr_plugin_setting_kliseis_tab_info', 'egr_example_plugin', 'kliseis_settings' );
+    add_settings_field( 'egr_plugin_setting_order_kliseis', 'Σειρά Κλήσεων (order_kliseis)', 'egr_plugin_setting_order_kliseis', 'egr_example_plugin', 'kliseis_settings' );
 
     add_settings_section( 'eidopoiitiria_settings', '<div id="eidopoiitiria">Ρυθμίσεις Ειδοποιητηρίων</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
     
@@ -122,6 +126,7 @@ function egr_register_settings() {
     add_settings_field( 'egr_plugin_setting_eidopoiitiria_api', 'Ειδοποιητήρια Api URL (eidopoiitiria_api)', 'egr_plugin_setting_eidopoiitiria_api', 'egr_example_plugin', 'eidopoiitiria_settings' );
     add_settings_field( 'egr_plugin_setting_eidopoiitiria_description', 'Περιγραφή (eidopoiitiria_description)', 'egr_plugin_setting_eidopoiitiria_description', 'egr_example_plugin', 'eidopoiitiria_settings' );
     add_settings_field( 'egr_plugin_setting_eidopoiitiria_tab_info', 'Γενικές Οδηγίες (eidopoiitiria_tab_info)', 'egr_plugin_setting_eidopoiitiria_tab_info', 'egr_example_plugin', 'eidopoiitiria_settings' );
+    add_settings_field( 'egr_plugin_setting_order_eidopoiitiria', 'Σειρά Ειδοποιητηρίων (order_eidopoiitiria)', 'egr_plugin_setting_order_eidopoiitiria', 'egr_example_plugin', 'eidopoiitiria_settings' );
 
     add_settings_section( 'dimotikos_foros_settings', '<div id="dimotikosforos">Ρυθμίσεις Δημοτικού Φόρου</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
 
@@ -129,12 +134,14 @@ function egr_register_settings() {
     add_settings_field( 'egr_plugin_setting_katastimata_api', 'Δημοτικός Φόρος Api URL (katastimata_api)', 'egr_plugin_setting_katastimata_api', 'egr_example_plugin', 'dimotikos_foros_settings' );
     add_settings_field( 'egr_plugin_setting_katastimata_description', 'Περιγραφή (katastimata_description)', 'egr_plugin_setting_katastimata_description', 'egr_example_plugin', 'dimotikos_foros_settings' );
     add_settings_field( 'egr_plugin_setting_katastimata_tab_info', 'Γενικές Οδηγίες (katastimata_tab_info)', 'egr_plugin_setting_katastimata_tab_info', 'egr_example_plugin', 'dimotikos_foros_settings' );
+    add_settings_field( 'egr_plugin_setting_order_katastimata', 'Σειρά Δημοτικού Φόρου (order_katastimata)', 'egr_plugin_setting_order_katastimata', 'egr_example_plugin', 'dimotikos_foros_settings' );
 
     add_settings_section( 'diakanonismoi_settings', '<div id="diakanonismoi">Ρυθμίσεις Διακανονισμών</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
     
     add_settings_field( 'egr_plugin_setting_isdiakanonismoi', 'Διακανονισμοί (is_diakanonismoi_enabled)', 'egr_plugin_setting_isdiakanonismoi', 'egr_example_plugin', 'diakanonismoi_settings' );
     add_settings_field( 'egr_plugin_setting_diakanonismoi_description', 'Περιγραφή (diakanonismoi_description)', 'egr_plugin_setting_diakanonismoi_description', 'egr_example_plugin', 'diakanonismoi_settings' );
     add_settings_field( 'egr_plugin_setting_diakanonismoi_tab_info', 'Γενικές Οδηγίες (diakanonismoi_tab_info)', 'egr_plugin_setting_diakanonismoi_tab_info', 'egr_example_plugin', 'diakanonismoi_settings' );
+    add_settings_field( 'egr_plugin_setting_order_diakanonismoi', 'Σειρά Διακανονισμών (order_diakanonismoi)', 'egr_plugin_setting_order_diakanonismoi', 'egr_example_plugin', 'diakanonismoi_settings' );
     
     add_settings_section( 'shde_settings', '<div id="diakinisi">Ρυθμίσεις Ηλεκτρονικής Διακήνησης Εγγράφων</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
     
@@ -142,6 +149,7 @@ function egr_register_settings() {
     add_settings_field( 'egr_plugin_setting_shde_api', 'Api Ηλεκτρονικής Διακήνησης Εγγράφων (shde_api)', 'egr_plugin_setting_shde_api', 'egr_example_plugin', 'shde_settings' );
     add_settings_field( 'egr_plugin_setting_shde_description', 'Περιγραφή (shde_description)', 'egr_plugin_setting_shde_description', 'egr_example_plugin', 'shde_settings' );
     add_settings_field( 'egr_plugin_setting_shde_tab_info', 'Γενικές Οδηγίες (shde_tab_info)', 'egr_plugin_setting_shde_tab_info', 'egr_example_plugin', 'shde_settings' );
+    add_settings_field( 'egr_plugin_setting_order_shde', 'Σειρά Ηλεκτρονικής Διακήνησης Εγγράφων (order_shde)', 'egr_plugin_setting_order_shde', 'egr_example_plugin', 'shde_settings' );
 
     add_settings_section( 'rantevou_settings', '<div id="rantevou">Ρυθμίσεις Ηλεκτρονικών Ραντεβού</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
     
@@ -149,6 +157,7 @@ function egr_register_settings() {
     add_settings_field( 'egr_plugin_setting_rantevou_api', 'Api Ηλεκτρονικών Ραντεβού (rantevou_api)', 'egr_plugin_setting_rantevou_api', 'egr_example_plugin', 'rantevou_settings' );
     add_settings_field( 'egr_plugin_setting_rantevou_description', 'Περιγραφή (rantevou_description)', 'egr_plugin_setting_rantevou_description', 'egr_example_plugin', 'rantevou_settings' );
     add_settings_field( 'egr_plugin_setting_rantevou_tab_info', 'Γενικές Οδηγίες (rantevou_tab_info)', 'egr_plugin_setting_rantevou_tab_info', 'egr_example_plugin', 'rantevou_settings' );
+    add_settings_field( 'egr_plugin_setting_order_rantevou', 'Σειρά Ραντεβού (order_rantevou)', 'egr_plugin_setting_order_rantevou', 'egr_example_plugin', 'rantevou_settings' );
     
     add_settings_section( 'proslipseis_settings', '<div id="proslipseis">Ρυθμίσεις Προσλήψεων</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
     
@@ -157,6 +166,7 @@ function egr_register_settings() {
     add_settings_field( 'egr_plugin_setting_proslipseis_description', 'Περιγραφή (proslipseis_description)', 'egr_plugin_setting_proslipseis_description', 'egr_example_plugin', 'proslipseis_settings' );
     add_settings_field( 'egr_plugin_setting_proslipseis_tab_title', 'Τίτλος Καρτέλας Μενού (proslipseis_tab_title)', 'egr_plugin_setting_proslipseis_tab_title', 'egr_example_plugin', 'proslipseis_settings' );
     add_settings_field( 'egr_plugin_setting_proslipseis_tab_info', 'Γενικές Οδηγίες (proslipseis_tab_info)', 'egr_plugin_setting_proslipseis_tab_info', 'egr_example_plugin', 'proslipseis_settings' );
+    add_settings_field( 'egr_plugin_setting_order_proslipseis', 'Σειρά Προσλήψεων (order_proslipseis)', 'egr_plugin_setting_order_proslipseis', 'egr_example_plugin', 'proslipseis_settings' );
 
     add_settings_section( 'extra_plugin_options', '<div id="extra-settings">Έξτρα Ρυθμίσεις Plugin</div>', 'egr_plugin_section_text', 'egr_example_plugin' );
 	
@@ -215,6 +225,11 @@ function egr_plugin_setting_home_page_text() {
 function egr_plugin_setting_oroi_xrisis_link() {
     $options = get_option( 'egr_webapps_plugin_options' );
     echo "<input id='egr_plugin_setting_oroi_xrisis_link' name='egr_webapps_plugin_options[oroi_xrisis_link]' type='text' value='".esc_attr(isset($options['oroi_xrisis_link']) ? $options['oroi_xrisis_link'] : '')."' />";
+}
+
+function egr_plugin_setting_order_profile() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_order_profile' name='egr_webapps_plugin_options[order_profile]' type='text' value='".esc_attr(isset($options['order_profile']) ? $options['order_profile'] : 200)."' />";
 }
 
 //domes
@@ -294,6 +309,11 @@ function egr_plugin_setting_google_maps_key() {
     echo "<input id='egr_plugin_setting_google_maps_key' name='egr_webapps_plugin_options[google_maps_key]' type='text' value='".esc_attr(isset($options['google_maps_key']) ? $options['google_maps_key'] : '')."' />";
 }
 
+function egr_plugin_setting_order_carpooling() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_order_carpooling' name='egr_webapps_plugin_options[order_carpooling]' type='text' value='".esc_attr(isset($options['order_carpooling']) ? $options['order_carpooling'] : 170)."' />";
+}
+
 //END
 
 //EPAYMENTS
@@ -349,6 +369,11 @@ function egr_plugin_setting_show_non_persisted_debits() {
     echo "<input id='egr_plugin_setting_show_non_persisted_debits' name='egr_webapps_plugin_options[show_non_persisted_debits]' type='checkbox' ".esc_attr(isset($options['show_non_persisted_debits']) ? 'checked=checked' : '')." />";
 }
 
+function egr_plugin_setting_order_epayments() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_order_epayments' name='egr_webapps_plugin_options[order_epayments]' type='text' value='".esc_attr(isset($options['order_epayments']) ? $options['order_epayments'] : 10)."' />";
+}
+
 //END
 
 //KLISEIS
@@ -399,6 +424,11 @@ function egr_plugin_setting_kliseis_receipts_tab_info() {
     </div>
 <?php }
 
+function egr_plugin_setting_order_kliseis() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_order_kliseis' name='egr_webapps_plugin_options[order_kliseis]' type='text' value='".esc_attr(isset($options['order_kliseis']) ? $options['order_kliseis'] : 20)."' />";
+}
+
 //END
 
 //EIDOPOIITIRIA
@@ -430,6 +460,11 @@ function egr_plugin_setting_eidopoiitiria_tab_info() {
         <div id="egr_plugin_setting_eidopoiitiria_tab_info_editor" class="editor"></div>
     </div>
 <?php }
+
+function egr_plugin_setting_order_eidopoiitiria() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_order_eidopoiitiria' name='egr_webapps_plugin_options[order_eidopoiitiria]' type='text' value='".esc_attr(isset($options['order_eidopoiitiria']) ? $options['order_eidopoiitiria'] : 70)."' />";
+}
 
 //END
 
@@ -463,6 +498,11 @@ function egr_plugin_setting_katastimata_tab_info() {
     </div>
 <?php }
 
+function egr_plugin_setting_order_katastimata() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_order_katastimata' name='egr_webapps_plugin_options[order_katastimata]' type='text' value='".esc_attr(isset($options['order_katastimata']) ? $options['order_katastimata'] : 30)."' />";
+}
+
 //END
 
 //DIAKANONISMOI
@@ -489,6 +529,11 @@ function egr_plugin_setting_diakanonismoi_tab_info() {
         <div id="egr_plugin_setting_diakanonismoi_tab_info_editor" class="editor"></div>
     </div>
 <?php }
+
+function egr_plugin_setting_order_diakanonismoi() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_order_diakanonismoi' name='egr_webapps_plugin_options[order_diakanonismoi]' type='text' value='".esc_attr(isset($options['order_diakanonismoi']) ? $options['order_diakanonismoi'] : 40)."' />";
+}
 
 //SHDE
 
@@ -520,6 +565,11 @@ function egr_plugin_setting_shde_tab_info() {
     </div>
 <?php }
 
+function egr_plugin_setting_order_shde() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_order_shde' name='egr_webapps_plugin_options[order_shde]' type='text' value='".esc_attr(isset($options['order_shde']) ? $options['order_shde'] : 90)."' />";
+}
+
 //RANTEVOU
 
 function egr_plugin_setting_israntevou() {
@@ -549,6 +599,11 @@ function egr_plugin_setting_rantevou_tab_info() {
         <div id="egr_plugin_setting_rantevou_tab_info_editor" class="editor"></div>
     </div>
 <?php }
+
+function egr_plugin_setting_order_rantevou() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_order_rantevou' name='egr_webapps_plugin_options[order_rantevou]' type='text' value='".esc_attr(isset($options['order_rantevou']) ? $options['order_rantevou'] : 100)."' />";
+}
 
 //END 
 
@@ -586,6 +641,11 @@ function egr_plugin_setting_proslipseis_tab_info() {
         <div id="egr_plugin_setting_proslipseis_tab_info_editor" class="editor"></div>
     </div>
 <?php }
+
+function egr_plugin_setting_order_proslipseis() {
+    $options = get_option( 'egr_webapps_plugin_options' );
+    echo "<input id='egr_plugin_setting_order_proslipseis' name='egr_webapps_plugin_options[order_proslipseis]' type='text' value='".esc_attr(isset($options['order_proslipseis']) ? $options['order_proslipseis'] : 60)."' />";
+}
 
 //END 
 
