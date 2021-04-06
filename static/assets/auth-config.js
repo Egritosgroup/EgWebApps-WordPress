@@ -43,7 +43,8 @@ var AppConfOptions = {
 
 	is_benefits_enabled: true,
 	benefits_applications_organization: "ΔΟΜΕΣ",
-	benefits_api: "https://domes.demo.egritosgroup.gr/",
+	//benefits_api: "https://domes.demo.egritosgroup.gr/",
+	benefits_api: "http://localhost:4258/",
 	benefits_tab_title: "Αιτήσεις Παιδικών Σταθμών",
 	benefits_description: 'Δημιουργία, επεξεργασία & υποβολή αιτήσεων για παιδικούς σταθμούς, με άμεση ενημέρωση για την κατάσταση της αίτησής σας.',
 	benefits_tab_info: 'Δημιουργία, επεξεργασία & υποβολή αιτήσεων για παιδικούς σταθμούς, με άμεση ενημέρωση για την κατάσταση της αίτησής σας.',
@@ -99,13 +100,13 @@ var AppConfOptions = {
 	shde_tab_info: 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.',
 	order_shde: 90,
 
-	is_rantevou_app_enabled: false,
+	is_rantevou_app_enabled: true,
 	rantevou_api: "http://rantevou.demo.egritosgroup.gr/",
 	rantevou_description: '',
 	rantevou_tab_info: 'Ραντεβού Πολιτών',
 	order_rantevou: 100,
 
-	is_proslipseis_enabled: false,
+	is_proslipseis_enabled: true,
 	proslipseis_api: "https://proslipseis.demo.egritosgroup.gr/",
 	proslipseis_description: 'Αιτήσεις Πολιτών προς το σύστημα προσλήψεων εποχιακού και μόνιμου προσωπικού του οργανισμού.',
 	proslipseis_tab_title: "Αιτήσεις Προσλήψεων",
