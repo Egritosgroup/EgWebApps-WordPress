@@ -1,0 +1,72 @@
+
+/* ------------------------- P-CALENDAR (CUSTOM, FULLWIDTH) -----------------------------------  */
+.egwebapps-calendar .p-datepicker {
+	border: 0 !important;
+	padding-left: 0;
+	padding-right: 0;
+}
+.egwebapps-calendar .p-datepicker-group-container { width: 100% !important; }
+.egwebapps-calendar .p-datepicker table th { text-align: center; }
+.egwebapps-calendar .p-datepicker table td { padding: 2px; }
+.p-datepicker table td > span, .p-datepicker table td > span.p-disabled {
+	background-color: var(--disabled);
+	border-radius: 0;
+	padding: 0;
+	width: unset;
+}
+
+.p-datepicker table td > span.p-disabled > .egwebapps-date-inner { 
+    background-color: var(--disabled) !important; 
+    color: #aaaaaa;
+}
+.p-datepicker table td > span > .egwebapps-date-inner {
+	width: 100%;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+	font-weight: bold;
+}
+.p-datepicker table td > span > .egwebapps-date-inner.diathesimo { background-color: #0fbe6c; }
+.p-datepicker table td > span > .egwebapps-date-inner.diathesimo:hover, .p-datepicker table td > span > .egwebapps-date-inner.diathesimo:focus { background-color: #098a4e; }
+.p-datepicker table td > span.p-highlight .egwebapps-date-inner.diathesimo { background-color: var(--primary); }
+.p-datepicker table td > span > .egwebapps-date-inner.mi-diathesimo { background-color: #c2433c; }
+.ui-datepicker table td { padding: 0.2em; }
+.egwebapps-calendar .ui-datepicker-calendar span.ui-state-disabled { padding: 20px 15px!important; }
+.egwebapps-calendar .ui-datepicker-calendar span.ui-state-disabled > .egwebapps-date-inner { font-weight: normal; }
+
+.egwebapps-calendar .ui-datepicker-header {
+	border-bottom: 2px solid #e3e6eb;
+	padding-bottom: 20px!important;
+}
+
+.egwebapps-calendar .ui-datepicker-title {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.egwebapps-calendar .ui-datepicker-prev, .egwebapps-calendar .ui-datepicker-next {
+	background-color: #d6d6d6;
+	width: 2em!important;
+	height: 2em!important;
+	color: #204969!important;
+}
+
+.egwebapps-calendar .ui-datepicker table td > a.ui-state-active .avail-box, .egwebapps-calendar .ui-datepicker table td > span.ui-state-active .avail-box {
+	background-color: #204969;
+}
+
+.egwebapps-calendar .avail-box { position: relative; }
+
+.egwebapps-calendar .availability {
+	display: block;
+	width: 100%;
+	height: 5px;
+    margin-top: 8px;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+
+  
+

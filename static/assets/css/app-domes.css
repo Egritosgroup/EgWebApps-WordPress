@@ -1,0 +1,27 @@
+/* ------------------- Kratiseis css -------------------- */
+.ypomnima-labels-wrapper {
+	border-top: 2px solid #e3e6eb;
+	padding-top: 0.857em;
+}
+
+.diastimata-container {
+   /* width: 100%; */
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+   /* grid-auto-rows: 75px; */
+   grid-auto-rows: auto;
+   grid-gap: 5px;
+}
+
+  .ypodomes-container {
+      /* width: 100%; */
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      /* grid-auto-rows: 75px; */
+      grid-auto-rows: auto;
+      grid-gap: 10px;
+  }
+
+/* ----------------------------------------------------------- */
+
+
