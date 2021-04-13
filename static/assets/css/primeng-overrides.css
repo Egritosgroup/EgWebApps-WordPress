@@ -67,6 +67,22 @@
 	border-bottom-right-radius: 3px;
 }
 
+/* ------------------------- P-SLIDER -----------------------------------  */
+.p-slider .p-slider-range {
+	background: var(--primary);
+}
 
+
+.p-slider:not(.p-disabled) .p-slider-handle {
+	background: white;
+	border-color: var(--primary);
+}
+
+.p-slider:not(.p-disabled) .p-slider-handle:hover {
+	background: var(--primary);
+	border-color: var(--primary);
+}
+
+/* ------------------------------------------------------------------------ */
   
 
