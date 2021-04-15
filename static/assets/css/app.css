@@ -651,15 +651,23 @@ td#files-td { padding: 0!important; }
 	transform: translateX(15px);
 }
 
-.ora-rantevou .diastima-btn {
-	flex: 0 0 calc(100% / 8 - 10px);
-	margin-right: 10px;
+.ora-rantevou {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+	grid-auto-rows: auto;
+	grid-gap: 5px;
 }
-
-.ora-rantevou .diastima-btn:nth-child(8n) { margin-right: 0; }
 
 .rantevou-container .slider.round { border-radius: 34px; }
 .rantevou-container .slider.round:before { border-radius: 50%; }
+
+.view-text {
+	display: none;
+}
+
+.map-container {
+	margin: 0!important;
+}
 
 
 /* ### MEDIA QUERIES ### */
@@ -740,4 +748,18 @@ td#files-td { padding: 0!important; }
 
 @media (min-width: 576px) {
 	.modal-dialog { max-width: 800px; }
+}
+
+@media (max-width: 640px) {
+	.view-button {
+		width: 100%;
+	}
+
+	.view-text {
+		display: inline-block;
+	}
+
+	.add-to-calendar a, .add-to-calendar button {
+		width: 100%;
+	}
 }

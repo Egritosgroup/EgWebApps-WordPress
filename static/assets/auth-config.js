@@ -1,5 +1,5 @@
 var AuthConfOptions = {
-	stsServer: "http://auth.dev.egritosgroup.gr",
+	stsServer: "https://auth.dev.egritosgroup.gr",
 	//stsServer: "https://auth.demo.egritosgroup.gr",
 	redirect_url: "http://localhost:4200/redirect-auth",
 	app_base_href: "/",
@@ -44,21 +44,21 @@ var AppConfOptions = {
 	is_benefits_enabled: true,
 	benefits_applications_organization: "ΔΟΜΕΣ",
 	// benefits_api: "https://domes.demo.egritosgroup.gr/",
-	benefits_api: "http://localhost:4258/",
+	benefits_api: "http://localhost:5380/",
 	benefits_tab_title: "Αιτήσεις Παιδικών Σταθμών",
 	benefits_description: 'Δημιουργία, επεξεργασία & υποβολή αιτήσεων για παιδικούς σταθμούς, με άμεση ενημέρωση για την κατάσταση της αίτησής σας.',
 	benefits_tab_info: 'Δημιουργία, επεξεργασία & υποβολή αιτήσεων για παιδικούς σταθμούς, με άμεση ενημέρωση για την κατάσταση της αίτησής σας.',
 	//app_help_page: "https://aitisi.dopafmai.gr/odigies-eggrafis/"
 
 	is_carpooling_enabled: false,
-	carpooling_api: "http://carpooling.demo.egritosgroup.gr/",
+	carpooling_api: "https://carpooling.demo.egritosgroup.gr/",
 	carpooling_description: 'Δημιουργία & συμμετοχή σε διαδρομές συν-πολιτών σας από οποιοδήποτε μέρος της Ελλάδας.',
 	carpooling_tab_info: '<p>Δημιουργία & συμμετοχή σε διαδρομές συν-πολιτών σας από οποιοδήποτε μέρος της Ελλάδας.</p>',
 	google_maps_key: "AIzaSyCIE9XxZEUpWvs_4e1O-gKL1jK6Xo2CQCM",
 	order_carpooling: 170,
 
 	is_epayments_enabled: true,
-	epayments_api: "http://financeapi.dev.egritosgroup.gr/",
+	epayments_api: "https://financeapi.dev.egritosgroup.gr/",
 	//epayments_api: "https://financeapi.localhost.egritosgroup.gr/",
 	epayments_description: 'Εξόφληση των οριστικοποιημένων οφειλών σας προς τον Φορέα.',
 	epayments_debits_tab_info: 'Σχόλια που αφορούν τις βεβαιωμένες οφειλές.',
@@ -67,7 +67,7 @@ var AppConfOptions = {
 	order_epayments: 10,
 
 	is_kliseis_enabled: true,
-	kliseis_api: "http://kliseis.demo.egritosgroup.gr/",
+	kliseis_api: "https://kliseis.demo.egritosgroup.gr/",
 	kliseis_description: 'Εξόφληση και καταχώρηση κλήσεων Δημοτικής Αστυνομίας.',
 	kliseis_debits_tab_info: `Παρακαλούμε επιλέξτε αυτές τις κλήσεις που θέλετε να εξοφλήσετε από την παρακάτω λίστα.<br />
 				Σε περίπτωση που επιθυμείτε να πληρώσετε κάποια κλήση που δεν υπάρχει στη λίστα, παρακαλώ πιέστε
@@ -77,14 +77,14 @@ var AppConfOptions = {
 	order_kliseis: 20,
 
 	is_eidopoiitiria_enabled: true,
-	eidopoiitiria_api: "http://financeapi.dev.egritosgroup.gr/",
+	eidopoiitiria_api: "https://financeapi.dev.egritosgroup.gr/",
 	//eidopoiitiria_api: "https://financeapi.localhost.egritosgroup.gr/",
 	eidopoiitiria_description: 'Εξόφληση ταυτοτήτων οφειλών.',
 	eidopoiitiria_tab_info: 'Εξόφληση ταυτοτήτων οφειλών.',
 	order_eidopoiitiria: 70,
 
 	is_dimotikos_foros_enabled: true,
-	katastimata_api: "http://katastimata.dev.egritosgroup.gr/",
+	katastimata_api: "https://katastimata.dev.egritosgroup.gr/",
 	katastimata_description: 'Υποβάλλετε και εξοφλήστε την δήλωσή σας για το τέλος 0,5%.',
 	katastimata_tab_info: 'Υποβάλλετε και εξοφλήστε την δήλωσή σας για το τέλος 0,5%.',
 	order_katastimata: 30,
@@ -95,13 +95,13 @@ var AppConfOptions = {
 	order_diakanonismoi: 40,
 
 	is_shde_app_enabled: false,
-	shde_api: "http://prot.dev.egritosgroup.gr/",
+	shde_api: "https://prot.dev.egritosgroup.gr/",
 	shde_description: 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.',
 	shde_tab_info: 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.',
 	order_shde: 90,
 
 	is_rantevou_app_enabled: true,
-	rantevou_api: "http://rantevou.demo.egritosgroup.gr/",
+	rantevou_api: "https://rantevou.demo.egritosgroup.gr/",
 	rantevou_description: '',
 	rantevou_tab_info: 'Ραντεβού Πολιτών',
 	order_rantevou: 100,
