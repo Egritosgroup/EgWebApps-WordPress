@@ -63,7 +63,7 @@ var AppConfOptions = {
 	epayments_description: 'Εξόφληση των οριστικοποιημένων οφειλών σας προς τον Φορέα.',
 	epayments_debits_tab_info: 'Σχόλια που αφορούν τις βεβαιωμένες οφειλές.',
 	epayments_receipts_tab_info: 'Σχόλια που αφορούν τις αποδείξεις των βεβαιωμένων οφειλών.',
-	show_non_persisted_debits: false,
+	show_non_persisted_debits: true,
 	order_epayments: 10,
 
 	is_kliseis_enabled: true,
