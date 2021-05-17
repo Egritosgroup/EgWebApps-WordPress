@@ -54,3 +54,10 @@
 }
 
 /* ----------------------------------------------------------- */
+
+/* -------------- Aitiseis css ------------------------------- */
+.eg-dropdown-white-space-normal .ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup, 
+.eg-dropdown-white-space-normal .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+	white-space: normal !important;
+}
+/* ----------------------------------------------------------- */
