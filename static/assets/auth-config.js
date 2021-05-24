@@ -15,22 +15,11 @@ var AuthConfOptions = {
 	post_logout_redirect_uri: "http://localhost:4200",
 	start_checksession: false,
 	silent_renew: false,
-	post_login_route: "/home",
-	// HTTP 403
-	//forbidden_route : '/forbidden',
-	// HTTP 401
-	//unauthorized_route : '/',
-	//auto_userinfo : true,
-	//auto_clean_state_after_authentication: true,
+	startup_route: "/home",
 	log_console_warning_active: false,
 	log_console_debug_active: false,
 	assets_base_href: "http://localhost:4200/assets/",
-
-	// id_token C8: The iat Claim can be used to reject tokens that were issued too far away from the current time,
-	// limiting the amount of time that nonces need to be stored to prevent attacks.The acceptable range is Client specific.
 	max_id_token_iat_offset_allowed_in_seconds: 3000, // 30000, //300
-	//override_well_known_configuration : true,
-	//override_well_known_configuration_url : '/.well-known/openid-configuration'
 };
 
 var AppConfOptions = {
@@ -94,7 +83,7 @@ var AppConfOptions = {
 	diakanonismoi_tab_info: 'Ενημέρωση για την κατάσταση των διακανονισμών σας και αίτηση νέων διακακονισμών.',
 	order_diakanonismoi: 40,
 
-	is_shde_app_enabled: false,
+	is_shde_app_enabled: true,
 	shde_api: "https://prot.dev.egritosgroup.gr/",
 	shde_description: 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.',
 	shde_tab_info: 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.',
