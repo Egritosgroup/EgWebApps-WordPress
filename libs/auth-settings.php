@@ -2,6 +2,7 @@
 
 function egwebapps_settings_url_handler() {
     if(strpos($_SERVER['REQUEST_URI'],'/auth-settings') > -1 ) {
+        header("Content-type: text/javascript");
         $options = get_option('egr_webapps_plugin_options');
 
         $AuthConf = json_decode(setAuthSettings($options, $GLOBALS['pluginFolderName']));
