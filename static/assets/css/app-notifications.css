@@ -1,0 +1,124 @@
+/* NOTIFICATIONS STYLE */
+.notifications-container .notgroup-container {
+	display: flex;
+	align-items: center;
+	color: #333;
+	text-decoration: none;
+	padding: 10px 15px;
+}
+
+.notifications-container.card-body {
+	padding: 10px 15px;
+}
+
+.notifications-container .p-accordion-header-link:hover, .notifications-container .p-accordion-header-link:active, .notifications-container .p-accordion-header-link:focus {
+	text-decoration: none;
+}
+
+.notifications-container .p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link,
+.notifications-container .p-accordion .p-accordion-header:not(.p-disabled).p-highlight:hover .p-accordion-header-link {
+	background: #dbdbdb;
+	border-color: #dbdbdb;
+	color: #333333;
+}
+
+.notifications-container .notgroup-title {
+	margin-left: 20px;
+}
+
+.notifications-container .notgroup-title h4 {
+	margin: 0;
+	font-size: 20px;
+}
+
+.notifications-container .notgroup-title span {
+	font-weight: 200;
+	font-size: 16px;
+}
+
+.notifications-container .extra-info {
+	display: inline-block;
+	margin-bottom: 15px;
+	font-size: 16px;
+}
+
+.notifications-container .descr {
+	font-size: 16px;
+}
+
+.notifications-container .arrow {
+	margin-left: auto;
+}
+
+.notifications-container .switch {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 24px;
+}
+
+.notifications-container .slider {
+	position: relative;
+	display: inline-block;
+	height: 8px;
+	width: 32px;
+	border-radius: 24px;
+	cursor: pointer;
+	background: #c5c5c5;
+	transition: all .2s ease;
+	margin: 0;
+}
+
+.notifications-container .slider:after {
+	background: #eeeeee;
+	position: absolute;
+	left: -8px;
+	top: calc((8px - 24px) / 2);
+	display: block;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	box-shadow: 0px 2px 2px #000;
+	content: '';
+	transition: all .2s ease;
+}
+
+.notifications-container .switch label {
+	color: #333;
+	font-size: 16px;
+	margin: 0;
+	display: flex;
+	align-items: center;
+}
+
+.notifications-container .switch label i {
+	font-size: 20px;
+	margin-right: 10px;
+}
+
+.notifications-container .switch .input {
+	display: none;
+}
+
+.notifications-container .switch .input:checked ~ .slider:after {
+	left: calc(32px - 24px + 8px);
+}
+
+.notifications-container .switch .input:checked ~ .slider:after {
+	background: #1c1378;
+}
+
+.notifications-container .has-switch {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.notifications-container .has-switch .switch {
+	margin-top: 0;
+}
+
+.notifications-container .has-switch .switch .label {
+	margin-right: 10px;
+}
+/* END NOTIFICATIONS STYLE */

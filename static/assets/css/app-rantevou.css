@@ -1,0 +1,209 @@
+/* ### RANTEVOU CALENDAR CUSTOM CSS ### */
+/* .rantevou-container .custom-calendar .p-datepicker {
+	border: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+.rantevou-container .custom-calendar .p-datepicker-group-container { width: 100%; }
+.rantevou-container .custom-calendar .p-datepicker table th { text-align: center; }
+.rantevou-container .custom-calendar .p-datepicker table td { padding: 2px; }
+.p-datepicker table td > span, .p-datepicker table td > span.p-disabled {
+	background-color: var(--disabled);
+	border-radius: 0;
+	padding: 0;
+	width: unset;
+}
+
+.rantevou-container .custom-calendar .ui-datepicker-calendar span.ui-state-disabled { padding: 20px 15px!important; }
+
+.rantevou-container .custom-calendar .ui-datepicker-header {
+	border-bottom: 2px solid #e3e6eb;
+	padding-bottom: 20px!important;
+}
+
+.rantevou-container .custom-calendar .ui-datepicker-title {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.rantevou-container .custom-calendar .ui-datepicker-prev, .rantevou-container .custom-calendar .ui-datepicker-next {
+	background-color: #d6d6d6;
+	width: 2em!important;
+	height: 2em!important;
+	color: #204969!important;
+}*/
+
+.egwebapps-calendar .p-datepicker table td > a.ui-state-active .avail-box, .egwebapps-calendar .p-datepicker table td > span.ui-state-active .avail-box {
+	background-color: #204969;
+}
+
+.egwebapps-calendar .p-datepicker table td > span.p-disabled > .custom-date-inner { background-color: var(--disabled) !important; }
+.egwebapps-calendar .p-datepicker table td > span > .custom-date-inner {
+	width: 100%;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+	font-weight: bold;
+}
+.egwebapps-calendar .custom-calendar .ui-datepicker-calendar span.ui-state-disabled > .custom-date-inner { font-weight: normal; }
+
+.egwebapps-calendar .p-datepicker table td > span > .custom-date-inner.diathesimo { background-color: #0fbe6c; }
+.egwebapps-calendar .p-datepicker table td > span > .custom-date-inner.diathesimo:hover,
+.egwebapps-calendar .p-datepicker table td > span > .custom-date-inner.diathesimo:focus { background-color: #098a4e; }
+.egwebapps-calendar .p-datepicker table td > span.p-highlight .custom-date-inner.diathesimo { background-color: var(--primary); }
+.egwebapps-calendar .p-datepicker table td > span > .custom-date-inner.mi-diathesimo { background-color: #c2433c; }
+
+.egwebapps-calendar .avail-box { position: relative; }
+.egwebapps-calendar .diastima-btn { width: calc((100% / 6) - 5px); margin-right: 5px; }
+.egwebapps-calendar .availability {
+	display: block;
+	width: 100%;
+	height: 5px;
+    margin-top: 8px;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+.rantevou-container .labels-wrapper {
+	border-top: 2px solid #e3e6eb;
+	padding-top: 0.857em;
+}
+
+.rantevou-container .ora-label {
+	border-bottom: 2px solid #e3e6eb;
+	padding-bottom: 0.857em;
+	margin-bottom: 0.857em;
+}
+
+.rantevou-container .square {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	margin-right: 5px;
+}
+
+.rantevou-container .square.green {	background-color: #0fbe6c; }
+.rantevou-container .square.red { background-color: #c2433c; }
+
+.rantevou-container .avail-box {
+	font-weight: bold;
+	padding: 20px 15px;
+}
+
+.rantevou-container .avail-box.green { background-color: #0fbe6c; }
+.rantevou-container .avail-box.red { background-color: #c2433c; }
+.rantevou-container .ui-table .ui-table-caption, .rantevou-container .ui-table .ui-table-summary { padding: .25em .5em !important; }
+
+.rantevou-container #main-map {
+	width: 100%;
+	height: 300px;
+	position: relative;
+}
+
+.rantevou-container .desc { display: none; }
+.rantevou-container .desc.active { display: inline-block; }
+.rantevou-container .number {
+	background-color: #c3c3c4;
+	display: inline-block;
+    width: 100px;
+    height: 10px;
+    margin-right: 8px;
+    border-radius: 6px;
+}
+
+.rantevou-container .number.active { background-color: #204969; }
+.rantevou-container .descs {
+	font-size: 19px;
+    margin-bottom: 15px;
+	line-height: 1;
+}
+
+.rantevou-container .light-green { background-color: #38833e; }
+.rantevou-container .green { background-color: #536069; }
+.rantevou-container .light-red { background-color: #ce5527; }
+.rantevou-container .red { background-color: #be2526; }
+.rantevou-container .yellow { background-color: #e5ce1c; }
+
+.rantevou-container .katastasi-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 0 5px;
+    height: 20px;
+    background-color: black;
+    color: white;
+	margin-right: 5px;
+}
+
+.rantevou-container .inner-katastasi {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+    justify-content: center;
+}
+
+.rantevou-container .katastasi-wrap {
+	position: absolute;
+	top: 0; bottom: 0;
+	left: 0; right: 0;
+}
+
+.rantevou-container .switch {
+	position: relative;
+	display: inline-block;
+	width: 38px;
+    height: 23px;
+}
+
+.rantevou-container .switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.rantevou-container .slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.rantevou-container .slider:before {
+	position: absolute;
+	content: "";
+	height: 15px;
+	width: 15px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.rantevou-container input:checked + .slider { background-color: #e0a800; }
+.rantevou-container input:focus + .slider { box-shadow: 0 0 1px #e0a800; }
+
+.rantevou-container input:checked + .slider:before {
+	-webkit-transform: translateX(15px);
+	-ms-transform: translateX(15px);
+	transform: translateX(15px);
+}
+
+.ora-rantevou {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+	grid-auto-rows: auto;
+	grid-gap: 5px;
+}
+
+.rantevou-container .slider.round { border-radius: 34px; }
+.rantevou-container .slider.round:before { border-radius: 50%; }

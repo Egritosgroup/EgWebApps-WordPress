@@ -1,0 +1,63 @@
+/* ------------------- Kratiseis css -------------------- */
+.ypomnima-labels-wrapper {
+	border-top: 2px solid #e3e6eb;
+	padding-top: 0.857em;
+}
+
+
+.ypomnima-square {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	margin-right: 5px;
+}
+
+.ypomnima-square.green {	background-color: #0fbe6c; }
+.ypomnima-square.red { background-color: #c2433c; }
+
+
+.diastimata-container {
+	/* width: 100%; */
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+	/* grid-auto-rows: 75px; */
+	grid-auto-rows: auto;
+	grid-gap: 5px;
+  }
+
+  .ypodomes-container {
+	/* width: 100%; */
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	/* grid-auto-rows: 75px; */
+	grid-auto-rows: auto;
+	grid-gap: 10px;
+  }
+
+  .eg-kratisi-olokliromeni .p-panel .p-panel-header {
+    background: var(--success) !important;
+}
+  .eg-kratisi-akiromeni .p-panel .p-panel-header {
+    background: var(--danger) !important;
+}
+  .eg-kratisi-prosorini .p-panel .p-panel-header {
+    background: var(--warning) !important;
+}
+
+.eg-ypodomi-badge {
+    position: absolute !important;
+    top: -15px !important;
+    right: -10px !important;
+    width: 40px !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+}
+
+/* ----------------------------------------------------------- */
+
+/* -------------- Aitiseis css ------------------------------- */
+.eg-dropdown-white-space-normal .ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup, 
+.eg-dropdown-white-space-normal .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+	white-space: normal !important;
+}
+/* ----------------------------------------------------------- */
