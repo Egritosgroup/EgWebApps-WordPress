@@ -51,7 +51,7 @@ var AppConfOptions = {
 	carpooling_description_en: 'Create and participate in trips with your fellow citizens from any part of Greece.',
 	carpooling_tab_info: 'Δημιουργία και συμμετοχή σε διαδρομές συν-πολιτών σας από οποιοδήποτε μέρος της Ελλάδας.',
 	carpooling_tab_info_en: 'Δημιουργία και συμμετοχή σε διαδρομές συν-πολιτών σας από οποιοδήποτε μέρος της Ελλάδας.',
-	google_maps_key: "AIzaSyCIE9XxZEUpWvs_4e1O-gKL1jK6Xo2CQCM",
+	google_maps_key: null,
 	order_carpooling: 170,
 
 	is_epayments_enabled: true,
