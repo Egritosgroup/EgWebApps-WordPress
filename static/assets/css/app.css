@@ -378,11 +378,8 @@ td#files-td { padding: 0!important; }
 .eiserxomeno { color:#0A84A3; }
 .ekserxomeno { color:#955982; }
 
-.katastasi .fa-paper-plane { color: #cccc00; }
+.katastasi .fa-paper-plane { color: green; }
 .katastasi .fa-pencil-alt { color:orangered; }
-.katastasi .fa-check { color:green; }
-.katastasi .fa-exclamation { color:greenyellow; }
-.katastasi .fa-times  { color:red; }
 
 .bg-grey { background-color: #dedede!important; }
 .view-text { display: none; }
