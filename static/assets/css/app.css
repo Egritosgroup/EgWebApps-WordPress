@@ -194,41 +194,42 @@ form .form-actions {
 /* ### EGWEBAPPS MISC ### */
 .payment-method:hover, .payment-method:focus, .payment-method:active { background-color: var(--disabled) !important; }
 
-.fixed-width-col-40 { width: 40px !important; }
-.fixed-width-col-60 { width: 60px !important; }
-.fixed-width-col-80 { width: 80px !important; }
-.fixed-width-col-100 { width: 100px !important; }
-.fixed-width-col-120 { width: 120px !important; }
-.fixed-width-col-150 { width: 150px !important; }
-.fixed-width-col-170 { width: 170px !important; }
-.fixed-width-col-180 { width: 180px !important; }
-.fixed-width-col-210 { width: 210px !important; }
-.fixed-width-col-220 { width: 220px !important; }
-.fixed-width-col-230 { width: 230px !important; }
-.fixed-width-col-240 { width: 240px !important; }
-.fixed-width-col-270 { width: 270px !important; }
-.fixed-width-col-300 { width: 300px !important; }
-.fixed-width-col-310 { width: 310px !important; }
-.fixed-width-col-320 { width: 320px !important; }
-.fixed-width-col-330 { width: 330px !important; }
-.fixed-width-col-340 { width: 340px !important; }
-.fixed-width-col-370 { width: 370px !important; }
-.fixed-width-col-400 { width: 400px !important; }
-.fixed-width-col-430 { width: 430px !important; }
-.fixed-width-col-450 { width: 450px !important; }
-.fixed-width-col-460 { width: 460px !important; }
-.fixed-width-col-470 { width: 470px !important; }
-.fixed-width-col-480 { width: 480px !important; }
-.fixed-width-col-510 { width: 510px !important; }
-.fixed-width-col-530 { width: 530px !important; }
-.fixed-width-col-570 { width: 570px !important; }
-.fixed-width-col-640 { width: 640px !important; }
-.fixed-width-col-710 { width: 710px !important; }
-.fixed-width-col-740 { width: 740px !important; }
-.fixed-width-col-810 { width: 810px !important; }
-.fixed-width-col-850 { width: 850px !important; }
-.fixed-width-col-920 { width: 920px !important; }
-.fixed-width-col-1050 { width: 1050px !important; }
+.fixed-width-col-40 { width: 40px !important; min-width: 40px !important; }
+.fixed-width-col-60 { width: 60px !important; min-width: 60px !important; }
+.fixed-width-col-80 { width: 80px !important; min-width: 80px !important; }
+.fixed-width-col-100 { width: 100px !important; min-width: 100px !important; }
+.fixed-width-col-120 { width: 120px !important; min-width: 120px !important; }
+.fixed-width-col-150 { width: 150px !important; min-width: 150px !important; }
+.fixed-width-col-170 { width: 170px !important; min-width: 170px !important; }
+.fixed-width-col-180 { width: 180px !important; min-width: 180px !important; }
+.fixed-width-col-210 { width: 210px !important; min-width: 210px !important; }
+.fixed-width-col-220 { width: 220px !important; min-width: 220px !important; }
+.fixed-width-col-230 { width: 230px !important; min-width: 230px !important; }
+.fixed-width-col-240 { width: 240px !important; min-width: 240px !important; }
+.fixed-width-col-270 { width: 270px !important; min-width: 270px !important; }
+.fixed-width-col-300 { width: 300px !important; min-width: 300px !important; }
+.fixed-width-col-310 { width: 310px !important; min-width: 310px !important; }
+.fixed-width-col-320 { width: 320px !important; min-width: 320px !important; }
+.fixed-width-col-330 { width: 330px !important; min-width: 330px !important; }
+.fixed-width-col-340 { width: 340px !important; min-width: 340px !important; }
+.fixed-width-col-370 { width: 370px !important; min-width: 370px !important; }
+.fixed-width-col-400 { width: 400px !important; min-width: 400px !important; }
+.fixed-width-col-430 { width: 430px !important; min-width: 430px !important; }
+.fixed-width-col-450 { width: 450px !important; min-width: 450px !important; }
+.fixed-width-col-460 { width: 460px !important; min-width: 460px !important; }
+.fixed-width-col-470 { width: 470px !important; min-width: 470px !important; }
+.fixed-width-col-480 { width: 480px !important; min-width: 480px !important; }
+.fixed-width-col-510 { width: 510px !important; min-width: 510px !important; }
+.fixed-width-col-530 { width: 530px !important; min-width: 530px !important; }
+.fixed-width-col-570 { width: 570px !important; min-width: 570px !important; }
+.fixed-width-col-640 { width: 640px !important; min-width: 640px !important; }
+.fixed-width-col-710 { width: 710px !important; min-width: 710px !important; }
+.fixed-width-col-740 { width: 740px !important; min-width: 740px !important; }
+.fixed-width-col-790 { width: 790px !important; min-width: 790px !important; }
+.fixed-width-col-810 { width: 810px !important; min-width: 810px !important; }
+.fixed-width-col-850 { width: 850px !important; min-width: 850px !important; }
+.fixed-width-col-920 { width: 920px !important; min-width: 920px !important; }
+.fixed-width-col-1050 { width: 1050px !important; min-width: 1050px !important; }
 
 .alert { font-size: 14px; }
 
