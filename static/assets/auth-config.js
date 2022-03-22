@@ -67,7 +67,7 @@ var AppConfOptions = {
 	order_epayments: 10,
 
 	is_kliseis_enabled: true,
-	kliseis_api: "https://kliseis.demo.egritosgroup.gr/",
+	kliseis_api: "http://localhost:4287/",
 	kliseis_description: 'Εξόφληση και καταχώρηση κλήσεων Δημοτικής Αστυνομίας.',
 	kliseis_description_en: 'Payment of traffic tickets',
 	kliseis_debits_tab_info: 'Παρακαλούμε επιλέξτε αυτές τις κλήσεις που θέλετε να εξοφλήσετε από την παρακάτω λίστα.<br />Σε περίπτωση που επιθυμείτε να πληρώσετε κάποια κλήση που δεν υπάρχει στη λίστα, παρακαλώ πιέστε "Καταχώρηση Νέας Κλήσης".',
