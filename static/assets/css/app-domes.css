@@ -34,6 +34,10 @@
 	grid-gap: 16px 10px;
   }
 
+  .domes-ypodomi-btn {
+		white-space: normal!important;
+	}
+
   .eg-kratisi-olokliromeni .p-panel .p-panel-header {
     background: var(--success) !important;
 }
