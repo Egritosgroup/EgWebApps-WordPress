@@ -32,7 +32,6 @@ if(isset($options['shortcode']) && $options['shortcode'] == 'on') {
     }
 }
 
-
 function sortFilesfromFolder($a, $b) {
     $a = explode('-', $a);
     $b = explode('-', $b);

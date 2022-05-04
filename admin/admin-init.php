@@ -52,6 +52,7 @@ function egr_render_plugin_settings_page() {
                     <button class="nav-link" id="nav-kliseis-tab" data-bs-toggle="tab" data-bs-target="#nav-kliseis" type="button" role="tab" aria-controls="nav-kliseis" aria-selected="false">Κλήσεις</button>
                     <button class="nav-link" id="nav-eidopoiitiria-tab" data-bs-toggle="tab" data-bs-target="#nav-eidopoiitiria" type="button" role="tab" aria-controls="nav-eidopoiitiria" aria-selected="false">Ειδοποιητήρια</button>
                     <button class="nav-link" id="nav-dimotikosforos-tab" data-bs-toggle="tab" data-bs-target="#nav-dimotikosforos" type="button" role="tab" aria-controls="nav-dimotikosforos" aria-selected="false">Δημοτικός Φόρος</button>
+                    <button class="nav-link" id="nav-koi-aitiseis-tab" data-bs-toggle="tab" data-bs-target="#nav-koi-aitiseis" type="button" role="tab" aria-controls="nav-koi-aitiseis" aria-selected="false">Αιτήσεις Κοινοχρήστων</button>
                     <button class="nav-link" id="nav-diakanonismoi-tab" data-bs-toggle="tab" data-bs-target="#nav-diakanonismoi" type="button" role="tab" aria-controls="nav-diakanonismoi" aria-selected="false">Διακανονισμοί</button>
                     <button class="nav-link" id="nav-diakinisi-tab" data-bs-toggle="tab" data-bs-target="#nav-diakinisi" type="button" role="tab" aria-controls="nav-diakinisi" aria-selected="false">Διακίνηση Εγγράφων</button>
                     <button class="nav-link" id="nav-rantevou-tab" data-bs-toggle="tab" data-bs-target="#nav-rantevou" type="button" role="tab" aria-controls="nav-rantevou" aria-selected="false">Ηλεκτρονικά Ραντεβού</button>
@@ -82,6 +83,9 @@ function egr_render_plugin_settings_page() {
                     </div>
                     <div class="tab-pane fade" id="nav-dimotikosforos" role="tabpanel" aria-labelledby="nav-dimotikosforos-tab">                
                         <?php do_settings_sections('egr_dimotikosforos_plugin'); ?>
+                    </div>
+                    <div class="tab-pane fade" id="nav-koi-aitiseis" role="tabpanel" aria-labelledby="nav-koi-aitiseis-tab">                
+                        <?php do_settings_sections('egr_koinoxristoi_plugin'); ?>
                     </div>
                     <div class="tab-pane fade" id="nav-diakanonismoi" role="tabpanel" aria-labelledby="nav-diakanonismoi-tab">                
                         <?php do_settings_sections('egr_diakanonismoi_plugin'); ?>
@@ -155,7 +159,7 @@ function egr_register_settings() {
     add_settings_field('egr_plugin_setting_epayments_receipts_tab_info', 'Οδηγίες Ιστορικού Πληρωμών Βεβαιωμένων Οφειλών (epayments_receipts_tab_info)', 'egr_plugin_setting_epayments_receipts_tab_info', 'egr_epayments_plugin', 'epayments_settings');
     add_settings_field('egr_plugin_setting_epayments_receipts_tab_info_en', 'Οδηγίες Ιστορικού Πληρωμών Βεβαιωμένων Οφειλών(EN) (epayments_receipts_tab_info_en)', 'egr_plugin_setting_epayments_receipts_tab_info_en', 'egr_epayments_plugin', 'epayments_settings');
     add_settings_field('egr_plugin_setting_epayments_tab_info', 'Γενικές Οδηγίες (epayments_tab_info)', 'egr_plugin_setting_epayments_tab_info', 'egr_epayments_plugin', 'epayments_settings');
-    add_settings_field('egr_plugin_setting_show_non_persisted_debits', 'Εμφάνιση μη διαρκών χρεών (show_non_persisted_debits)', 'egr_plugin_setting_show_non_persisted_debits', 'egr_epayments_plugin', 'epayments_settings');
+    add_settings_field('egr_plugin_setting_show_non_persisted_debits', 'Εμφάνιση μη βεβαιωμένων Οφειλών (show_non_persisted_debits)', 'egr_plugin_setting_show_non_persisted_debits', 'egr_epayments_plugin', 'epayments_settings');
     add_settings_field('egr_plugin_setting_order_epayments', 'Σειρά Ηλεκτρονικών Πληρωμών (order_epayments)', 'egr_plugin_setting_order_epayments', 'egr_epayments_plugin', 'epayments_settings');
     
     add_settings_section('kliseis_settings', '<div id="kliseis">Ρυθμίσεις Κλήσεων</div>', 'egr_plugin_section_text', 'egr_kliseis_plugin');
@@ -179,14 +183,23 @@ function egr_register_settings() {
     add_settings_field('egr_plugin_setting_eidopoiitiria_tab_info_en', 'Γενικές Οδηγίες(EN) (eidopoiitiria_tab_info_en)', 'egr_plugin_setting_eidopoiitiria_tab_info_en', 'egr_eidopoiitiria_plugin', 'eidopoiitiria_settings');
     add_settings_field('egr_plugin_setting_order_eidopoiitiria', 'Σειρά Ειδοποιητηρίων (order_eidopoiitiria)', 'egr_plugin_setting_order_eidopoiitiria', 'egr_eidopoiitiria_plugin', 'eidopoiitiria_settings');
 
-    add_settings_section('dimotikos_foros_settings', '<div id="dimotikosforos">Ρυθμίσεις Δημοτικού Φόρου</div>', 'egr_plugin_section_text', 'egr_dimotikosforos_plugin');
-    add_settings_field('egr_plugin_setting_isdimotikos_foros', 'Δημοτικός Φόρος (is_dimotikos_foros_enabled)', 'egr_plugin_setting_isdimotikos_foros', 'egr_dimotikosforos_plugin', 'dimotikos_foros_settings');
-    add_settings_field('egr_plugin_setting_katastimata_api', 'Δημοτικός Φόρος Api URL (katastimata_api)', 'egr_plugin_setting_katastimata_api', 'egr_dimotikosforos_plugin', 'dimotikos_foros_settings');
+    add_settings_section('dimotikos_foros_settings', '<div id="dimotikosforos">Ρυθμίσεις Τέλους 0.5% / Παρεπιδημούντων</div>', 'egr_plugin_section_text', 'egr_dimotikosforos_plugin');
+    add_settings_field('egr_plugin_setting_isdimotikos_foros', 'Τέλος 0.5% / Παρεπιδημούντων (is_dimotikos_foros_enabled)', 'egr_plugin_setting_isdimotikos_foros', 'egr_dimotikosforos_plugin', 'dimotikos_foros_settings');
+    add_settings_field('egr_plugin_setting_katastimata_api', 'Τέλος 0.5% / Παρεπιδημούντων Api URL (katastimata_api)', 'egr_plugin_setting_katastimata_api', 'egr_dimotikosforos_plugin', 'dimotikos_foros_settings');
     add_settings_field('egr_plugin_setting_katastimata_description', 'Περιγραφή (katastimata_description)', 'egr_plugin_setting_katastimata_description', 'egr_dimotikosforos_plugin', 'dimotikos_foros_settings');
     add_settings_field('egr_plugin_setting_katastimata_description_en', 'Περιγραφή(EN) (katastimata_description_en)', 'egr_plugin_setting_katastimata_description_en', 'egr_dimotikosforos_plugin', 'dimotikos_foros_settings');
     add_settings_field('egr_plugin_setting_katastimata_tab_info', 'Γενικές Οδηγίες (katastimata_tab_info)', 'egr_plugin_setting_katastimata_tab_info', 'egr_dimotikosforos_plugin', 'dimotikos_foros_settings');
     add_settings_field('egr_plugin_setting_katastimata_tab_info_en', 'Γενικές Οδηγίες(EN) (katastimata_tab_info_en)', 'egr_plugin_setting_katastimata_tab_info_en', 'egr_dimotikosforos_plugin', 'dimotikos_foros_settings');
-    add_settings_field('egr_plugin_setting_order_katastimata', 'Σειρά Δημοτικού Φόρου (order_katastimata)', 'egr_plugin_setting_order_katastimata', 'egr_dimotikosforos_plugin', 'dimotikos_foros_settings');
+    add_settings_field('egr_plugin_setting_order_katastimata', 'Σειρά Τέλους 0.5% / Παρεπιδημούντων (order_katastimata)', 'egr_plugin_setting_order_katastimata', 'egr_dimotikosforos_plugin', 'dimotikos_foros_settings');
+
+    add_settings_section('koin_aitiseis_settings', '<div id="koinoxristoi">Ρυθμίσεις Αιτήσεων Κοινοχρήστων</div>', 'egr_plugin_section_text', 'egr_koinoxristoi_plugin');
+    add_settings_field('egr_plugin_setting_is_koinoxristoi', 'Αιτήσεις Κοινοχρήστων (is_koinoxristoi_enabled)', 'egr_plugin_setting_koinoxristoi', 'egr_koinoxristoi_plugin', 'koinoxristoi_settings');
+    add_settings_field('egr_plugin_setting_koinoxristoi_api', 'Αιτήσεις Κοινοχρήστων Api URL (koinoxristoi_api)', 'egr_plugin_setting_koinoxristoi_api', 'egr_koinoxristoi_plugin', 'koinoxristoi_settings');
+    add_settings_field('egr_plugin_setting_koinoxristoi_description', 'Περιγραφή (koinoxristoi_description)', 'egr_plugin_setting_koinoxristoi_description', 'egr_koinoxristoi_plugin', 'koinoxristoi_settings');
+    add_settings_field('egr_plugin_setting_koinoxristoi_description_en', 'Περιγραφή(EN) (koinoxristoi_description_en)', 'egr_plugin_setting_koinoxristoi_description_en', 'egr_koinoxristoi_plugin', 'koinoxristoi_settings');
+    add_settings_field('egr_plugin_setting_koinoxristoi_tab_info', 'Γενικές Οδηγίες (koinoxristoi_tab_info)', 'egr_plugin_setting_koinoxristoi_tab_info', 'egr_koinoxristoi_plugin', 'koinoxristoi_settings');
+    add_settings_field('egr_plugin_setting_koinoxristoi_tab_info_en', 'Γενικές Οδηγίες(EN) (koinoxristoi_tab_info_en)', 'egr_plugin_setting_koinoxristoi_tab_info_en', 'egr_koinoxristoi_plugin', 'koinoxristoi_settings');
+    add_settings_field('egr_plugin_setting_order_koinoxristoi', 'Σειρά Αιτήσεων Κοινοχρήστων (order_koinoxristoi)', 'egr_plugin_setting_order_koinoxristoi', 'egr_koinoxristoi_plugin', 'koinoxristoi_settings');
 
     add_settings_section('diakanonismoi_settings', '<div id="diakanonismoi">Ρυθμίσεις Διακανονισμών</div>', 'egr_plugin_section_text', 'egr_diakanonismoi_plugin');
     add_settings_field('egr_plugin_setting_isdiakanonismoi', 'Διακανονισμοί (is_diakanonismoi_enabled)', 'egr_plugin_setting_isdiakanonismoi', 'egr_diakanonismoi_plugin', 'diakanonismoi_settings');
@@ -692,6 +705,61 @@ function egr_plugin_setting_katastimata_tab_info_en() {
 function egr_plugin_setting_order_katastimata() {
     $options = get_option('egr_webapps_plugin_options');
     echo "<input id='egr_plugin_setting_order_katastimata' name='egr_webapps_plugin_options[order_katastimata]' type='text' value='".esc_attr(isset($options['order_katastimata']) ? $options['order_katastimata'] : 30)."' />";
+}
+
+//END
+
+//KOINOXRHSTOI
+
+function egr_plugin_setting_koinoxristoi() {
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_koinoxristoi' name='egr_webapps_plugin_options[koinoxristoi]' type='checkbox' ".esc_attr(isset($options['koinoxristoi']) ? 'checked=checked' : '')." />";
+}
+
+function egr_plugin_setting_koinoxristoi_api() {
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_koinoxristoi_api' name='egr_webapps_plugin_options[koinoxristoi_api]' type='text' value='".esc_attr(isset($options['koinoxristoi_api']) ? $options['katastimata_api'] : '')."' />";
+}
+
+function egr_plugin_setting_koinoxristoi_description() {
+   $options = get_option('egr_webapps_plugin_options'); ?>
+
+   <div class="editor-wrapper egr_plugin_setting_katastimata_description_editor">
+       <?php echo "<input type='hidden' id='egr_plugin_setting_koinoxristoi_description' name='egr_webapps_plugin_options[koinoxristoi_description]' value='".esc_attr(isset($options['koinoxristoi_description']) ? $options['koinoxristoi_description'] : '')."' />"; ?>
+       <div id="egr_plugin_setting_koinoxristoi_description_editor" class="editor"></div>
+   </div>
+<?php }
+
+function egr_plugin_setting_koinoxristoi_description_en() {
+   $options = get_option('egr_webapps_plugin_options'); ?>
+
+   <div class="editor-wrapper egr_plugin_setting_katastimata_description_en_editor">
+       <?php echo "<input type='hidden' id='egr_plugin_setting_koinoxristoi_description_en' name='egr_webapps_plugin_options[koinoxristoi_description_en]' value='".esc_attr(isset($options['koinoxristoi_description_en']) ? $options['koinoxristoi_description_en'] : '')."' />"; ?>
+       <div id="egr_plugin_setting_koinoxristoi_description_en_editor" class="editor"></div>
+   </div>
+<?php }
+
+function egr_plugin_setting_koinoxristoi_tab_info() {
+   $options = get_option('egr_webapps_plugin_options'); ?>
+
+   <div class="editor-wrapper egr_plugin_setting_katastimata_tab_info_editor">
+       <?php echo "<input type='hidden' id='egr_plugin_setting_koinoxristoi_tab_info' name='egr_webapps_plugin_options[koinoxristoi_tab_info]' value='".esc_attr(isset($options['koinoxristoi_tab_info']) ? $options['koinoxristoi_tab_info'] : '')."' />"; ?>
+       <div id="egr_plugin_setting_koinoxristoi_tab_info_editor" class="editor"></div>
+   </div>
+<?php }
+
+function egr_plugin_setting_koinoxristoi_tab_info_en() {
+   $options = get_option('egr_webapps_plugin_options'); ?>
+
+   <div class="editor-wrapper egr_plugin_setting_katastimata_tab_info_en_editor">
+       <?php echo "<input type='hidden' id='egr_plugin_setting_koinoxristoi_tab_info_en' name='egr_webapps_plugin_options[koinoxristoi_tab_info_en]' value='".esc_attr(isset($options['koinoxristoi_tab_info_en']) ? $options['koinoxristoi_tab_info_en'] : '')."' />"; ?>
+       <div id="egr_plugin_setting_koinoxristoi_tab_info_en_editor" class="editor"></div>
+   </div>
+<?php }
+
+function egr_plugin_setting_order_koinoxristoi() {
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_order_koinoxristoi' name='egr_webapps_plugin_options[order_koinoxristoi]' type='text' value='".esc_attr(isset($options['order_koinoxristoi']) ? $options['order_koinoxristoi'] : 30)."' />";
 }
 
 //END
