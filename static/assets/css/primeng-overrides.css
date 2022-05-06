@@ -20,7 +20,12 @@ body .ui-widget { font-size: 15px; }
 .p-datatable .p-datatable-tbody > tr > td { word-break: break-all; }
 .p-datatable-scrollable-body > table > .p-datatable-tbody > tr > td:first-of-type { position: relative; }
 
-
+.p-dialog { max-width: 80vw; min-width: 400px; overflow: auto; }
+.p-dialog .p-dialog-header .p-dialog-title { font-size: 1.2rem; }
+.p-dialog .p-dialog-content { position: relative; }
+.p-dialog-content { overflow-y: initial !important; }
+.p-dialog .p-dialog-footer, .p-dialog .p-dialog-footer p-footer { display: flex; flex-wrap: wrap; text-align: left; }
+.p-dialog .p-dialog-footer p-footer { width: 100%; }
 
 .p-paginator .p-paginator-pages .p-paginator-page.p-highlight,
 .p-datatable .p-sortable-column.p-highligh,
