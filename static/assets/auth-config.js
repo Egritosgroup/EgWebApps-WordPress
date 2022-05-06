@@ -147,6 +147,7 @@ var AppConfOptions = {
 	is_proslipseis_enabled: true,
 	proslipseis_api: "https://proslipseis.demo.egritosgroup.gr/",
 	proslipseis_tab_title: "Αιτήσεις Προσλήψεων",
+	proslipseis_tab_title_en: "Recruitment Applications",
 	proslipseis_description: 'Αιτήσεις Πολιτών προς το σύστημα προσλήψεων εποχιακού και μόνιμου προσωπικού του οργανισμού.',
 	proslipseis_description_en: '',
 	proslipseis_tab_title_en: "Recruitment Applications",
