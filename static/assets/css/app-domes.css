@@ -4,7 +4,6 @@
 	padding-top: 0.857em;
 }
 
-
 .ypomnima-square {
 	display: inline-block;
 	width: 15px;
@@ -73,7 +72,7 @@
 .eg-diastima-badge {
 	position: absolute !important;
 	top: -16px !important;
-	right: -10px !important;   
+	right: -10px !important;
 	padding-top: 4px !important;
 	padding-bottom: 4px !important;
 }
@@ -81,7 +80,7 @@
 /* ----------------------------------------------------------- */
 
 /* -------------- Aitiseis css ------------------------------- */
-.eg-dropdown-white-space-normal .ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup, 
+.eg-dropdown-white-space-normal .ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup,
 .eg-dropdown-white-space-normal .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
 	white-space: normal !important;
 }
