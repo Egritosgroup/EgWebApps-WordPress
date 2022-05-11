@@ -56,7 +56,7 @@ function egr_render_plugin_settings_page()
                <button class="nav-link" id="nav-kliseis-tab" data-bs-toggle="tab" data-bs-target="#nav-kliseis" type="button" role="tab" aria-controls="nav-kliseis" aria-selected="false">Κλήσεις</button>
                <button class="nav-link" id="nav-eidopoiitiria-tab" data-bs-toggle="tab" data-bs-target="#nav-eidopoiitiria" type="button" role="tab" aria-controls="nav-eidopoiitiria" aria-selected="false">Ειδοποιητήρια</button>
                <button class="nav-link" id="nav-dimotikosforos-tab" data-bs-toggle="tab" data-bs-target="#nav-dimotikosforos" type="button" role="tab" aria-controls="nav-dimotikosforos" aria-selected="false">Δημοτικός Φόρος</button>
-               <button class="nav-link" id="nav-koi-aitiseis-tab" data-bs-toggle="tab" data-bs-target="#nav-koi-aitiseis" type="button" role="tab" aria-controls="nav-koi-aitiseis" aria-selected="false">Αιτήσεις Κοινοχρήστων</button>
+               <button class="nav-link" id="nav-koin-aitiseis-tab" data-bs-toggle="tab" data-bs-target="#nav-koin-aitiseis" type="button" role="tab" aria-controls="nav-koin-aitiseis" aria-selected="false">Αιτήσεις Κοινοχρήστων</button>
                <button class="nav-link" id="nav-diakanonismoi-tab" data-bs-toggle="tab" data-bs-target="#nav-diakanonismoi" type="button" role="tab" aria-controls="nav-diakanonismoi" aria-selected="false">Διακανονισμοί</button>
                <button class="nav-link" id="nav-diakinisi-tab" data-bs-toggle="tab" data-bs-target="#nav-diakinisi" type="button" role="tab" aria-controls="nav-diakinisi" aria-selected="false">Διακίνηση Εγγράφων</button>
                <button class="nav-link" id="nav-rantevou-tab" data-bs-toggle="tab" data-bs-target="#nav-rantevou" type="button" role="tab" aria-controls="nav-rantevou" aria-selected="false">Ηλεκτρονικά Ραντεβού</button>
@@ -88,7 +88,7 @@ function egr_render_plugin_settings_page()
                <div class="tab-pane fade" id="nav-dimotikosforos" role="tabpanel" aria-labelledby="nav-dimotikosforos-tab">
                   <?php do_settings_sections('egr_dimotikosforos_plugin'); ?>
                </div>
-               <div class="tab-pane fade" id="nav-koi-aitiseis" role="tabpanel" aria-labelledby="nav-koi-aitiseis-tab">
+               <div class="tab-pane fade" id="nav-koin-aitiseis" role="tabpanel" aria-labelledby="nav-koin-aitiseis-tab">
                   <?php do_settings_sections('egr_koinoxristoi_plugin'); ?>
                </div>
                <div class="tab-pane fade" id="nav-diakanonismoi" role="tabpanel" aria-labelledby="nav-diakanonismoi-tab">
@@ -136,6 +136,7 @@ function egr_register_settings()
 
    add_settings_section('domes_settings', '<div id="domes">Ρυθμίσεις Δομών</div>', 'egr_plugin_section_text', 'egr_domes_plugin');
    add_settings_field('egr_plugin_setting_isdomes', 'Δομές (is_benefits_enabled)', 'egr_plugin_setting_isdomes', 'egr_domes_plugin', 'domes_settings');
+   add_settings_field('egr_plugin_setting_benefits_applications_organization', 'Δομές (benefits_applications_organization)', 'egr_plugin_setting_isdomes', 'egr_domes_plugin', 'domes_settings');
    add_settings_field('egr_plugin_setting_domes_api', 'Δομές Api URL (benefits_api)', 'egr_plugin_setting_domes_api', 'egr_domes_plugin', 'domes_settings');
    add_settings_field('egr_plugin_setting_benefits_tab_title', 'Τίτλος Μενού (benefits_tab_title)', 'egr_plugin_setting_benefits_tab_title', 'egr_domes_plugin', 'domes_settings');
    add_settings_field('egr_plugin_setting_benefits_tab_title_en', 'Τίτλος Μενού (EN) (benefits_tab_title_en)', 'egr_plugin_setting_benefits_tab_title_en', 'egr_domes_plugin', 'domes_settings');
@@ -209,7 +210,7 @@ function egr_register_settings()
    add_settings_field('egr_plugin_setting_order_katastimata', 'Σειρά Εμφάνισης (order_katastimata)', 'egr_plugin_setting_order_katastimata', 'egr_dimotikosforos_plugin', 'dimotikos_foros_settings');
 
    add_settings_section('koin_aitiseis_settings', '<div id="koinoxristoi">Ρυθμίσεις Αιτήσεων Κοινοχρήστων</div>', 'egr_plugin_section_text', 'egr_koinoxristoi_plugin');
-   add_settings_field('egr_plugin_setting_is_koinoxristoi', 'Αιτήσεις Κοινοχρήστων (is_koinoxristoi_enabled)', 'egr_plugin_setting_koinoxristoi', 'egr_koinoxristoi_plugin', 'koinoxristoi_settings');
+   add_settings_field('egr_plugin_setting_is_koinoxristoi', 'Αιτήσεις Κοινοχρήστων (is_koinoxristoi_enabled)', 'egr_plugin_setting_is_koinoxristoi', 'egr_koinoxristoi_plugin', 'koinoxristoi_settings');
    add_settings_field('egr_plugin_setting_koinoxristoi_api', 'Αιτήσεις Κοινοχρήστων Api URL (koinoxristoi_api)', 'egr_plugin_setting_koinoxristoi_api', 'egr_koinoxristoi_plugin', 'koinoxristoi_settings');
    add_settings_field('egr_plugin_setting_koinoxristoi_tab_title', 'Τίτλος Μενού (koinoxristoi_tab_title)', 'egr_plugin_setting_koinoxristoi_tab_title', 'egr_koinoxristoi_plugin', 'koinoxristoi_settings');
    add_settings_field('egr_plugin_setting_koinoxristoi_tab_title_en', 'Τίτλος Μενού (EN) (koinoxristoi_tab_title_en)', 'egr_plugin_setting_koinoxristoi_tab_title_en', 'egr_koinoxristoi_plugin', 'koinoxristoi_settings');
@@ -363,6 +364,12 @@ function egr_plugin_setting_domes_api()
 {
    $options = get_option('egr_webapps_plugin_options');
    echo "<input id='egr_plugin_setting_domes_api' name='egr_webapps_plugin_options[domes_api]' type='text' value='" . esc_attr(isset($options['domes_api']) ? $options['domes_api'] : '') . "' />";
+}
+
+function egr_plugin_setting_benefits_applications_organization()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_benefits_applications_organization' name='egr_webapps_plugin_options[benefits_applications_organization]' type='text' value='" . esc_attr(isset($options['benefits_applications_organization']) ? $options['benefits_applications_organization'] : '') . "' />";
 }
 
 function egr_plugin_setting_benefits_tab_title()
@@ -857,10 +864,10 @@ function egr_plugin_setting_order_katastimata()
 //END
 
 //KOINOXRHSTOI
-function egr_plugin_setting_koinoxristoi()
+function egr_plugin_setting_is_koinoxristoi()
 {
    $options = get_option('egr_webapps_plugin_options');
-   echo "<input id='egr_plugin_setting_koinoxristoi' name='egr_webapps_plugin_options[koinoxristoi]' type='checkbox' " . esc_attr(isset($options['koinoxristoi']) ? 'checked=checked' : '') . " />";
+   echo "<input id='egr_plugin_setting_is_koinoxristoi' name='egr_webapps_plugin_options[koinoxristoi]' type='checkbox' " . esc_attr(isset($options['koinoxristoi']) ? 'checked=checked' : '') . " />";
 }
 
 function egr_plugin_setting_koinoxristoi_api()
