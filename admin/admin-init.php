@@ -136,7 +136,7 @@ function egr_register_settings()
 
    add_settings_section('domes_settings', '<div id="domes">Ρυθμίσεις Δομών</div>', 'egr_plugin_section_text', 'egr_domes_plugin');
    add_settings_field('egr_plugin_setting_isdomes', 'Δομές (is_benefits_enabled)', 'egr_plugin_setting_isdomes', 'egr_domes_plugin', 'domes_settings');
-   add_settings_field('egr_plugin_setting_benefits_applications_organization', 'Δομές (benefits_applications_organization)', 'egr_plugin_setting_isdomes', 'egr_domes_plugin', 'domes_settings');
+   //add_settings_field('egr_plugin_setting_benefits_applications_organization', 'Δομές (benefits_applications_organization)', 'egr_plugin_setting_isdomes', 'egr_domes_plugin', 'domes_settings');
    add_settings_field('egr_plugin_setting_domes_api', 'Δομές Api URL (benefits_api)', 'egr_plugin_setting_domes_api', 'egr_domes_plugin', 'domes_settings');
    add_settings_field('egr_plugin_setting_benefits_tab_title', 'Τίτλος Μενού (benefits_tab_title)', 'egr_plugin_setting_benefits_tab_title', 'egr_domes_plugin', 'domes_settings');
    add_settings_field('egr_plugin_setting_benefits_tab_title_en', 'Τίτλος Μενού (EN) (benefits_tab_title_en)', 'egr_plugin_setting_benefits_tab_title_en', 'egr_domes_plugin', 'domes_settings');
@@ -210,15 +210,15 @@ function egr_register_settings()
    add_settings_field('egr_plugin_setting_order_katastimata', 'Σειρά Εμφάνισης (order_katastimata)', 'egr_plugin_setting_order_katastimata', 'egr_dimotikosforos_plugin', 'dimotikos_foros_settings');
 
    add_settings_section('koin_aitiseis_settings', '<div id="koinoxristoi">Ρυθμίσεις Αιτήσεων Κοινοχρήστων</div>', 'egr_plugin_section_text', 'egr_koinoxristoi_plugin');
-   add_settings_field('egr_plugin_setting_is_koinoxristoi', 'Αιτήσεις Κοινοχρήστων (is_koinoxristoi_enabled)', 'egr_plugin_setting_is_koinoxristoi', 'egr_koinoxristoi_plugin', 'koinoxristoi_settings');
-   add_settings_field('egr_plugin_setting_koinoxristoi_api', 'Αιτήσεις Κοινοχρήστων Api URL (koinoxristoi_api)', 'egr_plugin_setting_koinoxristoi_api', 'egr_koinoxristoi_plugin', 'koinoxristoi_settings');
-   add_settings_field('egr_plugin_setting_koinoxristoi_tab_title', 'Τίτλος Μενού (koinoxristoi_tab_title)', 'egr_plugin_setting_koinoxristoi_tab_title', 'egr_koinoxristoi_plugin', 'koinoxristoi_settings');
-   add_settings_field('egr_plugin_setting_koinoxristoi_tab_title_en', 'Τίτλος Μενού (EN) (koinoxristoi_tab_title_en)', 'egr_plugin_setting_koinoxristoi_tab_title_en', 'egr_koinoxristoi_plugin', 'koinoxristoi_settings');
-   add_settings_field('egr_plugin_setting_koinoxristoi_description', 'Περιγραφή (koinoxristoi_description)', 'egr_plugin_setting_koinoxristoi_description', 'egr_koinoxristoi_plugin', 'koinoxristoi_settings');
-   add_settings_field('egr_plugin_setting_koinoxristoi_description_en', 'Περιγραφή (EN) (koinoxristoi_description_en)', 'egr_plugin_setting_koinoxristoi_description_en', 'egr_koinoxristoi_plugin', 'koinoxristoi_settings');
-   add_settings_field('egr_plugin_setting_koinoxristoi_tab_info', 'Γενικές Οδηγίες (koinoxristoi_tab_info)', 'egr_plugin_setting_koinoxristoi_tab_info', 'egr_koinoxristoi_plugin', 'koinoxristoi_settings');
-   add_settings_field('egr_plugin_setting_koinoxristoi_tab_info_en', 'Γενικές Οδηγίες (EN) (koinoxristoi_tab_info_en)', 'egr_plugin_setting_koinoxristoi_tab_info_en', 'egr_koinoxristoi_plugin', 'koinoxristoi_settings');
-   add_settings_field('egr_plugin_setting_order_koinoxristoi', 'Σειρά Εμφάνισης (order_koinoxristoi)', 'egr_plugin_setting_order_koinoxristoi', 'egr_koinoxristoi_plugin', 'koinoxristoi_settings');
+   add_settings_field('egr_plugin_setting_is_koinoxristoi', 'Αιτήσεις Κοινοχρήστων (is_koinoxristoi_enabled)', 'egr_plugin_setting_is_koinoxristoi', 'egr_koinoxristoi_plugin', 'koin_aitiseis_settings');
+   add_settings_field('egr_plugin_setting_koinoxristoi_api', 'Αιτήσεις Κοινοχρήστων Api URL (koinoxristoi_api)', 'egr_plugin_setting_koinoxristoi_api', 'egr_koinoxristoi_plugin', 'koin_aitiseis_settings');
+   add_settings_field('egr_plugin_setting_koinoxristoi_tab_title', 'Τίτλος Μενού (koinoxristoi_tab_title)', 'egr_plugin_setting_koinoxristoi_tab_title', 'egr_koinoxristoi_plugin', 'koin_aitiseis_settings');
+   add_settings_field('egr_plugin_setting_koinoxristoi_tab_title_en', 'Τίτλος Μενού (EN) (koinoxristoi_tab_title_en)', 'egr_plugin_setting_koinoxristoi_tab_title_en', 'egr_koinoxristoi_plugin', 'koin_aitiseis_settings');
+   add_settings_field('egr_plugin_setting_koinoxristoi_description', 'Περιγραφή (koinoxristoi_description)', 'egr_plugin_setting_koinoxristoi_description', 'egr_koinoxristoi_plugin', 'koin_aitiseis_settings');
+   add_settings_field('egr_plugin_setting_koinoxristoi_description_en', 'Περιγραφή (EN) (koinoxristoi_description_en)', 'egr_plugin_setting_koinoxristoi_description_en', 'egr_koinoxristoi_plugin', 'koin_aitiseis_settings');
+   add_settings_field('egr_plugin_setting_koinoxristoi_tab_info', 'Γενικές Οδηγίες (koinoxristoi_tab_info)', 'egr_plugin_setting_koinoxristoi_tab_info', 'egr_koinoxristoi_plugin', 'koin_aitiseis_settings');
+   add_settings_field('egr_plugin_setting_koinoxristoi_tab_info_en', 'Γενικές Οδηγίες (EN) (koinoxristoi_tab_info_en)', 'egr_plugin_setting_koinoxristoi_tab_info_en', 'egr_koinoxristoi_plugin', 'koin_aitiseis_settings');
+   add_settings_field('egr_plugin_setting_order_koinoxristoi', 'Σειρά Εμφάνισης (order_koinoxristoi)', 'egr_plugin_setting_order_koinoxristoi', 'egr_koinoxristoi_plugin', 'koin_aitiseis_settings');
 
    add_settings_section('diakanonismoi_settings', '<div id="diakanonismoi">Ρυθμίσεις Διακανονισμών</div>', 'egr_plugin_section_text', 'egr_diakanonismoi_plugin');
    add_settings_field('egr_plugin_setting_isdiakanonismoi', 'Διακανονισμοί (is_diakanonismoi_enabled)', 'egr_plugin_setting_isdiakanonismoi', 'egr_diakanonismoi_plugin', 'diakanonismoi_settings');
@@ -366,11 +366,11 @@ function egr_plugin_setting_domes_api()
    echo "<input id='egr_plugin_setting_domes_api' name='egr_webapps_plugin_options[domes_api]' type='text' value='" . esc_attr(isset($options['domes_api']) ? $options['domes_api'] : '') . "' />";
 }
 
-function egr_plugin_setting_benefits_applications_organization()
+/* function egr_plugin_setting_benefits_applications_organization()
 {
    $options = get_option('egr_webapps_plugin_options');
    echo "<input id='egr_plugin_setting_benefits_applications_organization' name='egr_webapps_plugin_options[benefits_applications_organization]' type='text' value='" . esc_attr(isset($options['benefits_applications_organization']) ? $options['benefits_applications_organization'] : '') . "' />";
-}
+} */
 
 function egr_plugin_setting_benefits_tab_title()
 {
@@ -873,7 +873,7 @@ function egr_plugin_setting_is_koinoxristoi()
 function egr_plugin_setting_koinoxristoi_api()
 {
    $options = get_option('egr_webapps_plugin_options');
-   echo "<input id='egr_plugin_setting_koinoxristoi_api' name='egr_webapps_plugin_options[koinoxristoi_api]' type='text' value='" . esc_attr(isset($options['koinoxristoi_api']) ? $options['katastimata_api'] : '') . "' />";
+   echo "<input id='egr_plugin_setting_koinoxristoi_api' name='egr_webapps_plugin_options[koinoxristoi_api]' type='text' value='" . esc_attr(isset($options['koinoxristoi_api']) ? $options['koinoxristoi_api'] : '') . "' />";
 }
 
 function egr_plugin_setting_koinoxristoi_tab_title()
