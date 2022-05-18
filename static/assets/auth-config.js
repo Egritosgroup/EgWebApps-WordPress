@@ -150,7 +150,6 @@ var AppConfOptions = {
 	proslipseis_tab_title_en: "Recruitment Applications",
 	proslipseis_description: 'Αιτήσεις Πολιτών προς το σύστημα προσλήψεων εποχιακού και μόνιμου προσωπικού του οργανισμού.',
 	proslipseis_description_en: '',
-	proslipseis_tab_title_en: "Recruitment Applications",
 	proslipseis_tab_info: 'Αιτήσεις Πολιτών προς το σύστημα προσλήψεων εποχιακού και μόνιμου προσωπικού του οργανισμού.',
 	proslipseis_tab_info_en: '',
 	order_proslipseis: 60,
