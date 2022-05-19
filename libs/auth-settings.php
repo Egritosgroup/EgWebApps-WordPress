@@ -198,11 +198,11 @@ function setAppsSettings($options, $pluginFolderName)
       'proslipseis_tab_info_en' => $options['proslipseis_tab_info_en'] ? htmlspecialchars($options['proslipseis_tab_info_en']) : '',
       'order_proslipseis' => $options['order_proslipseis'] ? $options['order_proslipseis'] : 60,
 
-      'is_notifications_enabled' => false,
+      /* 'is_notifications_enabled' => false,
       'notifications_api' => '',
       'notifications_tab_title' => $options['notifications_tab_title'] ? htmlspecialchars($options['notifications_tab_title']) : 'Ειδοποιήσεις',
       'notifications_tab_title_en' => $options['notifications_tab_title_en'] ? htmlspecialchars($options['notifications_tab_title_en']) : 'Notifications',
-      'order_notifications' => 80
+      'order_notifications' => 80 */
    );
 
    return json_encode($settingsArray);
