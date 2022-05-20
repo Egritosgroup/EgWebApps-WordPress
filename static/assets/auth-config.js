@@ -71,7 +71,7 @@ var AppConfOptions = {
 	order_epayments: 10,
 
 	is_kliseis_enabled: true,
-	kliseis_api: "http://localhost:4287/",
+	kliseis_api: "https://kliseis.demo.egritosgroup.gr/",
 	kliseis_tab_title: "Κλήσεις Κ.Ο.Κ.",
 	kliseis_tab_title_en: "Traffic Tickets",
 	kliseis_description: 'Εξόφληση και καταχώρηση κλήσεων Δημοτικής Αστυνομίας.',
