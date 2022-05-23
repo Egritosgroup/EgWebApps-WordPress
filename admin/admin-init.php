@@ -218,6 +218,7 @@ function egr_register_settings()
    add_settings_section('koin_aitiseis_settings', '<div id="koinoxristoi">Ρυθμίσεις Αιτήσεων Κοινοχρήστων</div>', 'egr_plugin_section_text', 'egr_koinoxristoi_plugin');
    add_settings_field('egr_plugin_setting_is_koinoxristoi', 'Αιτήσεις Κοινοχρήστων (is_koinoxristoi_enabled)', 'egr_plugin_setting_is_koinoxristoi', 'egr_koinoxristoi_plugin', 'koin_aitiseis_settings');
    add_settings_field('egr_plugin_setting_koinoxristoi_api', 'Αιτήσεις Κοινοχρήστων Api URL (koinoxristoi_api)', 'egr_plugin_setting_koinoxristoi_api', 'egr_koinoxristoi_plugin', 'koin_aitiseis_settings');
+   add_settings_field('egr_plugin_setting_koinoxristoi_afm_required', 'Α.Φ.Μ. Απαραίτητο', 'egr_plugin_setting_koinoxristoi_afm_required', 'egr_koinoxristoi_plugin', 'koin_aitiseis_settings');
    add_settings_field('egr_plugin_setting_koinoxristoi_tab_title', 'Τίτλος Μενού (koinoxristoi_tab_title)', 'egr_plugin_setting_koinoxristoi_tab_title', 'egr_koinoxristoi_plugin', 'koin_aitiseis_settings');
    add_settings_field('egr_plugin_setting_koinoxristoi_tab_title_en', 'Τίτλος Μενού (EN) (koinoxristoi_tab_title_en)', 'egr_plugin_setting_koinoxristoi_tab_title_en', 'egr_koinoxristoi_plugin', 'koin_aitiseis_settings');
    add_settings_field('egr_plugin_setting_koinoxristoi_description', 'Περιγραφή (koinoxristoi_description)', 'egr_plugin_setting_koinoxristoi_description', 'egr_koinoxristoi_plugin', 'koin_aitiseis_settings');
@@ -374,6 +375,12 @@ function egr_plugin_setting_domes_api()
 {
    $options = get_option('egr_webapps_plugin_options');
    echo "<input id='egr_plugin_setting_domes_api' name='egr_webapps_plugin_options[domes_api]' type='text' value='" . esc_attr(isset($options['domes_api']) ? $options['domes_api'] : '') . "' />";
+}
+
+function egr_plugin_setting_benefits_afm_required()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_benefits_afm_required' name='egr_webapps_plugin_options[benefits_afm_required]' type='checkbox' " . esc_attr(isset($options['benefits_afm_required']) ? 'checked=checked' : '') . " />";
 }
 
 /* function egr_plugin_setting_benefits_applications_organization()
