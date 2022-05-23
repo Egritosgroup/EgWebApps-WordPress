@@ -138,6 +138,7 @@ function egr_register_settings()
    add_settings_field('egr_plugin_setting_isdomes', 'Δομές (is_benefits_enabled)', 'egr_plugin_setting_isdomes', 'egr_domes_plugin', 'domes_settings');
    //add_settings_field('egr_plugin_setting_benefits_applications_organization', 'Δομές (benefits_applications_organization)', 'egr_plugin_setting_isdomes', 'egr_domes_plugin', 'domes_settings');
    add_settings_field('egr_plugin_setting_domes_api', 'Δομές Api URL (benefits_api)', 'egr_plugin_setting_domes_api', 'egr_domes_plugin', 'domes_settings');
+   add_settings_field('egr_plugin_setting_benefits_afm_required', 'Α.Φ.Μ. Απαραίτητο', 'egr_plugin_setting_benefits_afm_required', 'egr_domes_plugin', 'domes_settings');
    add_settings_field('egr_plugin_setting_benefits_tab_title', 'Τίτλος Μενού (benefits_tab_title)', 'egr_plugin_setting_benefits_tab_title', 'egr_domes_plugin', 'domes_settings');
    add_settings_field('egr_plugin_setting_benefits_tab_title_en', 'Τίτλος Μενού (EN) (benefits_tab_title_en)', 'egr_plugin_setting_benefits_tab_title_en', 'egr_domes_plugin', 'domes_settings');
    add_settings_field('egr_plugin_setting_benefits_description', 'Περιγραφή (benefits_description)', 'egr_plugin_setting_benefits_description', 'egr_domes_plugin', 'domes_settings');
@@ -149,6 +150,7 @@ function egr_register_settings()
    add_settings_section('carpooling_settings', '<div id="carpooling">Ρυθμίσεις CarPooling</div>', 'egr_plugin_section_text', 'egr_carpooling_plugin');
    add_settings_field('egr_plugin_setting_iscarpooling', 'Car Pooling (is_carpooling_enabled)', 'egr_plugin_setting_iscarpooling', 'egr_carpooling_plugin', 'carpooling_settings');
    add_settings_field('egr_plugin_setting_carpooling_api', 'Car Pooling Api URL (carpooling_api)', 'egr_plugin_setting_carpooling_api', 'egr_carpooling_plugin', 'carpooling_settings');
+   add_settings_field('egr_plugin_setting_carpooling_afm_required', 'Α.Φ.Μ. Απαραίτητο', 'egr_plugin_setting_carpooling_afm_required', 'egr_carpooling_plugin', 'carpooling_settings');
    add_settings_field('egr_plugin_setting_carpooling_tab_title', 'Τίτλος Μενού (carpooling_tab_title)', 'egr_plugin_setting_carpooling_tab_title', 'egr_carpooling_plugin', 'carpooling_settings');
    add_settings_field('egr_plugin_setting_carpooling_tab_title_en', 'Τίτλος Μενού (EN) (carpooling_tab_title_en)', 'egr_plugin_setting_carpooling_tab_title_en', 'egr_carpooling_plugin', 'carpooling_settings');
    add_settings_field('egr_plugin_setting_carpooling_description', 'Περιγραφή (carpooling_description)', 'egr_plugin_setting_carpooling_description', 'egr_carpooling_plugin', 'carpooling_settings');
@@ -161,6 +163,7 @@ function egr_register_settings()
    add_settings_section('epayments_settings', '<div id="epayments">Ρυθμίσεις Βεβαιωμένων Οφειλών</div>', 'egr_plugin_section_text', 'egr_epayments_plugin');
    add_settings_field('egr_plugin_setting_isepayments', 'Βεβαιωμένες Οφειλές (is_epayments_enabled)', 'egr_plugin_setting_isepayments', 'egr_epayments_plugin', 'epayments_settings');
    add_settings_field('egr_plugin_setting_epayments_api', 'Βεβαιωμένες Οφειλές Api URL (epayments_api)', 'egr_plugin_setting_epayments_api', 'egr_epayments_plugin', 'epayments_settings');
+   add_settings_field('egr_plugin_setting_epayments_afm_required', 'Α.Φ.Μ. Απαραίτητο', 'egr_plugin_setting_epayments_afm_required', 'egr_epayments_plugin', 'epayments_settings');
    add_settings_field('egr_plugin_setting_epayments_tab_title', 'Τίτλος Μενού (epayments_tab_title)', 'egr_plugin_setting_epayments_tab_title', 'egr_epayments_plugin', 'epayments_settings');
    add_settings_field('egr_plugin_setting_epayments_tab_title_en', 'Τίτλος Μενού (EN) (epayments_tab_title_en)', 'egr_plugin_setting_epayments_tab_title_en', 'egr_epayments_plugin', 'epayments_settings');
    add_settings_field('egr_plugin_setting_epayments_description', 'Περιγραφή (epayments_description)', 'egr_plugin_setting_epayments_description', 'egr_epayments_plugin', 'epayments_settings');
@@ -175,6 +178,7 @@ function egr_register_settings()
    add_settings_section('kliseis_settings', '<div id="kliseis">Ρυθμίσεις Κλήσεων Κ.Ο.Κ.</div>', 'egr_plugin_section_text', 'egr_kliseis_plugin');
    add_settings_field('egr_plugin_setting_iskliseis', 'Κλήσεις (is_kliseis_enabled)', 'egr_plugin_setting_iskliseis', 'egr_kliseis_plugin', 'kliseis_settings');
    add_settings_field('egr_plugin_setting_kliseis_api', 'Κλήσεις Api URL (kliseis_api)', 'egr_plugin_setting_kliseis_api', 'egr_kliseis_plugin', 'kliseis_settings');
+   add_settings_field('egr_plugin_setting_kliseis_afm_required', 'Α.Φ.Μ. Απαραίτητο', 'egr_plugin_setting_kliseis_afm_required', 'egr_kliseis_plugin', 'kliseis_settings');
    add_settings_field('egr_plugin_setting_kliseis_tab_title', 'Τίτλος Μενού (kliseis_tab_title)', 'egr_plugin_setting_kliseis_tab_title', 'egr_kliseis_plugin', 'kliseis_settings');
    add_settings_field('egr_plugin_setting_kliseis_tab_title_en', 'Τίτλος Μενού (EN) (kliseis_tab_title_en)', 'egr_plugin_setting_kliseis_tab_title_en', 'egr_kliseis_plugin', 'kliseis_settings');
    add_settings_field('egr_plugin_setting_kliseis_description', 'Περιγραφή (kliseis_description)', 'egr_plugin_setting_kliseis_description', 'egr_kliseis_plugin', 'kliseis_settings');
@@ -190,6 +194,7 @@ function egr_register_settings()
    add_settings_section('eidopoiitiria_settings', '<div id="eidopoiitiria">Ρυθμίσεις Ταυτοτήτων Οφειλών</div>', 'egr_plugin_section_text', 'egr_eidopoiitiria_plugin');
    add_settings_field('egr_plugin_setting_iseidopoiitiria', 'Ταυτότητες Οφειλής (is_eidopoiitiria_enabled)', 'egr_plugin_setting_iseidopoiitiria', 'egr_eidopoiitiria_plugin', 'eidopoiitiria_settings');
    add_settings_field('egr_plugin_setting_eidopoiitiria_api', 'Ταυτότητες Οφειλής Api URL (eidopoiitiria_api)', 'egr_plugin_setting_eidopoiitiria_api', 'egr_eidopoiitiria_plugin', 'eidopoiitiria_settings');
+   add_settings_field('egr_plugin_setting_eidopoiitiria_afm_required', 'Α.Φ.Μ. Απαραίτητο', 'egr_plugin_setting_eidopoiitiria_afm_required', 'egr_eidopoiitiria_plugin', 'egr_eidopoiitiria_plugin');
    add_settings_field('egr_plugin_setting_eidopoiitiria_tab_title', 'Τίτλος Μενού (eidopoiitiria_tab_title)', 'egr_plugin_setting_eidopoiitiria_tab_title', 'egr_eidopoiitiria_plugin', 'eidopoiitiria_settings');
    add_settings_field('egr_plugin_setting_eidopoiitiria_tab_title_en', 'Τίτλος Μενού (EN) (eidopoiitiria_tab_title_en)', 'egr_plugin_setting_eidopoiitiria_tab_title_en', 'egr_eidopoiitiria_plugin', 'eidopoiitiria_settings');
    add_settings_field('egr_plugin_setting_eidopoiitiria_description', 'Περιγραφή (eidopoiitiria_description)', 'egr_plugin_setting_eidopoiitiria_description', 'egr_eidopoiitiria_plugin', 'eidopoiitiria_settings');
@@ -201,6 +206,7 @@ function egr_register_settings()
    add_settings_section('dimotikos_foros_settings', '<div id="dimotikosforos">Ρυθμίσεις Τέλους 0.5% / Παρεπιδημούντων</div>', 'egr_plugin_section_text', 'egr_dimotikosforos_plugin');
    add_settings_field('egr_plugin_setting_isdimotikos_foros', 'Τέλος 0.5% / Παρεπιδημούντων (is_dimotikos_foros_enabled)', 'egr_plugin_setting_isdimotikos_foros', 'egr_dimotikosforos_plugin', 'dimotikos_foros_settings');
    add_settings_field('egr_plugin_setting_katastimata_api', 'Τέλος 0.5% / Παρεπιδημούντων Api URL (katastimata_api)', 'egr_plugin_setting_katastimata_api', 'egr_dimotikosforos_plugin', 'dimotikos_foros_settings');
+   add_settings_field('egr_plugin_setting_katastimata_afm_required', 'Α.Φ.Μ. Απαραίτητο', 'egr_plugin_setting_katastimata_afm_required', 'egr_dimotikosforos_plugin', 'dimotikos_foros_settings');
    add_settings_field('egr_plugin_setting_katastimata_tab_title', 'Τίτλος Μενού (katastimata_tab_title)', 'egr_plugin_setting_katastimata_tab_title', 'egr_dimotikosforos_plugin', 'dimotikos_foros_settings');
    add_settings_field('egr_plugin_setting_katastimata_tab_title_en', 'Τίτλος Μενού (EN) (katastimata_tab_title_en)', 'egr_plugin_setting_katastimata_tab_title_en', 'egr_dimotikosforos_plugin', 'dimotikos_foros_settings');
    add_settings_field('egr_plugin_setting_katastimata_description', 'Περιγραφή (katastimata_description)', 'egr_plugin_setting_katastimata_description', 'egr_dimotikosforos_plugin', 'dimotikos_foros_settings');
@@ -222,6 +228,7 @@ function egr_register_settings()
 
    add_settings_section('diakanonismoi_settings', '<div id="diakanonismoi">Ρυθμίσεις Διακανονισμών</div>', 'egr_plugin_section_text', 'egr_diakanonismoi_plugin');
    add_settings_field('egr_plugin_setting_isdiakanonismoi', 'Διακανονισμοί (is_diakanonismoi_enabled)', 'egr_plugin_setting_isdiakanonismoi', 'egr_diakanonismoi_plugin', 'diakanonismoi_settings');
+   add_settings_field('egr_plugin_setting_diakanonismoi_afm_required', 'Α.Φ.Μ. Απαραίτητο', 'egr_plugin_setting_diakanonismoi_afm_required', 'egr_diakanonismoi_plugin', 'diakanonismoi_settings');
    add_settings_field('egr_plugin_setting_diakanonismoi_tab_title', 'Τίτλος Μενού (diakanonismoi_tab_title)', 'egr_plugin_setting_diakanonismoi_tab_title', 'egr_diakanonismoi_plugin', 'diakanonismoi_settings');
    add_settings_field('egr_plugin_setting_diakanonismoi_tab_title_en', 'Τίτλος Μενού (EN) (diakanonismoi_tab_title_en)', 'egr_plugin_setting_diakanonismoi_tab_title_en', 'egr_diakanonismoi_plugin', 'diakanonismoi_settings');
    add_settings_field('egr_plugin_setting_diakanonismoi_description', 'Περιγραφή (diakanonismoi_description)', 'egr_plugin_setting_diakanonismoi_description', 'egr_diakanonismoi_plugin', 'diakanonismoi_settings');
@@ -230,9 +237,10 @@ function egr_register_settings()
    add_settings_field('egr_plugin_setting_diakanonismoi_tab_info_en', 'Γενικές Οδηγίες (EN) (diakanonismoi_tab_info_en)', 'egr_plugin_setting_diakanonismoi_tab_info_en', 'egr_diakanonismoi_plugin', 'diakanonismoi_settings');
    add_settings_field('egr_plugin_setting_order_diakanonismoi', 'Σειρά Εμφάνισης (order_diakanonismoi)', 'egr_plugin_setting_order_diakanonismoi', 'egr_diakanonismoi_plugin', 'diakanonismoi_settings');
 
-   add_settings_section('shde_settings', '<div id="diakinisi">Ρυθμίσεις Ηλεκτρονικής Διακήνησης Εγγράφων</div>', 'egr_plugin_section_text', 'egr_diakinisi_plugin');
-   add_settings_field('egr_plugin_setting_isshde', 'Ηλεκτρονική Διακήνηση Εγγράφων (is_shde_app_enabled)', 'egr_plugin_setting_isshde', 'egr_diakinisi_plugin', 'shde_settings');
-   add_settings_field('egr_plugin_setting_shde_api', 'Api Ηλεκτρονικής Διακήνησης Εγγράφων (shde_api)', 'egr_plugin_setting_shde_api', 'egr_diakinisi_plugin', 'shde_settings');
+   add_settings_section('shde_settings', '<div id="diakinisi">Ρυθμίσεις Ηλεκτρονικής Διακίνησης Εγγράφων</div>', 'egr_plugin_section_text', 'egr_diakinisi_plugin');
+   add_settings_field('egr_plugin_setting_isshde', 'Ηλεκτρονική Διακίνηση Εγγράφων (is_shde_app_enabled)', 'egr_plugin_setting_isshde', 'egr_diakinisi_plugin', 'shde_settings');
+   add_settings_field('egr_plugin_setting_shde_api', 'Api Ηλεκτρονικής Διακίνησης Εγγράφων (shde_api)', 'egr_plugin_setting_shde_api', 'egr_diakinisi_plugin', 'shde_settings');
+   add_settings_field('egr_plugin_setting_shde_afm_required', 'Α.Φ.Μ. Απαραίτητο', 'egr_plugin_setting_shde_afm_required', 'egr_diakinisi_plugin', 'shde_settings');
    add_settings_field('egr_plugin_setting_shde_tab_title', 'Τίτλος Μενού (shde_tab_title)', 'egr_plugin_setting_shde_tab_title', 'egr_diakinisi_plugin', 'shde_settings');
    add_settings_field('egr_plugin_setting_shde_tab_title_en', 'Τίτλος Μενού (EN) (shde_tab_title_en)', 'egr_plugin_setting_shde_tab_title_en', 'egr_diakinisi_plugin', 'shde_settings');
    add_settings_field('egr_plugin_setting_shde_description', 'Περιγραφή (shde_description)', 'egr_plugin_setting_shde_description', 'egr_diakinisi_plugin', 'shde_settings');
@@ -244,6 +252,7 @@ function egr_register_settings()
    add_settings_section('rantevou_settings', '<div id="rantevou">Ρυθμίσεις Ηλεκτρονικών Ραντεβού</div>', 'egr_plugin_section_text', 'egr_rantevou_plugin');
    add_settings_field('egr_plugin_setting_israntevou', 'Ηλεκτρονικά Ραντεβού (is_rantevou_app_enabled)', 'egr_plugin_setting_israntevou', 'egr_rantevou_plugin', 'rantevou_settings');
    add_settings_field('egr_plugin_setting_rantevou_api', 'Api Ηλεκτρονικών Ραντεβού (rantevou_api)', 'egr_plugin_setting_rantevou_api', 'egr_rantevou_plugin', 'rantevou_settings');
+   add_settings_field('egr_plugin_setting_rantevou_afm_required', 'Α.Φ.Μ. Απαραίτητο', 'egr_plugin_setting_rantevou_afm_required', 'egr_rantevou_plugin', 'rantevou_settings');
    add_settings_field('egr_plugin_setting_rantevou_tab_title', 'Τίτλος Μενού (rantevou_tab_title)', 'egr_plugin_setting_rantevou_tab_title', 'egr_rantevou_plugin', 'rantevou_settings');
    add_settings_field('egr_plugin_setting_rantevou_tab_title_en', 'Τίτλος Μενού (EN) (rantevou_tab_title_en)', 'egr_plugin_setting_rantevou_tab_title_en', 'egr_rantevou_plugin', 'rantevou_settings');
    add_settings_field('egr_plugin_setting_rantevou_description', 'Περιγραφή (rantevou_description)', 'egr_plugin_setting_rantevou_description', 'egr_rantevou_plugin', 'rantevou_settings');
@@ -255,6 +264,7 @@ function egr_register_settings()
    add_settings_section('proslipseis_settings', '<div id="proslipseis">Ρυθμίσεις Προσλήψεων</div>', 'egr_plugin_section_text', 'egr_proslipseis_plugin');
    add_settings_field('egr_plugin_setting_isproslipseis', 'Προσλήψεις (is_proslipseis_enabled)', 'egr_plugin_setting_isproslipseis', 'egr_proslipseis_plugin', 'proslipseis_settings');
    add_settings_field('egr_plugin_setting_proslipseis_api', 'Api Προσλήψεων (proslipseis_api)', 'egr_plugin_setting_proslipseis_api', 'egr_proslipseis_plugin', 'proslipseis_settings');
+   add_settings_field('egr_plugin_setting_proslipseis_afm_required', 'Α.Φ.Μ. Απαραίτητο', 'egr_plugin_setting_proslipseis_afm_required', 'egr_proslipseis_plugin', 'proslipseis_settings');
    add_settings_field('egr_plugin_setting_proslipseis_tab_title', 'Τίτλος Μενού (proslipseis_tab_title)', 'egr_plugin_setting_proslipseis_tab_title', 'egr_proslipseis_plugin', 'proslipseis_settings');
    add_settings_field('egr_plugin_setting_proslipseis_tab_title_en', 'Τίτλος Μενού (EN) (proslipseis_tab_title_en)', 'egr_plugin_setting_proslipseis_tab_title_en', 'egr_proslipseis_plugin', 'proslipseis_settings');
    add_settings_field('egr_plugin_setting_proslipseis_description', 'Περιγραφή (proslipseis_description)', 'egr_plugin_setting_proslipseis_description', 'egr_proslipseis_plugin', 'proslipseis_settings');
@@ -444,6 +454,12 @@ function egr_plugin_setting_carpooling_api()
    echo "<input id='egr_plugin_setting_carpooling_api' name='egr_webapps_plugin_options[carpooling_api]' type='text' value='" . esc_attr(isset($options['carpooling_api']) ? $options['carpooling_api'] : '') . "' />";
 }
 
+function egr_plugin_setting_carpooling_afm_required()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_carpooling_afm_required' name='egr_webapps_plugin_options[carpooling_afm_required]' type='checkbox' " . esc_attr(isset($options['carpooling_afm_required']) ? 'checked=checked' : '') . " />";
+}
+
 function egr_plugin_setting_carpooling_tab_title()
 {
    $options = get_option('egr_webapps_plugin_options');
@@ -520,6 +536,12 @@ function egr_plugin_setting_epayments_api()
 {
    $options = get_option('egr_webapps_plugin_options');
    echo "<input id='egr_plugin_setting_epayments_api' name='egr_webapps_plugin_options[epayments_api]' type='text' value='" . esc_attr(isset($options['epayments_api']) ? $options['epayments_api'] : '') . "' />";
+}
+
+function egr_plugin_setting_epayments_afm_required()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_epayments_afm_required' name='egr_webapps_plugin_options[epayments_afm_required]' type='checkbox' " . esc_attr(isset($options['epayments_afm_required']) ? 'checked=checked' : '') . " />";
 }
 
 function egr_plugin_setting_epayments_tab_title()
@@ -618,6 +640,12 @@ function egr_plugin_setting_kliseis_api()
 {
    $options = get_option('egr_webapps_plugin_options');
    echo "<input id='egr_plugin_setting_kliseis_api' name='egr_webapps_plugin_options[kliseis_api]' type='text' value='" . esc_attr(isset($options['kliseis_api']) ? $options['kliseis_api'] : '') . "' />";
+}
+
+function egr_plugin_setting_kliseis_afm_required()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_kliseis_afm_required' name='egr_webapps_plugin_options[kliseis_afm_required]' type='checkbox' " . esc_attr(isset($options['kliseis_afm_required']) ? 'checked=checked' : '') . " />";
 }
 
 function egr_plugin_setting_kliseis_tab_title()
@@ -732,6 +760,12 @@ function egr_plugin_setting_eidopoiitiria_api()
    echo "<input id='egr_plugin_setting_eidopoiitiria_api' name='egr_webapps_plugin_options[eidopoiitiria_api]' type='text' value='" . esc_attr(isset($options['eidopoiitiria_api']) ? $options['eidopoiitiria_api'] : '') . "' />";
 }
 
+function egr_plugin_setting_eidopoiitiria_afm_required()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_eidopoiitiria_afm_required' name='egr_webapps_plugin_options[eidopoiitiria_afm_required]' type='checkbox' " . esc_attr(isset($options['eidopoiitiria_afm_required']) ? 'checked=checked' : '') . " />";
+}
+
 function egr_plugin_setting_eidopoiitiria_tab_title()
 {
    $options = get_option('egr_webapps_plugin_options');
@@ -802,6 +836,12 @@ function egr_plugin_setting_katastimata_api()
 {
    $options = get_option('egr_webapps_plugin_options');
    echo "<input id='egr_plugin_setting_katastimata_api' name='egr_webapps_plugin_options[katastimata_api]' type='text' value='" . esc_attr(isset($options['katastimata_api']) ? $options['katastimata_api'] : '') . "' />";
+}
+
+function egr_plugin_setting_katastimata_afm_required()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_katastimata_afm_required' name='egr_webapps_plugin_options[katastimata_afm_required]' type='checkbox' " . esc_attr(isset($options['katastimata_afm_required']) ? 'checked=checked' : '') . " />";
 }
 
 function egr_plugin_setting_katastimata_tab_title()
@@ -876,6 +916,12 @@ function egr_plugin_setting_koinoxristoi_api()
    echo "<input id='egr_plugin_setting_koinoxristoi_api' name='egr_webapps_plugin_options[koinoxristoi_api]' type='text' value='" . esc_attr(isset($options['koinoxristoi_api']) ? $options['koinoxristoi_api'] : '') . "' />";
 }
 
+function egr_plugin_setting_koinoxristoi_afm_required()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_koinoxristoi_afm_required' name='egr_webapps_plugin_options[koinoxristoi_afm_required]' type='checkbox' " . esc_attr(isset($options['koinoxristoi_afm_required']) ? 'checked=checked' : '') . " />";
+}
+
 function egr_plugin_setting_koinoxristoi_tab_title()
 {
    $options = get_option('egr_webapps_plugin_options');
@@ -940,6 +986,12 @@ function egr_plugin_setting_isdiakanonismoi()
 {
    $options = get_option('egr_webapps_plugin_options');
    echo "<input id='egr_plugin_setting_isdiakanonismoi' name='egr_webapps_plugin_options[isdiakanonismoi]' type='checkbox' " . esc_attr(isset($options['isdiakanonismoi']) ? 'checked=checked' : '') . " />";
+}
+
+function egr_plugin_setting_diakanonismoi_afm_required()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_diakanonismoi_afm_required' name='egr_webapps_plugin_options[diakanonismoi_afm_required]' type='checkbox' " . esc_attr(isset($options['diakanonismoi_afm_required']) ? 'checked=checked' : '') . " />";
 }
 
 function egr_plugin_setting_diakanonismoi_tab_title()
@@ -1014,6 +1066,12 @@ function egr_plugin_setting_shde_api()
    echo "<input id='egr_plugin_setting_shde_api' name='egr_webapps_plugin_options[shde_api]' type='text' value='" . esc_attr(isset($options['shde_api']) ? $options['shde_api'] : '') . "' />";
 }
 
+function egr_plugin_setting_shde_afm_required()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_shde_afm_required' name='egr_webapps_plugin_options[shde_afm_required]' type='checkbox' " . esc_attr(isset($options['shde_afm_required']) ? 'checked=checked' : '') . " />";
+}
+
 function egr_plugin_setting_shde_tab_title()
 {
    $options = get_option('egr_webapps_plugin_options');
@@ -1086,6 +1144,12 @@ function egr_plugin_setting_rantevou_api()
    echo "<input id='egr_plugin_setting_rantevou_api' name='egr_webapps_plugin_options[rantevou_api]' type='text' value='" . esc_attr(isset($options['rantevou_api']) ? $options['rantevou_api'] : '') . "' />";
 }
 
+function egr_plugin_setting_rantevou_afm_required()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_rantevou_afm_required' name='egr_webapps_plugin_options[rantevou_afm_required]' type='checkbox' " . esc_attr(isset($options['rantevou_afm_required']) ? 'checked=checked' : '') . " />";
+}
+
 function egr_plugin_setting_rantevou_tab_title()
 {
    $options = get_option('egr_webapps_plugin_options');
@@ -1156,6 +1220,12 @@ function egr_plugin_setting_proslipseis_api()
 {
    $options = get_option('egr_webapps_plugin_options');
    echo "<input id='egr_plugin_setting_proslipseis_api' name='egr_webapps_plugin_options[proslipseis_api]' type='text' value='" . esc_attr(isset($options['proslipseis_api']) ? $options['proslipseis_api'] : '') . "' />";
+}
+
+function egr_plugin_setting_proslipseis_afm_required()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_proslipseis_afm_required' name='egr_webapps_plugin_options[proslipseis_afm_required]' type='checkbox' " . esc_attr(isset($options['proslipseis_afm_required']) ? 'checked=checked' : '') . " />";
 }
 
 function egr_plugin_setting_proslipseis_tab_title()
