@@ -35,7 +35,8 @@ var AppConfOptions = {
 
 	is_benefits_enabled: true,
 	benefits_applications_organization: "ΔΟΜΕΣ",
-	 benefits_api: "https://domes.demo.egritosgroup.gr/",
+	benefits_api: "https://domes.demo.egritosgroup.gr/",
+	benefits_afm_required: false,
 	//benefits_api: "http://localhost:5380/",
 	benefits_tab_title: "Αιτήσεις Παιδικών Σταθμών",
 	benefits_tab_title_en: "Nursery Schools Applications",
@@ -47,6 +48,7 @@ var AppConfOptions = {
 
 	is_carpooling_enabled: false,
 	carpooling_api: "https://carpooling.demo.egritosgroup.gr/",
+	carpooling_afm_required: true,
 	carpooling_tab_title: "Carpooling",
 	carpooling_tab_title_en: "Carpooling",
 	carpooling_description: 'Δημιουργία και συμμετοχή σε διαδρομές συν-πολιτών σας από οποιοδήποτε μέρος της Ελλάδας.',
@@ -58,6 +60,7 @@ var AppConfOptions = {
 
 	is_epayments_enabled: true,
 	epayments_api: "https://financeapi.dev.egritosgroup.gr/",
+	epayments_afm_required: true,
 	epayments_tab_title: "Βεβαιωμένες Οφειλές",
 	epayments_tab_title_en: "Persisted Debits",
 	//epayments_api: "https://financeapi.localhost.egritosgroup.gr/",
@@ -72,6 +75,7 @@ var AppConfOptions = {
 
 	is_kliseis_enabled: true,
 	kliseis_api: "https://kliseis.demo.egritosgroup.gr/",
+	kliseis_afm_required: true,
 	kliseis_tab_title: "Κλήσεις Κ.Ο.Κ.",
 	kliseis_tab_title_en: "Traffic Tickets",
 	kliseis_description: 'Εξόφληση και καταχώρηση κλήσεων Δημοτικής Αστυνομίας.',
@@ -86,6 +90,7 @@ var AppConfOptions = {
 
 	is_eidopoiitiria_enabled: true,
 	eidopoiitiria_api: "https://financeapi.dev.egritosgroup.gr/",
+	eidopoiitiria_afm_required: true,
 	eidopoiitiria_tab_title: "Ταυτότητες Οφειλής",
 	eidopoiitiria_tab_title_en: "Debt ID",
 	//eidopoiitiria_api: "https://financeapi.localhost.egritosgroup.gr/",
@@ -97,6 +102,7 @@ var AppConfOptions = {
 
 	is_dimotikos_foros_enabled: true,
 	katastimata_api: "https://katastimata.demo.egritosgroup.gr/",
+	katastimata_afm_required: true,
 	katastimata_tab_title: "Τέλος 0,5% / Παρεπιδημούντων",
 	katastimata_tab_title_en: "0,5% / Residents Tax",
 	katastimata_description: 'Υποβάλλετε και εξοφλήστε την δήλωσή σας για το τέλος 0,5%.',
@@ -107,6 +113,7 @@ var AppConfOptions = {
 
 	is_koinoxristoi_enabled: true,
 	koinoxristoi_api: "https://katastimata.demo.egritosgroup.gr/",
+	koinoxristoi_afm_required: true,
 	koinoxristoi_tab_title: "Αιτήσεις Κοινοχρήστων",
 	koinoxristoi_tab_title_en: "Common Area Applications",
 	koinoxristoi_description: 'Υποβάλλετε και εξοφλήστε αιτήσεις κοινοχρήστων.',
@@ -116,6 +123,7 @@ var AppConfOptions = {
 	order_koinoxristoi: 31,
 
 	is_diakanonismoi_enabled: true,
+	diakanonismoi_afm_required: true,
 	diakanonismoi_tab_title: "Διακανονισμοί",
 	diakanonismoi_tab_title_en: "Debt Settlements",
 	diakanonismoi_description: 'Ενημέρωση για την κατάσταση των διακανονισμών σας και αίτηση νέων διακακονισμών.',
@@ -126,6 +134,7 @@ var AppConfOptions = {
 
 	is_shde_app_enabled: true,
 	shde_api: "https://prot.dev.egritosgroup.gr/",
+	shde_afm_required: true,
 	shde_tab_title: "Αιτήσεις Πολιτών",
 	shde_tab_title_en: "Residents Applications",
 	shde_description: 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.',
@@ -136,6 +145,7 @@ var AppConfOptions = {
 
 	is_rantevou_app_enabled: true,
 	rantevou_api: "https://rantevou.demo.egritosgroup.gr/",
+	rantevou_afm_required: true,
 	rantevou_tab_title: "Ραντεβού Πολιτών",
 	rantevou_tab_title_en: "Residents Appointments",
 	rantevou_description: '',
@@ -146,6 +156,7 @@ var AppConfOptions = {
 
 	is_proslipseis_enabled: true,
 	proslipseis_api: "https://proslipseis.demo.egritosgroup.gr/",
+	proslipseis_afm_required: true,
 	proslipseis_tab_title: "Αιτήσεις Προσλήψεων",
 	proslipseis_tab_title_en: "Recruitment Applications",
 	proslipseis_description: 'Αιτήσεις Πολιτών προς το σύστημα προσλήψεων εποχιακού και μόνιμου προσωπικού του οργανισμού.',
@@ -154,8 +165,9 @@ var AppConfOptions = {
 	proslipseis_tab_info_en: '',
 	order_proslipseis: 60,
 
-	is_notifications_enabled: false,
+	is_notifications_enabled: true,
 	notifications_api: "https://localhost:5330/",
+	notifications_afm_required: true,
 	notifications_tab_title: "Ειδοποιήσεις",
 	notifications_tab_title_en: "Notifications",
 	order_notifications: 80
