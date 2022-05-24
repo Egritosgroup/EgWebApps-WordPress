@@ -83,7 +83,9 @@ function setAppsSettings($options, $pluginFolderName)
       'is_benefits_enabled' => isset($options['isdomes']) && $options['isdomes'] == 'on' ? true : false,
       //'benefits_applications_organization' => $options['benefits_applications_organization'] ? $options['benefits_applications_organization'] : 'ΔΟΜΕΣ',
       'benefits_api' => $options['domes_api'] ? $options['domes_api'] : '',
-      'benefits_afm_required' => isset($options['benefits_afm_required']) && $options['benefits_afm_required'] == 'on' ? true : true,
+      'benefits_afm_required' => (isset($options['benefits_afm_required']) && $options['benefits_afm_required'] == 'on') || !isset($options['benefits_afm_required'])
+         ? true
+         : false,
       'benefits_tab_title' => $options['benefits_tab_title'] ? htmlspecialchars($options['benefits_tab_title']) : 'Αιτήσεις Παιδικών Σταθμών',
       'benefits_tab_title_en' => $options['benefits_tab_title_en'] ? htmlspecialchars($options['benefits_tab_title_en']) : '',
       'benefits_description' => $options['benefits_description'] ? htmlspecialchars($options['benefits_description']) : 'Δημιουργία, επεξεργασία & υποβολή αιτήσεων για παιδικούς σταθμούς, με άμεση ενημέρωση για την κατάσταση της αίτησής σας.',
@@ -94,7 +96,9 @@ function setAppsSettings($options, $pluginFolderName)
 
       'is_carpooling_enabled' => isset($options['iscarpooling']) && $options['iscarpooling'] == 'on' ? true : false,
       'carpooling_api' => $options['carpooling_api'] ? $options['carpooling_api'] : '',
-      'carpooling_afm_required' => isset($options['carpooling_afm_required']) && $options['carpooling_afm_required'] == 'on' ? true : true,
+      'carpooling_afm_required' => (isset($options['carpooling_afm_required']) && $options['carpooling_afm_required'] == 'on') || !isset($options['carpooling_afm_required'])
+         ? true
+         : false,
       'carpooling_tab_title' => $options['carpooling_tab_title'] ? htmlspecialchars($options['carpooling_tab_title']) : 'Carpooling',
       'carpooling_tab_title_en' => $options['carpooling_tab_title_en'] ? htmlspecialchars($options['carpooling_tab_title_en']) : 'Carpooling',
       'carpooling_description' => $options['carpooling_description'] ? htmlspecialchars($options['carpooling_description']) : 'Δημιουργία & συμμετοχή σε διαδρομές συν-πολιτών σας από οποιοδήποτε μέρος της Ελλάδας.',
@@ -106,7 +110,9 @@ function setAppsSettings($options, $pluginFolderName)
 
       'is_epayments_enabled' => isset($options['isepayments']) && $options['isepayments'] == 'on' ? true : false,
       'epayments_api' => $options['epayments_api'] ? $options['epayments_api'] : '',
-      'epayments_afm_required' => isset($options['epayments_afm_required']) && $options['epayments_afm_required'] == 'on' ? true : true,
+      'epayments_afm_required' => (isset($options['epayments_afm_required']) && $options['epayments_afm_required'] == 'on') || !isset($options['epayments_afm_required'])
+         ? true
+         : false,
       'epayments_tab_title' => $options['epayments_tab_title'] ? htmlspecialchars($options['epayments_tab_title']) : 'Βεβαιωμένες Οφειλές',
       'epayments_tab_title_en' => $options['epayments_tab_title_en'] ? htmlspecialchars($options['epayments_tab_title_en']) : 'Persisted Debits',
       'epayments_description' => $options['epayments_description'] ? htmlspecialchars($options['epayments_description']) : 'Εξόφληση των οριστικοποιημένων οφειλών σας προς τον Φορέα.',
@@ -120,7 +126,9 @@ function setAppsSettings($options, $pluginFolderName)
 
       'is_kliseis_enabled' => isset($options['iskliseis']) && $options['iskliseis'] == 'on' ? true : false,
       'kliseis_api' => $options['kliseis_api'] ? $options['kliseis_api'] : '',
-      'kliseis_afm_required' => isset($options['kliseis_afm_required']) && $options['kliseis_afm_required'] == 'on' ? true : true,
+      'kliseis_afm_required' => (isset($options['kliseis_afm_required']) && $options['kliseis_afm_required'] == 'on') || !isset($options['kliseis_afm_required'])
+         ? true
+         : false,
       'kliseis_tab_title' => $options['kliseis_tab_title'] ? htmlspecialchars($options['kliseis_tab_title']) : 'Κλήσεις Κ.Ο.Κ.',
       'kliseis_tab_title_en' => $options['kliseis_tab_title_en'] ? htmlspecialchars($options['kliseis_tab_title_en']) : 'Traffic Tickets',
       'kliseis_description' => $options['kliseis_description'] ? htmlspecialchars($options['kliseis_description']) : 'Εξόφληση και καταχώρηση κλήσεων Δημοτικής Αστυνομίας.',
@@ -135,7 +143,9 @@ function setAppsSettings($options, $pluginFolderName)
 
       'is_eidopoiitiria_enabled' => isset($options['iseidopoiitiria']) && $options['iseidopoiitiria'] == 'on' ? true : false,
       'eidopoiitiria_api' => $options['eidopoiitiria_api'] ? $options['eidopoiitiria_api'] : '',
-      'eidopoiitiria_afm_required' => isset($options['eidopoiitiria_afm_required']) && $options['eidopoiitiria_afm_required'] == 'on' ? true : true,
+      'eidopoiitiria_afm_required' => (isset($options['eidopoiitiria_afm_required']) && $options['eidopoiitiria_afm_required'] == 'on') || !isset($options['eidopoiitiria_afm_required'])
+         ? true
+         : false,
       'eidopoiitiria_tab_title' => $options['eidopoiitiria_tab_title'] ? htmlspecialchars($options['eidopoiitiria_tab_title']) : 'Ταυτότητες Οφειλής',
       'eidopoiitiria_tab_title_en' => $options['eidopoiitiria_tab_title_en'] ? htmlspecialchars($options['eidopoiitiria_tab_title_en']) : 'Debt ID',
       'eidopoiitiria_description' => $options['eidopoiitiria_description'] ? htmlspecialchars($options['eidopoiitiria_description']) : 'Εξόφληση ειδοποιητηρίων.',
@@ -146,7 +156,9 @@ function setAppsSettings($options, $pluginFolderName)
 
       'is_dimotikos_foros_enabled' => isset($options['isdimotikos_foros']) && $options['isdimotikos_foros'] == 'on' ? true : false,
       'katastimata_api' => $options['katastimata_api'] ? $options['katastimata_api'] : '',
-      'katastimata_afm_required' => isset($options['katastimata_afm_required']) && $options['katastimata_afm_required'] == 'on' ? true : true,
+      'katastimata_afm_required' => (isset($options['katastimata_afm_required']) && $options['katastimata_afm_required'] == 'on') || !isset($options['katastimata_afm_required'])
+         ? true
+         : false,
       'katastimata_tab_title' => $options['katastimata_tab_title'] ? htmlspecialchars($options['katastimata_tab_title']) : 'Τέλος 0,5% / Παρεπιδημούντων',
       'katastimata_tab_title_en' => $options['katastimata_tab_title_en'] ? htmlspecialchars($options['katastimata_tab_title_en']) : '0,5% / Residents Tax',
       'katastimata_description' => $options['katastimata_description'] ? htmlspecialchars($options['katastimata_description']) : 'Υποβάλλετε και εξοφλήστε την δήλωσή σας για το τέλος 0,5%.',
@@ -157,7 +169,9 @@ function setAppsSettings($options, $pluginFolderName)
 
       'is_koinoxristoi_enabled' => isset($options['koinoxristoi']) && $options['koinoxristoi'] == 'on' ? true : false,
       'koinoxristoi_api' => $options['koinoxristoi_api'] ? $options['koinoxristoi_api'] : '',
-      'koinoxristoi_afm_required' => isset($options['koinoxristoi_afm_required']) && $options['koinoxristoi_afm_required'] == 'on' ? true : true,
+      'koinoxristoi_afm_required' => (isset($options['koinoxristoi_afm_required']) && $options['koinoxristoi_afm_required'] == 'on') || !isset($options['koinoxristoi_afm_required'])
+         ? true
+         : false,
       'koinoxristoi_tab_title' => $options['koinoxristoi_tab_title'] ? htmlspecialchars($options['koinoxristoi_tab_title']) : 'Αιτήσεις Κοινοχρήστων',
       'koinoxristoi_tab_title_en' => $options['koinoxristoi_tab_title_en'] ? htmlspecialchars($options['koinoxristoi_tab_title_en']) : 'Common Area Applications',
       'koinoxristoi_description' => $options['koinoxristoi_description'] ? htmlspecialchars($options['koinoxristoi_description']) : 'Υποβάλλετε και εξοφλήστε αιτήσεις κοινοχρήστων.',
@@ -167,7 +181,9 @@ function setAppsSettings($options, $pluginFolderName)
       'order_koinoxristoi' => $options['order_koinoxristoi'] ? $options['order_koinoxristoi'] : 31,
 
       'is_diakanonismoi_enabled' => isset($options['isdiakanonismoi']) && $options['isdiakanonismoi'] == 'on' ? true : false,
-      'diakanonismoi_afm_required' => isset($options['diakanonismoi_afm_required']) && $options['diakanonismoi_afm_required'] == 'on' ? true : true,
+      'diakanonismoi_afm_required' => (isset($options['diakanonismoi_afm_required']) && $options['diakanonismoi_afm_required'] == 'on') || !isset($options['diakanonismoi_afm_required'])
+         ? true
+         : false,
       'diakanonismoi_tab_title' => $options['diakanonismoi_tab_title'] ? htmlspecialchars($options['diakanonismoi_tab_title']) : 'Διακανονισμοί',
       'diakanonismoi_tab_title_en' => $options['diakanonismoi_tab_title_en'] ? htmlspecialchars($options['diakanonismoi_tab_title_en']) : 'Debt Settlements',
       'diakanonismoi_description' => $options['diakanonismoi_description'] ? htmlspecialchars($options['diakanonismoi_description']) : 'Ενημέρωση για την κατάσταση των διακανονισμών σας & αίτηση νέων διακακονισμών.',
@@ -178,7 +194,9 @@ function setAppsSettings($options, $pluginFolderName)
 
       'is_shde_app_enabled' => isset($options['isshde']) && $options['isshde'] == 'on' ? true : false,
       'shde_api' => $options['shde_api'] ? $options['shde_api'] : '',
-      'shde_afm_required' => isset($options['shde_afm_required']) && $options['shde_afm_required'] == 'on' ? true : true,
+      'shde_afm_required' => (isset($options['shde_afm_required']) && $options['shde_afm_required'] == 'on') || !isset($options['shde_afm_required'])
+         ? true
+         : false,
       'shde_tab_title' => $options['shde_tab_title'] ? htmlspecialchars($options['shde_tab_title']) : 'Αιτήσεις Πολιτών',
       'shde_tab_title_en' => $options['shde_tab_title_en'] ? htmlspecialchars($options['shde_tab_title_en']) : 'Residents Applications',
       'shde_description' => $options['shde_description'] ? htmlspecialchars($options['shde_description']) : 'Αιτήσεις Πολιτών προς το σύστημα ηλεκτρονικής διακίνησης εγγράφων του οργανισμού.',
@@ -189,7 +207,9 @@ function setAppsSettings($options, $pluginFolderName)
 
       'is_rantevou_app_enabled' => isset($options['israntevou']) && $options['israntevou'] == 'on' ? true : false,
       'rantevou_api' => $options['rantevou_api'] ? $options['rantevou_api'] : '',
-      'rantevou_afm_required' => isset($options['rantevou_afm_required']) && $options['rantevou_afm_required'] == 'on' ? true : true,
+      'rantevou_afm_required' => (isset($options['rantevou_afm_required']) && $options['rantevou_afm_required'] == 'on') || !isset($options['rantevou_afm_required'])
+         ? true
+         : false,
       'rantevou_tab_title' => $options['rantevou_tab_title'] ? htmlspecialchars($options['rantevou_tab_title']) : 'Ραντεβού Πολιτών',
       'rantevou_tab_title_en' => $options['rantevou_tab_title_en'] ? htmlspecialchars($options['rantevou_tab_title_en']) : 'Residents Appointments',
       'rantevou_description' => $options['rantevou_description'] ? htmlspecialchars($options['rantevou_description']) : 'Ηλεκτρονικά Ραντεβού Πολιτών',
@@ -200,7 +220,9 @@ function setAppsSettings($options, $pluginFolderName)
 
       'is_proslipseis_enabled' => isset($options['isproslipseis']) && $options['isproslipseis'] == 'on' ? true : false,
       'proslipseis_api' => $options['proslipseis_api'] ? $options['proslipseis_api'] : '',
-      'proslipseis_afm_required' => isset($options['proslipseis_afm_required']) && $options['proslipseis_afm_required'] == 'on' ? true : true,
+      'proslipseis_afm_required' => (isset($options['proslipseis_afm_required']) && $options['proslipseis_afm_required'] == 'on') || !isset($options['proslipseis_afm_required'])
+         ? true
+         : false,
       'proslipseis_tab_title' => $options['proslipseis_tab_title'] ? htmlspecialchars($options['proslipseis_tab_title']) : 'Αιτήσεις Προσλήψεων',
       'proslipseis_tab_title_en' => $options['proslipseis_tab_title_en'] ? htmlspecialchars($options['proslipseis_tab_title_en']) : 'Recruitment Applications',
       'proslipseis_description' => $options['proslipseis_description'] ? htmlspecialchars($options['proslipseis_description']) : 'Αιτήσεις Πολιτών προς το σύστημα προσλήψεων εποχιακού και μόνιμου προσωπικού του οργανισμού.',
