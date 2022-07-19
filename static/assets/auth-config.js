@@ -155,7 +155,8 @@ var AppConfOptions = {
 	order_rantevou: 100,
 
 	is_proslipseis_enabled: true,
-	proslipseis_api: "https://proslipseis.demo.egritosgroup.gr/",
+	//proslipseis_api: "https://proslipseis.demo.egritosgroup.gr/",
+	proslipseis_api: "http://localhost:4450/",
 	proslipseis_afm_required: true,
 	proslipseis_tab_title: "Αιτήσεις Προσλήψεων",
 	proslipseis_tab_title_en: "Recruitment Applications",
