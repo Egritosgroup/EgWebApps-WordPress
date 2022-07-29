@@ -423,6 +423,7 @@ td#files-td { padding: 0!important; }
 .view-text { display: none; }
 
 .map-container { margin: 0!important; }
+.ontop-select.ng-dropdown-panel.ng-select-bottom, .ontop-select.ng-dropdown-panel.ng-select-top { z-index: 1200; }
 
 /* ### MEDIA QUERIES ### */
 @media (max-width: 1198px) { .pm-size-2 { width: 46%; } }
