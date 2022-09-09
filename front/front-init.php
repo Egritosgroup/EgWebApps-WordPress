@@ -61,7 +61,7 @@ function IncludeAngularFiles()
 
       while (false !== ($entry = readdir($handle))) {
          if ($entry != "." && $entry != "..") {
-            if (strlen($entry) > 0 && ctype_digit(substr($entry, 0, 1))) {
+            if (strlen($entry) > 0 && ctype_digit(substr($entry, 0, 1)) && substr($entry, -3) == ".js") {
                array_push($chunkFiles, $entry);
             }
 
@@ -88,15 +88,15 @@ function IncludeAngularFiles()
       arsort($chunkFiles);
       usort($chunkFiles, "sortFilesfromFolder"); ?>
 
+      <?php foreach ($chunkFiles as $i) { ?>
+         <script src="<?= site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/') . $i; ?>?v=<?= $egwebapps_version; ?>" nomodule></script>
+      <?php } ?>
+
       <script src="<?php echo site_url('/' . trailingslashit(dirname(plugin_basename(__FILE__))) . 'auth-settings'); ?>?v=<?php echo $egwebapps_version; ?>"></script>
       <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>runtime.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
       <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>polyfills.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
       <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>main.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
       <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>common.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
-
-      <?php foreach ($chunkFiles as $i) { ?>
-         <script src="<?= site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/') . $i; ?>?v=<?= $egwebapps_version; ?>" nomodule></script>
-      <?php } ?>
 
       <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>scripts.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
 
