@@ -48,66 +48,58 @@ function IncludeAngularFiles()
 {
    $egwebapps_version = $GLOBALS["egwebapps_version"];
 
-   if ($handle = opendir('./wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/')) { ?>
+   if ($handle = opendir('./wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/')) {
+      /* <script src="<?php //echo site_url('/' . trailingslashit(dirname(plugin_basename(__FILE__))) . 'auth-settings'); ?>?v=<?php echo $egwebapps_version; ?>"></script>
+      <script src="<?php //echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>runtime.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
+      <script src="<?php //echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>polyfills.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
+      <script src="<?php //echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>main.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
+      <script src="<?php //echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>common.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
+      <script src="<?php //echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>scripts.js?v=<?php echo $egwebapps_version; ?>" type="module"></script> */
+
+      $chunkFiles = [];
+      $mainFiles = [];
+
+      while (false !== ($entry = readdir($handle))) {
+         if ($entry != "." && $entry != "..") {
+            if (strlen($entry) > 0 && ctype_digit(substr($entry, 0, 1))) {
+               array_push($chunkFiles, $entry);
+            }
+
+            /* if (strpos($entry, '.js') !== false) {
+               if (strpos($entry, 'es5') !== false) {
+                  if (strpos($entry, 'runtime') !== false || strpos($entry, 'polyfills') !== false || strpos($entry, 'main') !== false || strpos($entry, 'common') !== false) {
+                     array_push($es5mainFiles, $entry);
+                  } else {
+                     array_push($es5Files, $entry);
+                  } ?>
+               <?php } else if (strpos($entry, 'es2015') !== false) {
+                  if (strpos($entry, 'runtime') !== false || strpos($entry, 'polyfills') !== false || strpos($entry, 'main') !== false || strpos($entry, 'common') !== false) {
+                     array_push($es2015mainFiles, $entry);
+                  } else {
+                     array_push($es2015Files, $entry);
+                  } ?>
+               <?php } else if (strpos($entry, 'script') !== false) { ?>
+                  <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>scripts.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
+               <?php }
+            } */
+         }
+      }
+
+      arsort($chunkFiles);
+      usort($chunkFiles, "sortFilesfromFolder"); ?>
+
       <script src="<?php echo site_url('/' . trailingslashit(dirname(plugin_basename(__FILE__))) . 'auth-settings'); ?>?v=<?php echo $egwebapps_version; ?>"></script>
-      <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>common.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
       <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>runtime.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
       <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>polyfills.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
-      <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>scripts.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
       <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>main.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
+      <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>common.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
 
-<?php /* $es5Files = [];
-        $es2015Files = [];
-        $es5mainFiles = [];
-        $es2015mainFiles = [];
+      <?php foreach ($chunkFiles as $i) { ?>
+         <script src="<?= site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/') . $i; ?>?v=<?= $egwebapps_version; ?>" nomodule></script>
+      <?php } ?>
 
-        while (false !== ($entry = readdir($handle))) {
-            if ($entry != "." && $entry != "..") {
-                if(strpos($entry, '.js') !== false) {
-                    if(strpos($entry, 'es5') !== false) {
-                        if(strpos($entry, 'runtime') !== false || strpos($entry, 'polyfills') !== false || strpos($entry, 'main') !== false || strpos($entry, 'common') !== false) {
-                            array_push($es5mainFiles, $entry);
-                        } else {
-                            array_push($es5Files, $entry);
-                        } ?>
-                    <?php } else if(strpos($entry, 'es2015') !== false) {
-                        if(strpos($entry, 'runtime') !== false || strpos($entry, 'polyfills') !== false || strpos($entry, 'main') !== false || strpos($entry, 'common') !== false) {
-                            array_push($es2015mainFiles, $entry);
-                        } else {
-                            array_push($es2015Files, $entry);
-                        } ?>
-                    <?php } else if(strpos($entry, 'script') !== false) { ?>
-                        
-                    <?php }
-                }
-            }
-        }
-        
-        arsort($es5mainFiles);
-        arsort($es2015mainFiles);
-        usort($es5Files, "sortFilesfromFolder");
-        usort($es2015Files, "sortFilesfromFolder"); ?>
-    
-        <script src="<?php echo site_url('/' . trailingslashit(dirname(plugin_basename( __FILE__ ))) . 'auth-settings'); ?>?v=<?php echo $egwebapps_version; ?>"></script>
-        
-        <?php foreach($es5mainFiles as $i){ ?>
-            <script src="<?= site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/') . $i; ?>?v=<?= $egwebapps_version; ?>" nomodule></script>
-        <?php }
+      <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>scripts.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
 
-        foreach($es2015mainFiles as $i){ ?>
-            <script src="<?= site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/') . $i; ?>?v=<?= $egwebapps_version; ?>" type="module"></script>
-        <?php }
-
-        foreach($es5Files as $i){ ?>
-            <script src="<?= site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/') . $i; ?>?v=<?= $egwebapps_version; ?>" nomodule></script>
-        <?php }
-
-        foreach($es2015Files as $i){ ?>
-            <script src="<?= site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/') . $i; ?>?v=<?= $egwebapps_version; ?>" type="module"></script>
-        <?php } ?>
-        
-        <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>scripts.js?v=<?php echo $egwebapps_version; ?>" defer></script> */
-
-      closedir($handle);
+<?php closedir($handle);
    }
 } ?>
