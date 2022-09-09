@@ -49,6 +49,7 @@ function IncludeAngularFiles()
    $egwebapps_version = $GLOBALS["egwebapps_version"];
 
    if ($handle = opendir('./wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/')) { ?>
+      <script src="<?php echo site_url('/' . trailingslashit(dirname(plugin_basename(__FILE__))) . 'auth-settings'); ?>?v=<?php echo $egwebapps_version; ?>"></script>
       <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>runtime.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
       <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>polyfills.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
       <script src="<?php echo site_url('/wp-content/plugins/' . $GLOBALS['pluginFolderName'][0] . '/static/'); ?>scripts.js?v=<?php echo $egwebapps_version; ?>" type="module"></script>
