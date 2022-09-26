@@ -75,8 +75,8 @@ function setAppsSettings($options, $pluginFolderName)
       'unauthorized_allowed' => isset($options['unauthorized_allowed']) && $options['unauthorized_allowed'] == 'on' ? true : false,
       'multilingual' => isset($options['multilingual']) && $options['multilingual'] == 'on' ? true : false,
       'application_url' => $options['application_url'] ? $options['application_url'] : '',
-      'home_page_text' => $options['home_page_text'] ? $options['home_page_text'] : '',
-      'home_page_text_en' => $options['home_page_text_en'] ? $options['home_page_text_en'] : '',
+      'home_page_text' => $options['home_page_text'] ? htmlspecialchars($options['home_page_text']) : '',
+      'home_page_text_en' => $options['home_page_text_en'] ? htmlspecialchars($options['home_page_text_en']) : '',
       'oroi_xrisis_link' => $options['oroi_xrisis_link'] ? $options['oroi_xrisis_link'] : '',
       'order_profile' => $options['order_profile'] ? $options['order_profile'] : 200,
 
