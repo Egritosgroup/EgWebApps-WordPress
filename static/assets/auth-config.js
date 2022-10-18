@@ -1,16 +1,15 @@
 var AuthConfOptions = {
-	stsServer: "https://auth.dev.egritosgroup.gr",
+	stsServer: "https://auth.demo.egritosgroup.gr",
 	//stsServer: "https://auth.demo.egritosgroup.gr",
 	redirect_url: "http://localhost:4200/redirect-auth",
 	app_base_href: "/",
 	// The Client MUST validate that the aud (audience) Claim contains its client_id value registered at the Issuer identified by the iss (issuer) Claim as an audience.
 	// The ID Token MUST be rejected if the ID Token does not list the Client as a valid audience, or if it contains additional audiences not trusted by the Client.
-	client_id: "egwebapps-localhost",
+	client_id: "egwebapps-demo",
 	//client_id: "egwebapps-egritos",
 	response_type: "id_token token",
 	// For some oidc, we require resource identifier to be provided along with the request.
 	resource: "",
-	//EgritosGroup.Finance.Revenue.Full EgritosGroup.CarPooling.Full EgritosGroup.Domes.Basic EgritosGroup.Kliseis.Politis EgritosGroup.Katastimata.Politis
 	scope: "openid profile profilepersonalinfo profileextra roles EgritosGroup.Auth.Basic",
 	post_logout_redirect_uri: "http://localhost:4200",
 	start_checksession: false,
@@ -35,9 +34,8 @@ var AppConfOptions = {
 
 	is_benefits_enabled: true,
 	benefits_applications_organization: "ΔΟΜΕΣ",
-	//benefits_api: "https://domes.demo.egritosgroup.gr/",
+	benefits_api: "https://domes.demo.egritosgroup.gr/",
 	benefits_afm_required: false,
-	benefits_api: "http://localhost:5380/",
 	benefits_tab_title: "Αιτήσεις Παιδικών Σταθμών",
 	benefits_tab_title_en: "Nursery Schools Applications",
 	benefits_description: 'Δημιουργία, επεξεργασία και υποβολή αιτήσεων για παιδικούς σταθμούς, με άμεση ενημέρωση για την κατάσταση της αίτησής σας.',
@@ -59,7 +57,7 @@ var AppConfOptions = {
 	order_carpooling: 170,
 
 	is_epayments_enabled: true,
-	epayments_api: "https://financeapi.dev.egritosgroup.gr/",
+	epayments_api: "https://financeapi.demo.egritosgroup.gr/",
 	epayments_afm_required: true,
 	epayments_tab_title: "Βεβαιωμένες Οφειλές",
 	epayments_tab_title_en: "Persisted Debits",
@@ -89,7 +87,7 @@ var AppConfOptions = {
 	order_kliseis: 20,
 
 	is_eidopoiitiria_enabled: true,
-	eidopoiitiria_api: "https://financeapi.dev.egritosgroup.gr/",
+	eidopoiitiria_api: "https://financeapi.demo.egritosgroup.gr/",
 	eidopoiitiria_afm_required: true,
 	eidopoiitiria_tab_title: "Ταυτότητες Οφειλής",
 	eidopoiitiria_tab_title_en: "Debt ID",
@@ -143,7 +141,7 @@ var AppConfOptions = {
 	shde_tab_info_en: '',
 	order_shde: 90,
 
-	is_rantevou_app_enabled: true,
+	is_rantevou_app_enabled: false,
 	rantevou_api: "https://rantevou.demo.egritosgroup.gr/",
 	rantevou_afm_required: true,
 	rantevou_tab_title: "Ραντεβού Πολιτών",
@@ -154,9 +152,8 @@ var AppConfOptions = {
 	rantevou_tab_info_en: '',
 	order_rantevou: 100,
 
-	is_proslipseis_enabled: true,
-	//proslipseis_api: "https://proslipseis.demo.egritosgroup.gr/",
-	proslipseis_api: "http://localhost:4450/",
+	is_proslipseis_enabled: false,
+	proslipseis_api: "https://proslipseis.demo.egritosgroup.gr/",
 	proslipseis_afm_required: true,
 	proslipseis_tab_title: "Αιτήσεις Προσλήψεων",
 	proslipseis_tab_title_en: "Recruitment Applications",
@@ -166,8 +163,8 @@ var AppConfOptions = {
 	proslipseis_tab_info_en: '',
 	order_proslipseis: 60,
 
-	is_notifications_enabled: true,
-	notifications_api: "https://localhost:5330/",
+	is_notifications_enabled: false,
+	notifications_api: "https://auth.demo.egritosgroup.gr/",
 	notifications_afm_required: true,
 	notifications_tab_title: "Ειδοποιήσεις",
 	notifications_tab_title_en: "Notifications",
