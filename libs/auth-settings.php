@@ -75,6 +75,8 @@ function setAppsSettings($options, $pluginFolderName)
       'unauthorized_allowed' => isset($options['unauthorized_allowed']) && $options['unauthorized_allowed'] == 'on' ? true : false,
       'multilingual' => isset($options['multilingual']) && $options['multilingual'] == 'on' ? true : false,
       'application_url' => $options['application_url'] ? $options['application_url'] : '',
+      'epayments_api' => $options['epayments_api'] ? $options['epayments_api'] : '',
+      'banks_api' => $options['banks_api'] ? $options['banks_api'] : '',
       'home_page_text' => $options['home_page_text'] ? htmlspecialchars($options['home_page_text']) : '',
       'home_page_text_en' => $options['home_page_text_en'] ? htmlspecialchars($options['home_page_text_en']) : '',
       'oroi_xrisis_link' => $options['oroi_xrisis_link'] ? $options['oroi_xrisis_link'] : '',
@@ -109,7 +111,6 @@ function setAppsSettings($options, $pluginFolderName)
       'order_carpooling' => $options['order_carpooling'] ? $options['order_carpooling'] : 170,
 
       'is_epayments_enabled' => isset($options['isepayments']) && $options['isepayments'] == 'on' ? true : false,
-      'epayments_api' => $options['epayments_api'] ? $options['epayments_api'] : '',
       'epayments_afm_required' => (isset($options['epayments_afm_required']) && $options['epayments_afm_required'] == 'on') || !isset($options['epayments_afm_required'])
          ? true
          : false,

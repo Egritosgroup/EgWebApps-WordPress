@@ -124,10 +124,12 @@ function egr_register_settings()
    add_settings_field('egr_plugin_setting_organization_name_en', 'Όνομα Οργανισμού(EN) (organization_name_en)', 'egr_plugin_setting_organization_name_en', 'egr_basic_plugin', 'auth_settings');
    add_settings_field('egr_plugin_setting_console_id', 'Console Client ID', 'egr_plugin_setting_console_id', 'egr_basic_plugin', 'auth_settings');
    add_settings_field('egr_plugin_setting_unauthorized_allowed', 'Επιτρέπεται περιήγηση απο μη συνδεδεμένους χρήστες (unauthorized_allowed)', 'egr_plugin_setting_unauthorized_allowed', 'egr_basic_plugin', 'auth_settings');
-   add_settings_field('egr_plugin_setting_multilingual', 'Πολυγλωσσικό (multilingual)', 'egr_plugin_setting_multilingual', 'egr_basic_plugin', 'auth_settings');
+   add_settings_field('egr_plugin_setting_epayments_api', 'URL Api Οικονομικής', 'egr_plugin_setting_epayments_api', 'egr_basic_plugin', 'auth_settings');
+   add_settings_field('egr_plugin_setting_banks_api', 'URL Api Τραπεζών (MPP)', 'egr_plugin_setting_banks_api', 'egr_basic_plugin', 'auth_settings');
    add_settings_field('egr_plugin_setting_authserver', 'URL Authentication Server (stsServer)', 'egr_plugin_setting_authserver', 'egr_basic_plugin', 'auth_settings');
    add_settings_field('egr_plugin_setting_clientid', 'Client ID (client_id)', 'egr_plugin_setting_clientid', 'egr_basic_plugin', 'auth_settings');
    add_settings_field('egr_plugin_setting_scope', 'Scopes (scope)', 'egr_plugin_setting_scope', 'egr_basic_plugin', 'auth_settings');
+   add_settings_field('egr_plugin_setting_multilingual', 'Πολυγλωσσικό (multilingual)', 'egr_plugin_setting_multilingual', 'egr_basic_plugin', 'auth_settings');
    add_settings_field('egr_plugin_setting_application_url', 'URL εφαρμογής', 'egr_plugin_setting_application_url', 'egr_basic_plugin', 'auth_settings');
    add_settings_field('egr_plugin_setting_home_page_text', 'Κείμενο αρχικής σελίδας', 'egr_plugin_setting_home_page_text', 'egr_basic_plugin', 'auth_settings');
    add_settings_field('egr_plugin_setting_home_page_text_en', 'Κείμενο αρχικής σελίδας(EN)', 'egr_plugin_setting_home_page_text_en', 'egr_basic_plugin', 'auth_settings');
@@ -162,7 +164,6 @@ function egr_register_settings()
 
    add_settings_section('epayments_settings', '<div id="epayments">Ρυθμίσεις Βεβαιωμένων Οφειλών</div>', 'egr_plugin_section_text', 'egr_epayments_plugin');
    add_settings_field('egr_plugin_setting_isepayments', 'Βεβαιωμένες Οφειλές (is_epayments_enabled)', 'egr_plugin_setting_isepayments', 'egr_epayments_plugin', 'epayments_settings');
-   add_settings_field('egr_plugin_setting_epayments_api', 'Βεβαιωμένες Οφειλές Api URL (epayments_api)', 'egr_plugin_setting_epayments_api', 'egr_epayments_plugin', 'epayments_settings');
    add_settings_field('egr_plugin_setting_epayments_afm_required', 'Α.Φ.Μ. Απαραίτητο', 'egr_plugin_setting_epayments_afm_required', 'egr_epayments_plugin', 'epayments_settings');
    add_settings_field('egr_plugin_setting_epayments_tab_title', 'Τίτλος Μενού (epayments_tab_title)', 'egr_plugin_setting_epayments_tab_title', 'egr_epayments_plugin', 'epayments_settings');
    add_settings_field('egr_plugin_setting_epayments_tab_title_en', 'Τίτλος Μενού (EN) (epayments_tab_title_en)', 'egr_plugin_setting_epayments_tab_title_en', 'egr_epayments_plugin', 'epayments_settings');
@@ -193,7 +194,6 @@ function egr_register_settings()
 
    add_settings_section('eidopoiitiria_settings', '<div id="eidopoiitiria">Ρυθμίσεις Ταυτοτήτων Οφειλών</div>', 'egr_plugin_section_text', 'egr_eidopoiitiria_plugin');
    add_settings_field('egr_plugin_setting_iseidopoiitiria', 'Ταυτότητες Οφειλής (is_eidopoiitiria_enabled)', 'egr_plugin_setting_iseidopoiitiria', 'egr_eidopoiitiria_plugin', 'eidopoiitiria_settings');
-   add_settings_field('egr_plugin_setting_eidopoiitiria_api', 'Ταυτότητες Οφειλής Api URL (eidopoiitiria_api)', 'egr_plugin_setting_eidopoiitiria_api', 'egr_eidopoiitiria_plugin', 'eidopoiitiria_settings');
    add_settings_field('egr_plugin_setting_eidopoiitiria_afm_required', 'Α.Φ.Μ. Απαραίτητο', 'egr_plugin_setting_eidopoiitiria_afm_required', 'egr_eidopoiitiria_plugin', 'egr_eidopoiitiria_plugin');
    add_settings_field('egr_plugin_setting_eidopoiitiria_tab_title', 'Τίτλος Μενού (eidopoiitiria_tab_title)', 'egr_plugin_setting_eidopoiitiria_tab_title', 'egr_eidopoiitiria_plugin', 'eidopoiitiria_settings');
    add_settings_field('egr_plugin_setting_eidopoiitiria_tab_title_en', 'Τίτλος Μενού (EN) (eidopoiitiria_tab_title_en)', 'egr_plugin_setting_eidopoiitiria_tab_title_en', 'egr_eidopoiitiria_plugin', 'eidopoiitiria_settings');
@@ -310,16 +310,28 @@ function egr_plugin_setting_unauthorized_allowed()
    echo "<input id='egr_plugin_setting_unauthorized_allowed' name='egr_webapps_plugin_options[unauthorized_allowed]' type='checkbox' " . esc_attr(isset($options['unauthorized_allowed']) ? 'checked=checked' : '') . " />";
 }
 
-function egr_plugin_setting_multilingual()
-{
-   $options = get_option('egr_webapps_plugin_options');
-   echo "<input id='egr_plugin_setting_multilingual' name='egr_webapps_plugin_options[multilingual]' type='checkbox' " . esc_attr(isset($options['multilingual']) ? 'checked=checked' : '') . " />";
-}
-
 function egr_plugin_setting_authserver()
 {
    $options = get_option('egr_webapps_plugin_options');
    echo "<input id='egr_plugin_setting_authserver' name='egr_webapps_plugin_options[authserver]' type='text' value='" . esc_url(isset($options['authserver']) ? $options['authserver'] : '') . "' />";
+}
+
+// function egr_plugin_setting_epayments_api()
+// {
+//    $options = get_option('egr_webapps_plugin_options');
+//    echo "<input id='egr_plugin_setting_epayments_api' name='egr_webapps_plugin_options[epayments_api]' type='text' value='" . esc_attr(isset($options['epayments_api']) ? $options['epayments_api'] : '') . "' />";
+// }
+
+function egr_plugin_setting_epayments_api()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_epayments_api' name='egr_webapps_plugin_options[epayments_api]' type='text' value='" . esc_url(isset($options['epayments_api']) ? $options['epayments_api'] : '') . "' />";
+}
+
+function egr_plugin_setting_banks_api()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_banks_api' name='egr_webapps_plugin_options[banks_api]' type='text' value='" . esc_url(isset($options['banks_api']) ? $options['banks_api'] : '') . "' />";
 }
 
 function egr_plugin_setting_clientid()
@@ -332,6 +344,12 @@ function egr_plugin_setting_scope()
 {
    $options = get_option('egr_webapps_plugin_options');
    echo "<input id='egr_plugin_setting_scope' name='egr_webapps_plugin_options[scope]' type='text' disabled='disabled' value='openid profile roles profileextra EgritosGroup.Auth.Basic' />";
+}
+
+function egr_plugin_setting_multilingual()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_multilingual' name='egr_webapps_plugin_options[multilingual]' type='checkbox' " . esc_attr(isset($options['multilingual']) ? 'checked=checked' : '') . " />";
 }
 
 function egr_plugin_setting_application_url()
@@ -537,12 +555,6 @@ function egr_plugin_setting_isepayments()
 {
    $options = get_option('egr_webapps_plugin_options');
    echo "<input id='egr_plugin_setting_isepayments' name='egr_webapps_plugin_options[isepayments]' type='checkbox' " . esc_attr(isset($options['isepayments']) ? 'checked=checked' : '') . " />";
-}
-
-function egr_plugin_setting_epayments_api()
-{
-   $options = get_option('egr_webapps_plugin_options');
-   echo "<input id='egr_plugin_setting_epayments_api' name='egr_webapps_plugin_options[epayments_api]' type='text' value='" . esc_attr(isset($options['epayments_api']) ? $options['epayments_api'] : '') . "' />";
 }
 
 function egr_plugin_setting_epayments_afm_required()
