@@ -24,6 +24,9 @@ var AuthConfOptions = {
 var AppConfOptions = {
 	multilingual: true,
 	application_url: "http://localhost:4200",
+	//epayments_api: "https://financeapi.demo.egritosgroup.gr/", obsolete
+	finance_api: "https://financeapi.demo.egritosgroup.gr/",
+	gov_payment_gateway_api: "",
 	organization_name: "του Δήμου Τρικκαίων",
 	organization_name_en: "/ Municipality of Trikala City",
 	unauthorized_allowed: true,
@@ -57,11 +60,9 @@ var AppConfOptions = {
 	order_carpooling: 170,
 
 	is_epayments_enabled: true,
-	epayments_api: "https://financeapi.demo.egritosgroup.gr/",
 	epayments_afm_required: true,
 	epayments_tab_title: "Βεβαιωμένες Οφειλές",
 	epayments_tab_title_en: "Persisted Debits",
-	//epayments_api: "https://financeapi.localhost.egritosgroup.gr/",
 	epayments_description: 'Εξόφληση των οριστικοποιημένων οφειλών σας προς τον Φορέα.',
 	epayments_description_en: 'Waiver of persisted debits to the Organization.',
 	epayments_debits_tab_info: 'Σχόλια που αφορούν τις βεβαιωμένες οφειλές.',
@@ -87,11 +88,9 @@ var AppConfOptions = {
 	order_kliseis: 20,
 
 	is_eidopoiitiria_enabled: true,
-	eidopoiitiria_api: "https://financeapi.demo.egritosgroup.gr/",
 	eidopoiitiria_afm_required: true,
 	eidopoiitiria_tab_title: "Ταυτότητες Οφειλής",
 	eidopoiitiria_tab_title_en: "Debt ID",
-	//eidopoiitiria_api: "https://financeapi.localhost.egritosgroup.gr/",
 	eidopoiitiria_description: 'Εξόφληση ταυτοτήτων οφειλών.',
 	eidopoiitiria_description_en: 'Debt ID payment',
 	eidopoiitiria_tab_info: '',
