@@ -124,8 +124,8 @@ function egr_register_settings()
    add_settings_field('egr_plugin_setting_organization_name_en', 'Όνομα Οργανισμού(EN) (organization_name_en)', 'egr_plugin_setting_organization_name_en', 'egr_basic_plugin', 'auth_settings');
    add_settings_field('egr_plugin_setting_console_id', 'Console Client ID', 'egr_plugin_setting_console_id', 'egr_basic_plugin', 'auth_settings');
    add_settings_field('egr_plugin_setting_unauthorized_allowed', 'Επιτρέπεται περιήγηση απο μη συνδεδεμένους χρήστες (unauthorized_allowed)', 'egr_plugin_setting_unauthorized_allowed', 'egr_basic_plugin', 'auth_settings');
-   add_settings_field('egr_plugin_setting_epayments_api', 'URL Api Οικονομικής', 'egr_plugin_setting_epayments_api', 'egr_basic_plugin', 'auth_settings');
-   add_settings_field('egr_plugin_setting_banks_api', 'URL Api Τραπεζών (MPP)', 'egr_plugin_setting_banks_api', 'egr_basic_plugin', 'auth_settings');
+   add_settings_field('egr_plugin_setting_finance_api', 'URL Api Οικονομικής', 'egr_plugin_setting_finance_api', 'egr_basic_plugin', 'auth_settings');
+   add_settings_field('egr_plugin_setting_gov_payment_gateway_api', 'URL Api Πληρωμών (GovPaymentGateway)', 'egr_plugin_setting_gov_payment_gateway_api', 'egr_basic_plugin', 'auth_settings');
    add_settings_field('egr_plugin_setting_authserver', 'URL Authentication Server (stsServer)', 'egr_plugin_setting_authserver', 'egr_basic_plugin', 'auth_settings');
    add_settings_field('egr_plugin_setting_clientid', 'Client ID (client_id)', 'egr_plugin_setting_clientid', 'egr_basic_plugin', 'auth_settings');
    add_settings_field('egr_plugin_setting_scope', 'Scopes (scope)', 'egr_plugin_setting_scope', 'egr_basic_plugin', 'auth_settings');
@@ -316,22 +316,16 @@ function egr_plugin_setting_authserver()
    echo "<input id='egr_plugin_setting_authserver' name='egr_webapps_plugin_options[authserver]' type='text' value='" . esc_url(isset($options['authserver']) ? $options['authserver'] : '') . "' />";
 }
 
-// function egr_plugin_setting_epayments_api()
-// {
-//    $options = get_option('egr_webapps_plugin_options');
-//    echo "<input id='egr_plugin_setting_epayments_api' name='egr_webapps_plugin_options[epayments_api]' type='text' value='" . esc_attr(isset($options['epayments_api']) ? $options['epayments_api'] : '') . "' />";
-// }
-
-function egr_plugin_setting_epayments_api()
+function egr_plugin_setting_finance_api()
 {
    $options = get_option('egr_webapps_plugin_options');
-   echo "<input id='egr_plugin_setting_epayments_api' name='egr_webapps_plugin_options[epayments_api]' type='text' value='" . esc_url(isset($options['epayments_api']) ? $options['epayments_api'] : '') . "' />";
+   echo "<input id='egr_plugin_setting_finance_api' name='egr_webapps_plugin_options[epayments_api]' type='text' value='" . esc_url(isset($options['epayments_api']) ? $options['epayments_api'] : '') . "' />";
 }
 
-function egr_plugin_setting_banks_api()
+function egr_plugin_setting_gov_payment_gateway_api()
 {
    $options = get_option('egr_webapps_plugin_options');
-   echo "<input id='egr_plugin_setting_banks_api' name='egr_webapps_plugin_options[banks_api]' type='text' value='" . esc_url(isset($options['banks_api']) ? $options['banks_api'] : '') . "' />";
+   echo "<input id='egr_plugin_setting_gov_payment_gateway_api' name='egr_webapps_plugin_options[gov_payment_gateway_api]' type='text' value='" . esc_url(isset($options['gov_payment_gateway_api']) ? $options['gov_payment_gateway_api'] : '') . "' />";
 }
 
 function egr_plugin_setting_clientid()
