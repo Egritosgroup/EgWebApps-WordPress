@@ -767,11 +767,11 @@ function egr_plugin_setting_iseidopoiitiria()
    echo "<input id='egr_plugin_setting_iseidopoiitiria' name='egr_webapps_plugin_options[iseidopoiitiria]' type='checkbox' " . esc_attr(isset($options['iseidopoiitiria']) ? 'checked=checked' : '') . " />";
 }
 
-function egr_plugin_setting_eidopoiitiria_api()
-{
-   $options = get_option('egr_webapps_plugin_options');
-   echo "<input id='egr_plugin_setting_eidopoiitiria_api' name='egr_webapps_plugin_options[eidopoiitiria_api]' type='text' value='" . esc_attr(isset($options['eidopoiitiria_api']) ? $options['eidopoiitiria_api'] : '') . "' />";
-}
+// function egr_plugin_setting_eidopoiitiria_api()
+// {
+//    $options = get_option('egr_webapps_plugin_options');
+//    echo "<input id='egr_plugin_setting_eidopoiitiria_api' name='egr_webapps_plugin_options[eidopoiitiria_api]' type='text' value='" . esc_attr(isset($options['eidopoiitiria_api']) ? $options['eidopoiitiria_api'] : '') . "' />";
+// }
 
 function egr_plugin_setting_eidopoiitiria_afm_required()
 {

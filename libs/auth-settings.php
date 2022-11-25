@@ -68,7 +68,6 @@ function setAuthSettings($options, $pluginFolderName)
 
 function setAppsSettings($options, $pluginFolderName)
 {
-
    $settingsArray = array(
       'organization_name' => $options['organization_name'] ? $options['organization_name'] : get_bloginfo(),
       'organization_name_en' => $options['organization_name_en'] ? $options['organization_name_en'] : '',
@@ -143,7 +142,7 @@ function setAppsSettings($options, $pluginFolderName)
       'order_kliseis' => $options['order_kliseis'] ? $options['order_kliseis'] : 20,
 
       'is_eidopoiitiria_enabled' => isset($options['iseidopoiitiria']) && $options['iseidopoiitiria'] == 'on' ? true : false,
-      'eidopoiitiria_api' => $options['eidopoiitiria_api'] ? $options['eidopoiitiria_api'] : '',
+      'eidopoiitiria_api' => $options['eidopoiitiria_api'] ?? $options['epayments_api'] ?? '',
       'eidopoiitiria_afm_required' => (isset($options['eidopoiitiria_afm_required']) && $options['eidopoiitiria_afm_required'] == 'on') || !isset($options['eidopoiitiria_afm_required'])
          ? true
          : false,
