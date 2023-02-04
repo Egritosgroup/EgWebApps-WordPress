@@ -26,7 +26,7 @@ var AppConfOptions = {
 	application_url: "http://localhost:4200",
 	//epayments_api: "https://financeapi.demo.egritosgroup.gr/", obsolete
 	finance_api: "https://financeapi.demo.egritosgroup.gr/",
-	gov_payment_gateway_api: "",
+	gov_payment_gateway_api: "https://financeapi.demo.egritosgroup.gr/",
 	organization_name: "του Δήμου Τρικκαίων",
 	organization_name_en: "/ Municipality of Trikala City",
 	unauthorized_allowed: true,
