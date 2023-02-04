@@ -151,7 +151,7 @@ var AppConfOptions = {
 	rantevou_tab_info_en: '',
 	order_rantevou: 100,
 
-	is_proslipseis_enabled: false,
+	is_proslipseis_enabled: true,
 	proslipseis_api: "https://proslipseis.demo.egritosgroup.gr/",
 	proslipseis_afm_required: true,
 	proslipseis_tab_title: "Αιτήσεις Προσλήψεων",
