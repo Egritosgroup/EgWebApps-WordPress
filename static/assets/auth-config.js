@@ -38,7 +38,7 @@ var AppConfOptions = {
 	is_benefits_enabled: true,
 	benefits_applications_organization: "ΔΟΜΕΣ",
 	benefits_api: "https://domes.demo.egritosgroup.gr/",
-	benefits_afm_required: false,
+	benefits_afm_required: true,
 	benefits_tab_title: "Αιτήσεις Παιδικών Σταθμών",
 	benefits_tab_title_en: "Nursery Schools Applications",
 	benefits_description: 'Δημιουργία, επεξεργασία και υποβολή αιτήσεων για παιδικούς σταθμούς, με άμεση ενημέρωση για την κατάσταση της αίτησής σας.',
