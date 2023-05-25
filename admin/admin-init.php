@@ -392,7 +392,7 @@ function egr_plugin_setting_domes_api()
 function egr_plugin_setting_benefits_afm_required()
 {
    $options = get_option('egr_webapps_plugin_options');
-   echo "<input id='egr_plugin_setting_benefits_afm_required' name='egr_webapps_plugin_options[benefits_afm_required]' type='checkbox' " . esc_attr((isset($options['benefits_afm_required']) && $options['benefits_afm_required'] == 'on') || !isset($options['benefits_afm_required']) ? 'checked=checked' : '') . " />";
+   echo "<input id='egr_plugin_setting_benefits_afm_required' name='egr_webapps_plugin_options[benefits_afm_required]' type='checkbox' " . esc_attr(isset($options['benefits_afm_required']) ? 'checked=checked' : '') . " />";
 }
 
 /* function egr_plugin_setting_benefits_applications_organization()
@@ -476,7 +476,7 @@ function egr_plugin_setting_carpooling_api()
 function egr_plugin_setting_carpooling_afm_required()
 {
    $options = get_option('egr_webapps_plugin_options');
-   echo "<input id='egr_plugin_setting_carpooling_afm_required' name='egr_webapps_plugin_options[carpooling_afm_required]' type='checkbox' " . esc_attr((isset($options['carpooling_afm_required']) && $options['carpooling_afm_required'] == 'on') || !isset($options['carpooling_afm_required']) ? 'checked=checked' : '') . " />";
+   echo "<input id='egr_plugin_setting_carpooling_afm_required' name='egr_webapps_plugin_options[carpooling_afm_required]' type='checkbox' " . esc_attr(isset($options['carpooling_afm_required']) ? 'checked=checked' : '') . " />";
 }
 
 function egr_plugin_setting_carpooling_tab_title()
@@ -554,7 +554,7 @@ function egr_plugin_setting_isepayments()
 function egr_plugin_setting_epayments_afm_required()
 {
    $options = get_option('egr_webapps_plugin_options');
-   echo "<input id='egr_plugin_setting_epayments_afm_required' name='egr_webapps_plugin_options[epayments_afm_required]' type='checkbox' " . esc_attr((isset($options['epayments_afm_required']) && $options['epayments_afm_required'] == 'on') || !isset($options['epayments_afm_required']) ? 'checked=checked' : '') . " />";
+   echo "<input id='egr_plugin_setting_epayments_afm_required' name='egr_webapps_plugin_options[epayments_afm_required]' type='checkbox' " . esc_attr(isset($options['epayments_afm_required']) ? 'checked=checked' : '') . " />";
 }
 
 function egr_plugin_setting_epayments_tab_title()
@@ -658,7 +658,7 @@ function egr_plugin_setting_kliseis_api()
 function egr_plugin_setting_kliseis_afm_required()
 {
    $options = get_option('egr_webapps_plugin_options');
-   echo "<input id='egr_plugin_setting_kliseis_afm_required' name='egr_webapps_plugin_options[kliseis_afm_required]' type='checkbox' " . esc_attr((isset($options['kliseis_afm_required']) && $options['kliseis_afm_required'] == 'on') || !isset($options['kliseis_afm_required']) ? 'checked=checked' : '') . " />";
+   echo "<input id='egr_plugin_setting_kliseis_afm_required' name='egr_webapps_plugin_options[kliseis_afm_required]' type='checkbox' " . esc_attr(isset($options['kliseis_afm_required']) ? 'checked=checked' : '') . " />";
 }
 
 function egr_plugin_setting_kliseis_tab_title()
@@ -776,7 +776,7 @@ function egr_plugin_setting_iseidopoiitiria()
 function egr_plugin_setting_eidopoiitiria_afm_required()
 {
    $options = get_option('egr_webapps_plugin_options');
-   echo "<input id='egr_plugin_setting_eidopoiitiria_afm_required' name='egr_webapps_plugin_options[eidopoiitiria_afm_required]' type='checkbox' " . esc_attr((isset($options['eidopoiitiria_afm_required']) && $options['eidopoiitiria_afm_required'] == 'on') || !isset($options['eidopoiitiria_afm_required']) ? 'checked=checked' : '') . " />";
+   echo "<input id='egr_plugin_setting_eidopoiitiria_afm_required' name='egr_webapps_plugin_options[eidopoiitiria_afm_required]' type='checkbox' " . esc_attr(isset($options['eidopoiitiria_afm_required']) ? 'checked=checked' : '') . " />";
 }
 
 function egr_plugin_setting_eidopoiitiria_tab_title()
@@ -854,7 +854,7 @@ function egr_plugin_setting_katastimata_api()
 function egr_plugin_setting_katastimata_afm_required()
 {
    $options = get_option('egr_webapps_plugin_options');
-   echo "<input id='egr_plugin_setting_katastimata_afm_required' name='egr_webapps_plugin_options[katastimata_afm_required]' type='checkbox' " . esc_attr((isset($options['katastimata_afm_required']) && $options['katastimata_afm_required'] == 'on') || !isset($options['katastimata_afm_required']) ? 'checked=checked' : '') . " />";
+   echo "<input id='egr_plugin_setting_katastimata_afm_required' name='egr_webapps_plugin_options[katastimata_afm_required]' type='checkbox' " . esc_attr(isset($options['katastimata_afm_required']) ? 'checked=checked' : '') . " />";
 }
 
 function egr_plugin_setting_katastimata_tab_title()
@@ -932,7 +932,7 @@ function egr_plugin_setting_koinoxristoi_api()
 function egr_plugin_setting_koinoxristoi_afm_required()
 {
    $options = get_option('egr_webapps_plugin_options');
-   echo "<input id='egr_plugin_setting_koinoxristoi_afm_required' name='egr_webapps_plugin_options[koinoxristoi_afm_required]' type='checkbox' " . esc_attr((isset($options['koinoxristoi_afm_required']) && $options['koinoxristoi_afm_required'] == 'on') || !isset($options['koinoxristoi_afm_required']) ? 'checked=checked' : '') . " />";
+   echo "<input id='egr_plugin_setting_koinoxristoi_afm_required' name='egr_webapps_plugin_options[koinoxristoi_afm_required]' type='checkbox' " . esc_attr(isset($options['koinoxristoi_afm_required']) ? 'checked=checked' : '') . " />";
 }
 
 function egr_plugin_setting_koinoxristoi_tab_title()
@@ -1004,7 +1004,7 @@ function egr_plugin_setting_isdiakanonismoi()
 function egr_plugin_setting_diakanonismoi_afm_required()
 {
    $options = get_option('egr_webapps_plugin_options');
-   echo "<input id='egr_plugin_setting_diakanonismoi_afm_required' name='egr_webapps_plugin_options[diakanonismoi_afm_required]' type='checkbox' " . esc_attr((isset($options['diakanonismoi_afm_required']) && $options['diakanonismoi_afm_required'] == 'on') || !isset($options['diakanonismoi_afm_required']) ? 'checked=checked' : '') . " />";
+   echo "<input id='egr_plugin_setting_diakanonismoi_afm_required' name='egr_webapps_plugin_options[diakanonismoi_afm_required]' type='checkbox' "  . esc_attr(isset($options['diakanonismoi_afm_required']) ? 'checked=checked' : '') . " />";
 }
 
 function egr_plugin_setting_diakanonismoi_tab_title()
@@ -1082,7 +1082,7 @@ function egr_plugin_setting_shde_api()
 function egr_plugin_setting_shde_afm_required()
 {
    $options = get_option('egr_webapps_plugin_options');
-   echo "<input id='egr_plugin_setting_shde_afm_required' name='egr_webapps_plugin_options[shde_afm_required]' type='checkbox' " . esc_attr((isset($options['shde_afm_required']) && $options['shde_afm_required'] == 'on') || !isset($options['shde_afm_required']) ? 'checked=checked' : '') . " />";
+   echo "<input id='egr_plugin_setting_shde_afm_required' name='egr_webapps_plugin_options[shde_afm_required]' type='checkbox' " . esc_attr(isset($options['shde_afm_required']) ? 'checked=checked' : '') . " />";
 }
 
 function egr_plugin_setting_shde_tab_title()
@@ -1160,7 +1160,7 @@ function egr_plugin_setting_rantevou_api()
 function egr_plugin_setting_rantevou_afm_required()
 {
    $options = get_option('egr_webapps_plugin_options');
-   echo "<input id='egr_plugin_setting_rantevou_afm_required' name='egr_webapps_plugin_options[rantevou_afm_required]' type='checkbox' " . esc_attr((isset($options['rantevou_afm_required']) && $options['rantevou_afm_required'] == 'on') || !isset($options['rantevou_afm_required']) ? 'checked=checked' : '') . " />";
+   echo "<input id='egr_plugin_setting_rantevou_afm_required' name='egr_webapps_plugin_options[rantevou_afm_required]' type='checkbox' " . esc_attr(isset($options['rantevou_afm_required']) ? 'checked=checked' : '') . " />";
 }
 
 function egr_plugin_setting_rantevou_tab_title()
@@ -1238,7 +1238,7 @@ function egr_plugin_setting_proslipseis_api()
 function egr_plugin_setting_proslipseis_afm_required()
 {
    $options = get_option('egr_webapps_plugin_options');
-   echo "<input id='egr_plugin_setting_proslipseis_afm_required' name='egr_webapps_plugin_options[proslipseis_afm_required]' type='checkbox' " . esc_attr((isset($options['proslipseis_afm_required']) && $options['proslipseis_afm_required'] == 'on') || !isset($options['proslipseis_afm_required']) ? 'checked=checked' : '') . " />";
+   echo "<input id='egr_plugin_setting_proslipseis_afm_required' name='egr_webapps_plugin_options[proslipseis_afm_required]' type='checkbox' " . esc_attr(isset($options['proslipseis_afm_required']) ? 'checked=checked' : '') . " />";
 }
 
 function egr_plugin_setting_proslipseis_tab_title()
