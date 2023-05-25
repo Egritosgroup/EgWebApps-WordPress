@@ -13,7 +13,7 @@ function egwebapps_settings_url_handler()
       if ($AuthConf) {
          foreach ($AuthConf as $key => $value) {
             if (is_bool($value)) {
-               $bool_val = $value ? 'true' : 'false';
+               $bool_val = $value ? 'on' : 'off';
                echo $key . ': ' . $bool_val . ', ';
             } else if (is_numeric($value)) {
                echo $key . ': ' . $value . ', ';
@@ -27,7 +27,7 @@ function egwebapps_settings_url_handler()
       if ($AppConf) {
          foreach ($AppConf as $key => $value) {
             if (is_bool($value)) {
-               $bool_val = $value ? 'true' : 'false';
+               $bool_val = $value ? 'on' : 'off';
                echo $key . ': ' . $bool_val . ', ';
             } else if (is_numeric($value)) {
                echo $key . ': ' . $value . ', ';
