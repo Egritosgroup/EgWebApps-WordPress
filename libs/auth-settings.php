@@ -13,7 +13,7 @@ function egwebapps_settings_url_handler()
       if ($AuthConf) {
          foreach ($AuthConf as $key => $value) {
             if (is_bool($value)) {
-               $bool_val = $value ? 'on' : 'off';
+               $bool_val = $value ? 'true' : 'false';
                echo $key . ': ' . $bool_val . ', ';
             } else if (is_numeric($value)) {
                echo $key . ': ' . $value . ', ';
@@ -27,7 +27,7 @@ function egwebapps_settings_url_handler()
       if ($AppConf) {
          foreach ($AppConf as $key => $value) {
             if (is_bool($value)) {
-               $bool_val = $value ? 'on' : 'off';
+               $bool_val = $value ? 'true' : 'false';
                echo $key . ': ' . $bool_val . ', ';
             } else if (is_numeric($value)) {
                echo $key . ': ' . $value . ', ';
@@ -84,7 +84,7 @@ function setAppsSettings($options, $pluginFolderName)
       'is_benefits_enabled' => isset($options['isdomes']) && $options['isdomes'] == 'on' ? true : false,
       //'benefits_applications_organization' => $options['benefits_applications_organization'] ? $options['benefits_applications_organization'] : 'ΔΟΜΕΣ',
       'benefits_api' => $options['domes_api'] ? $options['domes_api'] : '',
-      'benefits_afm_required' => (isset($options['benefits_afm_required']) && $options['benefits_afm_required'] == 'on') || !isset($options['benefits_afm_required'])
+      'benefits_afm_required' => (isset($options['benefits_afm_required']) && $options['benefits_afm_required'] == 'on')
          ? true
          : false,
       'benefits_tab_title' => $options['benefits_tab_title'] ? htmlspecialchars($options['benefits_tab_title']) : 'Αιτήσεις Παιδικών Σταθμών',
