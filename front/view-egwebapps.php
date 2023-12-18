@@ -18,6 +18,7 @@ $options = get_option('egr_webapps_plugin_options');
     document.getElementsByTagName('head')[0].prepend(baseHeaderTag);
 
     var egwebappsVersion = '<?php echo $egwebapps_version; ?>';
+    var parentSelectedLanguage = "el";
 </script>
 <?php if(isset($options['jquery_check']) && $options['jquery_check'] == 'on') { ?>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
