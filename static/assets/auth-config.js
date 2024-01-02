@@ -1,6 +1,6 @@
 var AuthConfOptions = {
 	stsServer: "https://auth.demo.egritosgroup.gr",
-	// stsServer: "https://localhost:5330",
+	//stsServer: "https://localhost:5330",
 	redirect_url: "http://localhost:4200/redirect-auth",
 	app_base_href: "/",
 	// The Client MUST validate that the aud (audience) Claim contains its client_id value registered at the Issuer identified by the iss (issuer) Claim as an audience.
