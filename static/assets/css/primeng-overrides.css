@@ -587,6 +587,16 @@ body .ui-steps .ui-steps-item.ui-state-highlight .ui-steps-number {
     color: #333;
 }
 
+th.ng-tns-c3632051545-2.ng-star-inserted {
+    text-align: center;
+}
+
+.p-datepicker-touch-ui,
+.p-calendar .p-datepicker-touch-ui {
+    min-width: 25vw;
+    width: 350px;
+}
+
 .p-tabview-nav {
     margin-bottom: 0;
 }
