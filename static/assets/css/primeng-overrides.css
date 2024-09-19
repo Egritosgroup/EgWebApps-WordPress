@@ -543,3 +543,27 @@ body .ui-steps .ui-steps-item.ui-state-highlight .ui-steps-number {
         text-align: left !important;
     }
 }
+
+.top-info,
+.apps-menu__item.fill-up:hover,
+.app-footer a,
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link,
+form .form-control {
+    color: var(--white);
+}
+
+.apps-menu__item.fill-up:hover {
+    text-decoration: none;
+}
+
+::placeholder {
+    color: var(--black);
+}
+
+.form-control:disabled {
+    background-color: var(--bs-secondary-bg);
+}
+
+.form-control {
+    background-color: var(--bs-body-bg);
+}
