@@ -556,11 +556,11 @@ body .ui-steps .ui-steps-item.ui-state-highlight .ui-steps-number {
     text-decoration: none;
 }
 
-.form-control:disabled {
+.main-container.egwebapps .form-control:disabled {
     background-color: var(--bs-secondary-bg)!important;
 }
 
-.form-control {
+.main-container.egwebapps .form-control {
     background-color: var(--bs-body-bg)!important;
     border: var(--bs-border-width) solid var(--bs-border-color);
 }
@@ -602,7 +602,7 @@ th.ng-tns-c3632051545-2.ng-star-inserted {
 }
 
 @media (max-width: 650px) {
-    .main-container {
+    .main-container.egwebapps {
         width: 95%;
     }
 }
