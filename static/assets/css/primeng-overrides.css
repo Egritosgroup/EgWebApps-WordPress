@@ -577,3 +577,11 @@ body .ui-steps .ui-steps-item.ui-state-highlight .ui-steps-number {
 .p-menuitem-link-active {
     background-color: var(--info);
 }
+
+.p-tabview .p-tabview-nav li:not(.p-highlight):not(.p-disabled):hover .p-tabview-nav-link {
+    color: #333;
+}
+
+.p-tabview-nav {
+    margin-bottom: 0;
+}
