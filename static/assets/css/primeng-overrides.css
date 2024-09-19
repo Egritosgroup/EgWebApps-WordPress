@@ -560,6 +560,7 @@ body .ui-steps .ui-steps-item.ui-state-highlight .ui-steps-number {
     background-color: var(--bs-secondary-bg)!important;
 }
 
+.main-container.egwebapps .p-calendar-w-btn .p-inputtext,
 .main-container.egwebapps .form-control {
     background-color: var(--bs-body-bg)!important;
     border: var(--bs-border-width) solid var(--bs-border-color);
