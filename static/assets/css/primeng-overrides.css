@@ -564,6 +564,10 @@ body .ui-steps .ui-steps-item.ui-state-highlight .ui-steps-number {
     background-color: var(--bs-body-bg)!important;
 }
 
+.p-fieldset .p-fieldset-legend {
+    background-color: var(--bs-body-bg)!important;
+}
+
 .apps-menu__item,
 .home-menu__item {
     background-color: var(--white);
