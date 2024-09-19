@@ -562,6 +562,7 @@ body .ui-steps .ui-steps-item.ui-state-highlight .ui-steps-number {
 
 .form-control {
     background-color: var(--bs-body-bg)!important;
+    border: var(--bs-border-width) solid var(--bs-border-color);
 }
 
 .p-fieldset .p-fieldset-legend {
