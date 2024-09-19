@@ -570,7 +570,7 @@ form .form-control {
 
 .apps-menu__item,
 .home-menu__item {
-    background-color: var(--white);
+    background-color: var(--white)!important;
 }
 
 .apps-menu__item:hover,
@@ -579,5 +579,5 @@ form .form-control {
 .home-menu__item:focus,
 .apps-menu__item.activeTab,
 .p-menuitem-link-active {
-    background-color: var(--info);
+    background-color: var(--info)!important;
 }
