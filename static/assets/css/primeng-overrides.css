@@ -602,6 +602,11 @@ th.ng-tns-c3632051545-2.ng-star-inserted {
     margin-bottom: 0;
 }
 
+.fill-up:hover,
+.fill-up:focus {
+    box-shadow: inset 0 -6.25em 0 0 var(--info);
+}
+
 @media (max-width: 650px) {
     .main-container.egwebapps {
         width: 95%;
