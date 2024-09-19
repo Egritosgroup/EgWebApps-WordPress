@@ -590,3 +590,9 @@ body .ui-steps .ui-steps-item.ui-state-highlight .ui-steps-number {
 .p-tabview-nav {
     margin-bottom: 0;
 }
+
+@media (max-width: 650px) {
+    .main-container {
+        width: 95%;
+    }
+}

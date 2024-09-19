@@ -1733,11 +1733,6 @@
             margin: 0 0 10px 0;
         }
     }
-    @media (max-width: 650px) {
-        .main-container {
-            width: 95%;
-        }
-    }
     @media (max-width: 595px) {
         .apps-menu.authorized .apps-menu__item,
         .apps-menu.authorized .home-menu__item {
