@@ -543,23 +543,3 @@ body .ui-steps .ui-steps-item.ui-state-highlight .ui-steps-number {
         text-align: left !important;
     }
 }
-
-body,
-html,
-p,
-div,
-ul,
-li,
-a,
-article {
-    color: unset!important;
-}
-
-.apps-menu__item:hover,
-.apps-menu__item:focus,
-.home-menu__item:hover,
-.home-menu__item:focus,
-.apps-menu__item.activeTab,
-.p-menuitem-link-active {
-    text-decoration: none;
-}
