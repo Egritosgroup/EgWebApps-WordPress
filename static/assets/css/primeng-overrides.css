@@ -607,6 +607,8 @@ th.ng-tns-c3632051545-2.ng-star-inserted {
     box-shadow: inset 0 -6.25em 0 0 var(--info);
 }
 
+.ontop-select.ng-dropdown-panel.ng-select-bottom, .ontop-select.ng-dropdown-panel.ng-select-top { z-index: 1200; }
+
 @media (max-width: 650px) {
     .main-container.egwebapps {
         width: 95%;
