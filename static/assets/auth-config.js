@@ -130,7 +130,7 @@ var AppConfOptions = {
 	order_diakanonismoi: 40,
 
 	is_shde_app_enabled: true,
-	shde_api: "https://prot.dev.egritosgroup.gr/",
+	shde_api: "https://shde.demo.egritosgroup.gr/",
 	shde_afm_required: true,
 	shde_tab_title: "Αιτήσεις Πολιτών",
 	shde_tab_title_en: "Residents Applications",

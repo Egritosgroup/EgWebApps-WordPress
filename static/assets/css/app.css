@@ -2,20 +2,20 @@
     --secondary: #C9C08E;
     --white: #ffffff;
     --bgcolor: #ecf0f5;
-    --primary: #204969;
+    --primary: #393a3f; /* for accessibility reasons */ /* --primary: #204969; */
     --danger: #BF3F38;
     --success: #23B391;
-    --info: #1D8397;
+    --info: #145E6B; /* for accessibility reasons */ /* --info: #1D8397; */
     --warning: #CB9E51;
     --disabled: #d0d6d8;
     --light-bg: #f8f9fa;
     --secondary: #868e96;
     --light: #f8f9fa;
     --dark: #343a40;
-    --primary-hover: #142e42;
+    --primary-hover: #2E2F33; /* for accessibility reasons */ /* --primary-hover: #142e42; */
     --danger-hover: #BF3F38;
     --success-hover: #23B391;
-    --info-hover: #1D8397;
+    --info-hover: #125763; /* for accessibility reasons */ /* --info-hover: #1D8397; */
     --warning-hover: #b38536;
     --eidos-1: #1E90FF;
     --eidos-2: #2E8B57;
@@ -74,7 +74,7 @@
         border-bottom-right-radius: 5px;
         padding: 20px;
         color: var(--white);
-        font-size: 10px;
+        font-size: 11px;
         text-align: right;
     }
     .app-footer a {
