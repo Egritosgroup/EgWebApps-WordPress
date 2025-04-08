@@ -3,13 +3,13 @@
 * Plugin Name: Ηλεκτρονικές Εφαρμογές - Έγκριτος Group
 * Plugin URI: 
 * Description: Ηλεκτρονικές Εφαρμογές - Έγκριτος Group
-* Version: 17.1.41291
+* Version: 17.1.41661
 * Author: EgritosGroup
 * Author URI: https://egritosgroup.gr/
 **/ 
 
 global $egwebapps_version;
-$egwebapps_version = '17.1.41291';
+$egwebapps_version = '17.1.41661';
 
 
 $GLOBALS['pluginFolderName'] = explode('/', trailingslashit(dirname(plugin_basename( __FILE__ ))));
