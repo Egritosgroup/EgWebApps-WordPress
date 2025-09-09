@@ -167,6 +167,17 @@ var AppConfOptions = {
 	notifications_afm_required: true,
 	notifications_tab_title: "Ειδοποιήσεις",
 	notifications_tab_title_en: "Notifications",
-	order_notifications: 80
+	order_notifications: 80,
+
+	is_koimitiria_enabled: true,
+	koimitiria_api: "https://koimitiria.demo.egritosgroup.gr/",
+	// koimitiria_api: "http://localhost:4397/",
+	koimitiria_afm_required: true,
+	koimitiria_tab_title: "Αιτήσεις Χώρων Κοιμητηρίων",
+	koimitiria_tab_title_en: "Cemetery Space Applications",
+	koimitiria_description: '',
+	koimitiria_description_en: '',
+	koimitiria_tab_info: '',
+	order_koimitiria: 110,
 };
 

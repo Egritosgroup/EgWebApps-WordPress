@@ -81,6 +81,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 @egritos/kliseis-ng
 
+@egritos/koimitiria-ng
+
 @egritos/notifications-ng
 
 @egritos/proslipseis-ng
