@@ -61,6 +61,7 @@ function egr_render_plugin_settings_page()
                <button class="nav-link" id="nav-diakinisi-tab" data-bs-toggle="tab" data-bs-target="#nav-diakinisi" type="button" role="tab" aria-controls="nav-diakinisi" aria-selected="false">Διακίνηση Εγγράφων</button>
                <button class="nav-link" id="nav-rantevou-tab" data-bs-toggle="tab" data-bs-target="#nav-rantevou" type="button" role="tab" aria-controls="nav-rantevou" aria-selected="false">Ηλεκτρονικά Ραντεβού</button>
                <button class="nav-link" id="nav-proslipseis-tab" data-bs-toggle="tab" data-bs-target="#nav-proslipseis" type="button" role="tab" aria-controls="nav-proslipseis" aria-selected="false">Προσλήψεις</button>
+               <button class="nav-link" id="nav-koimitiria-tab" data-bs-toggle="tab" data-bs-target="#nav-koimitiria" type="button" role="tab" aria-controls="nav-koimitiria" aria-selected="false">Κοιμητήρια</button>
                <button class="nav-link" id="nav-extrasettings-tab" data-bs-toggle="tab" data-bs-target="#nav-extrasettings" type="button" role="tab" aria-controls="nav-extrasettings" aria-selected="false">Ρυθμίσεις Προσθέτου</button>
             </div>
          </nav>
@@ -102,6 +103,9 @@ function egr_render_plugin_settings_page()
                </div>
                <div class="tab-pane fade" id="nav-proslipseis" role="tabpanel" aria-labelledby="nav-proslipseis-tab">
                   <?php do_settings_sections('egr_proslipseis_plugin'); ?>
+               </div>
+               <div class="tab-pane fade" id="nav-koimitiria" role="tabpanel" aria-labelledby="nav-koimitiria-tab">
+                  <?php do_settings_sections('egr_koimitiria_plugin'); ?>
                </div>
                <div class="tab-pane fade" id="nav-extrasettings" role="tabpanel" aria-labelledby="nav-extrasettings-tab">
                   <?php do_settings_sections('egr_extrasettings_plugin'); ?>
@@ -273,6 +277,18 @@ function egr_register_settings()
    add_settings_field('egr_plugin_setting_proslipseis_tab_info', 'Γενικές Οδηγίες (proslipseis_tab_info)', 'egr_plugin_setting_proslipseis_tab_info', 'egr_proslipseis_plugin', 'proslipseis_settings');
    add_settings_field('egr_plugin_setting_proslipseis_tab_info_en', 'Γενικές Οδηγίες (ΕΝ) (proslipseis_tab_info_en)', 'egr_plugin_setting_proslipseis_tab_info_en', 'egr_proslipseis_plugin', 'proslipseis_settings');
    add_settings_field('egr_plugin_setting_order_proslipseis', 'Σειρά Εμφάνισης (order_proslipseis)', 'egr_plugin_setting_order_proslipseis', 'egr_proslipseis_plugin', 'proslipseis_settings');
+
+   add_settings_section('koimitiria_settings', '<div id="koimitiria">Ρυθμίσεις Κοιμητηρίων</div>', 'egr_plugin_section_text', 'egr_koimitiria_plugin');
+   add_settings_field('egr_plugin_setting_iskoimitiria', 'Κοιμητήρια (is_koimitiria_enabled)', 'egr_plugin_setting_iskoimitiria', 'egr_koimitiria_plugin', 'koimitiria_settings');
+   add_settings_field('egr_plugin_setting_koimitiria_api', 'Api Κοιμητηρίων (koimitiria_api)', 'egr_plugin_setting_koimitiria_api', 'egr_koimitiria_plugin', 'koimitiria_settings');
+   add_settings_field('egr_plugin_setting_koimitiria_afm_required', 'Α.Φ.Μ. Απαραίτητο', 'egr_plugin_setting_koimitiria_afm_required', 'egr_koimitiria_plugin', 'koimitiria_settings');
+   add_settings_field('egr_plugin_setting_koimitiria_tab_title', 'Τίτλος Μενού (koimitiria_tab_title)', 'egr_plugin_setting_koimitiria_tab_title', 'egr_koimitiria_plugin', 'koimitiria_settings');
+   add_settings_field('egr_plugin_setting_koimitiria_tab_title_en', 'Τίτλος Μενού (EN) (koimitiria_tab_title_en)', 'egr_plugin_setting_koimitiria_tab_title_en', 'egr_koimitiria_plugin', 'koimitiria_settings');
+   add_settings_field('egr_plugin_setting_koimitiria_description', 'Περιγραφή (koimitiria_description)', 'egr_plugin_setting_koimitiria_description', 'egr_koimitiria_plugin', 'koimitiria_settings');
+   add_settings_field('egr_plugin_setting_koimitiria_description_en', 'Περιγραφή (ΕΝ) (koimitiria_description_en)', 'egr_plugin_setting_koimitiria_description_en', 'egr_koimitiria_plugin', 'koimitiria_settings');
+   add_settings_field('egr_plugin_setting_koimitiria_tab_info', 'Γενικές Οδηγίες (koimitiria_tab_info)', 'egr_plugin_setting_koimitiria_tab_info', 'egr_koimitiria_plugin', 'koimitiria_settings');
+   add_settings_field('egr_plugin_setting_koimitiria_tab_info_en', 'Γενικές Οδηγίες (ΕΝ) (koimitiria_tab_info_en)', 'egr_plugin_setting_koimitiria_tab_info_en', 'egr_koimitiria_plugin', 'koimitiria_settings');
+   add_settings_field('egr_plugin_setting_order_koimitiria', 'Σειρά Εμφάνισης (order_koimitiria)', 'egr_plugin_setting_order_koimitiria', 'egr_koimitiria_plugin', 'koimitiria_settings');
 
    add_settings_section('extra_plugin_options', '<div id="extra-settings">Έξτρα Ρυθμίσεις Plugin</div>', 'egr_plugin_section_text', 'egr_extrasettings_plugin');
    add_settings_field('egr_plugin_setting_jquery_check', 'Ενεργοποίηση JQuery', 'egr_plugin_setting_jquery_check', 'egr_extrasettings_plugin', 'extra_plugin_options');
@@ -1297,6 +1313,84 @@ function egr_plugin_setting_order_proslipseis()
 {
    $options = get_option('egr_webapps_plugin_options');
    echo "<input id='egr_plugin_setting_order_proslipseis' name='egr_webapps_plugin_options[order_proslipseis]' type='text' value='" . esc_attr(isset($options['order_proslipseis']) ? $options['order_proslipseis'] : 60) . "' />";
+}
+//END 
+
+//KOIMITIRIA
+function egr_plugin_setting_iskoimitiria()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_iskoimitiria' name='egr_webapps_plugin_options[iskoimitiria]' type='checkbox' " . esc_attr(isset($options['iskoimitiria']) ? 'checked=checked' : '') . " />";
+}
+
+function egr_plugin_setting_koimitiria_api()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_koimitiria_api' name='egr_webapps_plugin_options[koimitiria_api]' type='text' value='" . esc_attr(isset($options['koimitiria_api']) ? $options['koimitiria_api'] : '') . "' />";
+}
+
+function egr_plugin_setting_koimitiria_afm_required()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_koimitiria_afm_required' name='egr_webapps_plugin_options[koimitiria_afm_required]' type='checkbox' " . esc_attr(isset($options['koimitiria_afm_required']) ? 'checked=checked' : '') . " />";
+}
+
+function egr_plugin_setting_koimitiria_tab_title()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_koimitiria_tab_title' name='egr_webapps_plugin_options[koimitiria_tab_title]' type='text' value='" . esc_attr(isset($options['koimitiria_tab_title']) ? $options['koimitiria_tab_title'] : '') . "' />";
+}
+
+function egr_plugin_setting_koimitiria_tab_title_en()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_koimitiria_tab_title_en' name='egr_webapps_plugin_options[koimitiria_tab_title_en]' type='text' value='" . esc_attr(isset($options['koimitiria_tab_title_en']) ? $options['koimitiria_tab_title_en'] : '') . "' />";
+}
+
+function egr_plugin_setting_koimitiria_description()
+{
+   $options = get_option('egr_webapps_plugin_options'); ?>
+
+   <div class="editor-wrapper egr_plugin_setting_koimitiria_description_editor">
+      <?php echo "<input type='hidden' id='egr_plugin_setting_koimitiria_description' name='egr_webapps_plugin_options[koimitiria_description]' value='" . esc_attr(isset($options['koimitiria_description']) ? $options['koimitiria_description'] : '') . "' />"; ?>
+      <div id="egr_plugin_setting_koimitiria_description_editor" class="editor"></div>
+   </div>
+<?php }
+
+function egr_plugin_setting_koimitiria_description_en()
+{
+   $options = get_option('egr_webapps_plugin_options'); ?>
+
+   <div class="editor-wrapper egr_plugin_setting_koimitiria_description_en_editor">
+      <?php echo "<input type='hidden' id='egr_plugin_setting_koimitiria_description_en' name='egr_webapps_plugin_options[koimitiria_description_en]' value='" . esc_attr(isset($options['koimitiria_description_en']) ? $options['koimitiria_description_en'] : '') . "' />"; ?>
+      <div id="egr_plugin_setting_koimitiria_description_en_editor" class="editor"></div>
+   </div>
+<?php }
+
+function egr_plugin_setting_koimitiria_tab_info()
+{
+   $options = get_option('egr_webapps_plugin_options'); ?>
+
+   <div class="editor-wrapper egr_plugin_setting_koimitiria_tab_info_editor">
+      <?php echo "<input type='hidden' id='egr_plugin_setting_koimitiria_tab_info' name='egr_webapps_plugin_options[koimitiria_tab_info]' value='" . esc_attr(isset($options['koimitiria_tab_info']) ? $options['koimitiria_tab_info'] : '') . "' />"; ?>
+      <div id="egr_plugin_setting_koimitiria_tab_info_editor" class="editor"></div>
+   </div>
+<?php }
+
+function egr_plugin_setting_koimitiria_tab_info_en()
+{
+   $options = get_option('egr_webapps_plugin_options'); ?>
+
+   <div class="editor-wrapper egr_plugin_setting_koimitiria_tab_info_en_editor">
+      <?php echo "<input type='hidden' id='egr_plugin_setting_koimitiria_tab_info_en' name='egr_webapps_plugin_options[koimitiria_tab_info_en]' value='" . esc_attr(isset($options['koimitiria_tab_info_en']) ? $options['koimitiria_tab_info_en'] : '') . "' />"; ?>
+      <div id="egr_plugin_setting_koimitiria_tab_info_en_editor" class="editor"></div>
+   </div>
+<?php }
+
+function egr_plugin_setting_order_koimitiria()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_order_koimitiria' name='egr_webapps_plugin_options[order_koimitiria]' type='text' value='" . esc_attr(isset($options['order_koimitiria']) ? $options['order_koimitiria'] : 60) . "' />";
 }
 //END 
 

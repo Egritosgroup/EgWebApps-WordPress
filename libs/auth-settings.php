@@ -231,6 +231,19 @@ function setAppsSettings($options, $pluginFolderName)
       'proslipseis_tab_info_en' => $options['proslipseis_tab_info_en'] ? htmlspecialchars($options['proslipseis_tab_info_en']) : '',
       'order_proslipseis' => $options['order_proslipseis'] ? $options['order_proslipseis'] : 60,
 
+      'is_koimitiria_enabled' => isset($options['iskoimitiria']) && $options['iskoimitiria'] == 'on' ? true : false,
+      'koimitiria_api' => $options['koimitiria_api'] ? $options['koimitiria_api'] : '',
+      'koimitiria_afm_required' => (isset($options['koimitiria_afm_required']) && $options['koimitiria_afm_required'] == 'on') || !isset($options['koimitiria_afm_required'])
+         ? true
+         : false,
+      'koimitiria_tab_title' => $options['koimitiria_tab_title'] ? htmlspecialchars($options['koimitiria_tab_title']) : 'Αιτήσεις Κοιμητηρίων',
+      'koimitiria_tab_title_en' => $options['koimitiria_tab_title_en'] ? htmlspecialchars($options['koimitiria_tab_title_en']) : 'Cemetery Space Applications',
+      'koimitiria_description' => $options['koimitiria_description'] ? htmlspecialchars($options['koimitiria_description']) : 'Αιτήσεις Πολιτών προς το σύστημα κοιμητηρίων για χώρους.',
+      'koimitiria_description_en' => $options['koimitiria_description_en'] ? htmlspecialchars($options['koimitiria_description_en']) : '',
+      'koimitiria_tab_info' => $options['koimitiria_tab_info'] ? htmlspecialchars($options['koimitiria_tab_info']) : '',
+      'koimitiria_tab_info_en' => $options['koimitiria_tab_info_en'] ? htmlspecialchars($options['koimitiria_tab_info_en']) : '',
+      'order_koimitiria' => $options['order_koimitiria'] ? $options['order_koimitiria'] : 110,
+
       /* 'is_notifications_enabled' => false,
       'notifications_api' => '',
       'notifications_tab_title' => $options['notifications_tab_title'] ? htmlspecialchars($options['notifications_tab_title']) : 'Ειδοποιήσεις',
