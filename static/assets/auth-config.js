@@ -59,7 +59,7 @@ var AppConfOptions = {
 	google_maps_key: null,
 	order_carpooling: 170,
 
-	is_epayments_enabled: true,
+	is_epayments_enabled: false,
 	epayments_afm_required: true,
 	epayments_tab_title: "Βεβαιωμένες Οφειλές",
 	epayments_tab_title_en: "Persisted Debits",
@@ -72,7 +72,7 @@ var AppConfOptions = {
 	show_non_persisted_debits: true,
 	order_epayments: 10,
 
-	is_kliseis_enabled: true,
+	is_kliseis_enabled: false,
 	kliseis_api: "https://kliseis.demo.egritosgroup.gr/",
 	kliseis_afm_required: true,
 	kliseis_tab_title: "Κλήσεις Κ.Ο.Κ.",
@@ -97,7 +97,7 @@ var AppConfOptions = {
 	eidopoiitiria_tab_info_en: '',
 	order_eidopoiitiria: 70,
 
-	is_dimotikos_foros_enabled: true,
+	is_dimotikos_foros_enabled: false,
 	katastimata_api: "https://katastimata.demo.egritosgroup.gr/",
 	katastimata_afm_required: true,
 	katastimata_tab_title: "Τέλος 0,5% / Παρεπιδημούντων",
@@ -129,7 +129,7 @@ var AppConfOptions = {
 	diakanonismoi_tab_info_en: '',
 	order_diakanonismoi: 40,
 
-	is_shde_app_enabled: true,
+	is_shde_app_enabled: false,
 	shde_api: "https://shde.demo.egritosgroup.gr/",
 	shde_afm_required: true,
 	shde_tab_title: "Αιτήσεις Πολιτών",
@@ -140,7 +140,7 @@ var AppConfOptions = {
 	shde_tab_info_en: '',
 	order_shde: 90,
 
-	is_rantevou_app_enabled: false,
+	is_rantevou_app_enabled: true,
 	rantevou_api: "https://rantevou.demo.egritosgroup.gr/",
 	rantevou_afm_required: true,
 	rantevou_tab_title: "Ραντεβού Πολιτών",
@@ -162,7 +162,7 @@ var AppConfOptions = {
 	proslipseis_tab_info_en: '',
 	order_proslipseis: 60,
 
-	is_notifications_enabled: false,
+	is_notifications_enabled: true,
 	notifications_api: "https://auth.demo.egritosgroup.gr/",
 	notifications_afm_required: true,
 	notifications_tab_title: "Ειδοποιήσεις",
