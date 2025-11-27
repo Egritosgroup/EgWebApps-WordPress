@@ -179,5 +179,16 @@ var AppConfOptions = {
 	koimitiria_description_en: '',
 	koimitiria_tab_info: '',
 	order_koimitiria: 110,
+
+	is_ydrefsi_enabled: true,
+	ydrefsi_api: "https://ydrefsi.demo.egritosgroup.gr/",
+	// ydrefsi_api: "http://localhost:4397/",
+	ydrefsi_afm_required: true,
+	ydrefsi_tab_title: "Ύδρευση",
+	ydrefsi_tab_title_en: "Water Supply",
+	ydrefsi_description: '',
+	ydrefsi_description_en: '',
+	ydrefsi_tab_info: '',
+	order_ydrefsi: 110,
 };
 

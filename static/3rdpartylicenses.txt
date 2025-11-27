@@ -87,6 +87,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 @egritos/proslipseis-ng
 
+@egritos/ydrefsi-ng
+
 @fortawesome/fontawesome-free
 (CC-BY-4.0 AND OFL-1.1 AND MIT)
 Fonticons, Inc. (https://fontawesome.com)
