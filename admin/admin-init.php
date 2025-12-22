@@ -62,6 +62,7 @@ function egr_render_plugin_settings_page()
                <button class="nav-link" id="nav-rantevou-tab" data-bs-toggle="tab" data-bs-target="#nav-rantevou" type="button" role="tab" aria-controls="nav-rantevou" aria-selected="false">Ηλεκτρονικά Ραντεβού</button>
                <button class="nav-link" id="nav-proslipseis-tab" data-bs-toggle="tab" data-bs-target="#nav-proslipseis" type="button" role="tab" aria-controls="nav-proslipseis" aria-selected="false">Προσλήψεις</button>
                <button class="nav-link" id="nav-koimitiria-tab" data-bs-toggle="tab" data-bs-target="#nav-koimitiria" type="button" role="tab" aria-controls="nav-koimitiria" aria-selected="false">Κοιμητήρια</button>
+               <button class="nav-link" id="nav-ydrefsi-tab" data-bs-toggle="tab" data-bs-target="#nav-ydrefsi" type="button" role="tab" aria-controls="nav-ydrefsi" aria-selected="false">Ύδρευση</button>
                <button class="nav-link" id="nav-extrasettings-tab" data-bs-toggle="tab" data-bs-target="#nav-extrasettings" type="button" role="tab" aria-controls="nav-extrasettings" aria-selected="false">Ρυθμίσεις Προσθέτου</button>
             </div>
          </nav>
@@ -106,6 +107,9 @@ function egr_render_plugin_settings_page()
                </div>
                <div class="tab-pane fade" id="nav-koimitiria" role="tabpanel" aria-labelledby="nav-koimitiria-tab">
                   <?php do_settings_sections('egr_koimitiria_plugin'); ?>
+               </div>
+               <div class="tab-pane fade" id="nav-ydrefsi" role="tabpanel" aria-labelledby="nav-ydrefsi-tab">
+                  <?php do_settings_sections('egr_ydrefsi_plugin'); ?>
                </div>
                <div class="tab-pane fade" id="nav-extrasettings" role="tabpanel" aria-labelledby="nav-extrasettings-tab">
                   <?php do_settings_sections('egr_extrasettings_plugin'); ?>
@@ -289,6 +293,18 @@ function egr_register_settings()
    add_settings_field('egr_plugin_setting_koimitiria_tab_info', 'Γενικές Οδηγίες (koimitiria_tab_info)', 'egr_plugin_setting_koimitiria_tab_info', 'egr_koimitiria_plugin', 'koimitiria_settings');
    add_settings_field('egr_plugin_setting_koimitiria_tab_info_en', 'Γενικές Οδηγίες (ΕΝ) (koimitiria_tab_info_en)', 'egr_plugin_setting_koimitiria_tab_info_en', 'egr_koimitiria_plugin', 'koimitiria_settings');
    add_settings_field('egr_plugin_setting_order_koimitiria', 'Σειρά Εμφάνισης (order_koimitiria)', 'egr_plugin_setting_order_koimitiria', 'egr_koimitiria_plugin', 'koimitiria_settings');
+
+   add_settings_section('ydrefsi_settings', '<div id="ydrefsi">Ρυθμίσεις Ύδρευσης</div>', 'egr_plugin_section_text', 'egr_ydrefsi_plugin');
+   add_settings_field('egr_plugin_setting_isydrefsi', 'Ύδρευση (is_ydrefsi_enabled)', 'egr_plugin_setting_isydrefsi', 'egr_ydrefsi_plugin', 'ydrefsi_settings');
+   add_settings_field('egr_plugin_setting_ydrefsi_api', 'Api Ύδρευσης (ydrefsi_api)', 'egr_plugin_setting_ydrefsi_api', 'egr_ydrefsi_plugin', 'ydrefsi_settings');
+   add_settings_field('egr_plugin_setting_ydrefsi_afm_required', 'Α.Φ.Μ. Απαραίτητο', 'egr_plugin_setting_ydrefsi_afm_required', 'egr_ydrefsi_plugin', 'ydrefsi_settings');
+   add_settings_field('egr_plugin_setting_ydrefsi_tab_title', 'Τίτλος Μενού (ydrefsi_tab_title)', 'egr_plugin_setting_ydrefsi_tab_title', 'egr_ydrefsi_plugin', 'ydrefsi_settings');
+   add_settings_field('egr_plugin_setting_ydrefsi_tab_title_en', 'Τίτλος Μενού (EN) (ydrefsi_tab_title_en)', 'egr_plugin_setting_ydrefsi_tab_title_en', 'egr_ydrefsi_plugin', 'ydrefsi_settings');
+   add_settings_field('egr_plugin_setting_ydrefsi_description', 'Περιγραφή (ydrefsi_description)', 'egr_plugin_setting_ydrefsi_description', 'egr_ydrefsi_plugin', 'ydrefsi_settings');
+   add_settings_field('egr_plugin_setting_ydrefsi_description_en', 'Περιγραφή (ΕΝ) (ydrefsi_description_en)', 'egr_plugin_setting_ydrefsi_description_en', 'egr_ydrefsi_plugin', 'ydrefsi_settings');
+   add_settings_field('egr_plugin_setting_ydrefsi_tab_info', 'Γενικές Οδηγίες (ydrefsi_tab_info)', 'egr_plugin_setting_ydrefsi_tab_info', 'egr_ydrefsi_plugin', 'ydrefsi_settings');
+   add_settings_field('egr_plugin_setting_ydrefsi_tab_info_en', 'Γενικές Οδηγίες (ΕΝ) (ydrefsi_tab_info_en)', 'egr_plugin_setting_ydrefsi_tab_info_en', 'egr_ydrefsi_plugin', 'ydrefsi_settings');
+   add_settings_field('egr_plugin_setting_order_ydrefsi', 'Σειρά Εμφάνισης (order_ydrefsi)', 'egr_plugin_setting_order_ydrefsi', 'egr_ydrefsi_plugin', 'ydrefsi_settings');
 
    add_settings_section('extra_plugin_options', '<div id="extra-settings">Έξτρα Ρυθμίσεις Plugin</div>', 'egr_plugin_section_text', 'egr_extrasettings_plugin');
    add_settings_field('egr_plugin_setting_jquery_check', 'Ενεργοποίηση JQuery', 'egr_plugin_setting_jquery_check', 'egr_extrasettings_plugin', 'extra_plugin_options');
@@ -1393,6 +1409,86 @@ function egr_plugin_setting_order_koimitiria()
    echo "<input id='egr_plugin_setting_order_koimitiria' name='egr_webapps_plugin_options[order_koimitiria]' type='text' value='" . esc_attr(isset($options['order_koimitiria']) ? $options['order_koimitiria'] : 60) . "' />";
 }
 //END 
+
+//ΎΔΡΕΥΣΗ
+function egr_plugin_setting_isydrefsi()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_isydrefsi' name='egr_webapps_plugin_options[isydrefsi]' type='checkbox' " . esc_attr(isset($options['isydrefsi']) ? 'checked=checked' : '') . " />";
+}
+
+function egr_plugin_setting_ydrefsi_api()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_ydrefsi_api' name='egr_webapps_plugin_options[ydrefsi_api]' type='text' value='" . esc_attr(isset($options['ydrefsi_api']) ? $options['ydrefsi_api'] : '') . "' />";
+}
+
+function egr_plugin_setting_ydrefsi_afm_required()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_ydrefsi_afm_required' name='egr_webapps_plugin_options[ydrefsi_afm_required]' type='checkbox' " . esc_attr(isset($options['ydrefsi_afm_required']) ? 'checked=checked' : '') . " />";
+}
+
+function egr_plugin_setting_ydrefsi_tab_title()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_ydrefsi_tab_title' name='egr_webapps_plugin_options[ydrefsi_tab_title]' type='text' value='" . esc_attr(isset($options['ydrefsi_tab_title']) ? $options['ydrefsi_tab_title'] : '') . "' />";
+}
+
+function egr_plugin_setting_ydrefsi_tab_title_en()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_ydrefsi_tab_title_en' name='egr_webapps_plugin_options[ydrefsi_tab_title_en]' type='text' value='" . esc_attr(isset($options['ydrefsi_tab_title_en']) ? $options['ydrefsi_tab_title_en'] : '') . "' />";
+}
+
+function egr_plugin_setting_ydrefsi_description()
+{
+   $options = get_option('egr_webapps_plugin_options'); ?>
+
+   <div class="editor-wrapper egr_plugin_setting_ydrefsi_description_editor">
+      <?php echo "<input type='hidden' id='egr_plugin_setting_ydrefsi_description' name='egr_webapps_plugin_options[ydrefsi_description]' value='" . esc_attr(isset($options['ydrefsi_description']) ? $options['ydrefsi_description'] : '') . "' />"; ?>
+      <div id="egr_plugin_setting_ydrefsi_description_editor" class="editor"></div>
+   </div>
+<?php }
+
+function egr_plugin_setting_ydrefsi_description_en()
+{
+   $options = get_option('egr_webapps_plugin_options'); ?>
+
+   <div class="editor-wrapper egr_plugin_setting_ydrefsi_description_en_editor">
+      <?php echo "<input type='hidden' id='egr_plugin_setting_ydrefsi_description_en' name='egr_webapps_plugin_options[ydrefsi_description_en]' value='" . esc_attr(isset($options['ydrefsi_description_en']) ? $options['ydrefsi_description_en'] : '') . "' />"; ?>
+      <div id="egr_plugin_setting_ydrefsi_description_en_editor" class="editor"></div>
+   </div>
+<?php }
+
+function egr_plugin_setting_ydrefsi_tab_info()
+{
+   $options = get_option('egr_webapps_plugin_options'); ?>
+
+   <div class="editor-wrapper egr_plugin_setting_ydrefsi_tab_info_editor">
+      <?php echo "<input type='hidden' id='egr_plugin_setting_ydrefsi_tab_info' name='egr_webapps_plugin_options[ydrefsi_tab_info]' value='" . esc_attr(isset($options['ydrefsi_tab_info']) ? $options['ydrefsi_tab_info'] : '') . "' />"; ?>
+      <div id="egr_plugin_setting_ydrefsi_tab_info_editor" class="editor"></div>
+   </div>
+<?php }
+
+function egr_plugin_setting_ydrefsi_tab_info_en()
+{
+   $options = get_option('egr_webapps_plugin_options'); ?>
+
+   <div class="editor-wrapper egr_plugin_setting_ydrefsi_tab_info_en_editor">
+      <?php echo "<input type='hidden' id='egr_plugin_setting_ydrefsi_tab_info_en' name='egr_webapps_plugin_options[ydrefsi_tab_info_en]' value='" . esc_attr(isset($options['ydrefsi_tab_info_en']) ? $options['ydrefsi_tab_info_en'] : '') . "' />"; ?>
+      <div id="egr_plugin_setting_ydrefsi_tab_info_en_editor" class="editor"></div>
+   </div>
+<?php }
+
+function egr_plugin_setting_order_ydrefsi()
+{
+   $options = get_option('egr_webapps_plugin_options');
+   echo "<input id='egr_plugin_setting_order_ydrefsi' name='egr_webapps_plugin_options[order_ydrefsi]' type='text' value='" . esc_attr(isset($options['order_ydrefsi']) ? $options['order_ydrefsi'] : 60) . "' />";
+}
+//END 
+
+
 
 function egr_plugin_setting_shortcode()
 {

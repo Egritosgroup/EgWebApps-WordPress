@@ -244,6 +244,19 @@ function setAppsSettings($options, $pluginFolderName)
       'koimitiria_tab_info_en' => $options['koimitiria_tab_info_en'] ? htmlspecialchars($options['koimitiria_tab_info_en']) : '',
       'order_koimitiria' => $options['order_koimitiria'] ? $options['order_koimitiria'] : 110,
 
+      'is_ydrefsi_enabled' => isset($options['isydrefsi']) && $options['isydrefsi'] == 'on' ? true : false,
+      'ydrefsi_api' => $options['ydrefsi_api'] ? $options['ydrefsi_api'] : '',
+      'ydrefsi_afm_required' => (isset($options['ydrefsi_afm_required']) && $options['ydrefsi_afm_required'] == 'on') || !isset($options['ydrefsi_afm_required'])
+         ? true
+         : false,
+      'ydrefsi_tab_title' => $options['ydrefsi_tab_title'] ? htmlspecialchars($options['ydrefsi_tab_title']) : 'Ύδρευση',
+      'ydrefsi_tab_title_en' => $options['ydrefsi_tab_title_en'] ? htmlspecialchars($options['ydrefsi_tab_title_en']) : 'Water Supply',
+      'ydrefsi_description' => $options['ydrefsi_description'] ? htmlspecialchars($options['ydrefsi_description']) : 'Υπηρεσίες προς πολίτες που αφορούν την ύδρευση.',
+      'ydrefsi_description_en' => $options['ydrefsi_description_en'] ? htmlspecialchars($options['ydrefsi_description_en']) : '',
+      'ydrefsi_tab_info' => $options['ydrefsi_tab_info'] ? htmlspecialchars($options['ydrefsi_tab_info']) : '',
+      'ydrefsi_tab_info_en' => $options['ydrefsi_tab_info_en'] ? htmlspecialchars($options['ydrefsi_tab_info_en']) : '',
+      'order_ydrefsi' => $options['order_ydrefsi'] ? $options['order_ydrefsi'] : 120,
+
       /* 'is_notifications_enabled' => false,
       'notifications_api' => '',
       'notifications_tab_title' => $options['notifications_tab_title'] ? htmlspecialchars($options['notifications_tab_title']) : 'Ειδοποιήσεις',
